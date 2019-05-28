@@ -1,1 +1,20 @@
-<h1>figma</h1>
+<div class="container">
+  <h1>Share your project!</h1>
+  <div>
+   <%= simple_form_for [@project] do |f| %>
+
+      <%= f.input :name %>
+      <%= f.input :organization %>
+      <%= f.input :org_description, label: 'Tell a bit about your organization' %>
+      <%= f.input :url, label: 'URL' %>
+      <%= f.input :short_description, label: 'Short description of the project - what are its main features? (100 characters or less)' %>
+      <%= f.input :long_description, label: 'Tell more in detail about the project and what a user will expect from participating' %>
+      <%= f.input :location %>
+      <%= f.input :photo %>
+      <!-- to add after the photo uploader has been included -->
+      <%#= f.input :photo_cache, as: :hidden %>
+    <div>
+    <%= f.submit "Submit Your Project", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
