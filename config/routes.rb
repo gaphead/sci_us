@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   resources :projects, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :users
+  resources :favorites
     # resources: favorites only: [:index, :new, :create, :destroy]
 end
