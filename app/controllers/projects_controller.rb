@@ -1,11 +1,12 @@
 class ProjectsController < ApplicationController
   before_action :setProject, only: [:index, :show]
   skip_before_action :authenticate_user!, only: [:index, :show, :create]
+
   def index
     @projects = Project.all
   end
 
-   # def create
+  # def create
   # end
 
   def new
