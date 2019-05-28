@@ -1,1 +1,17 @@
 <h1>Your Profile</h1>
+
+<div class='container'>
+  <div class='opener'>
+    <div>
+      <%= cl_image_tag @user.photo, class: "avatar-large", alt: "your profile picture" %>
+    </div>
+    <div>
+      <h1><%= @user.first_name %> <%= @user.last_name %></h>
+    </div>
+    <div>
+      <p><%= @user.email %></p>
+    </div>
+    <div>
+      <%= link_to "Edit profile", edit_user_registration_path(@user), class: 'btn btn-secondary' %>
+    </div>
+  </div>
