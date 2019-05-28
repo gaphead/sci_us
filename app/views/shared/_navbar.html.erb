@@ -27,7 +27,7 @@
           <%= link_to "have a project?", new_project_path, id: "nav-share",class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%#= cl_image_tag current_user.email, width: 300, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= cl_image_tag current_user.photo, width: 300, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Profile", profile_path(current_user), class: "dropdown-item" %>
             <!-- Path is incorrect -->
