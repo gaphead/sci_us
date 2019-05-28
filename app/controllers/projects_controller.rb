@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :setProject, only: [:index, :show]
   skip_before_action :authenticate_user!, only: [:index, :show, :create]
+
   def index
     @projects = Project.all
   end
@@ -13,6 +14,7 @@ class ProjectsController < ApplicationController
       render 'new'
     end
   end
+
 
   def new
     @project = Project.new
