@@ -16,8 +16,12 @@ ActiveRecord::Schema.define(version: 2019_05_28_145909) do
   enable_extension "plpgsql"
 
   create_table "favorites", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_favorites_on_project_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -46,4 +50,6 @@ ActiveRecord::Schema.define(version: 2019_05_28_145909) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favorites", "projects"
+  add_foreign_key "favorites", "users"
 end
