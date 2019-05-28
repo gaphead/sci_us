@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
-  has_many :users
-  has_many :favorites
+  mount_uploader :photo, PhotoUploader
+  has_many :users, through: :favorites
 
   validates :name, presence: true
   validates :organization, presence: true

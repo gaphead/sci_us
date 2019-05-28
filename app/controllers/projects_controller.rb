@@ -15,7 +15,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-
   def new
     @project = Project.new
   end
@@ -33,11 +32,11 @@ class ProjectsController < ApplicationController
   # def destroy
   # end
   private
-  
+
   def project_params
     params.require(:project).permit(:name, :short_description, :long_description, :url, :location, :organization, :photo, :photo_cache, :active, :org_description)
   end
-  
+
   def setProject
     @project = Project.find(params[:id])
   end
