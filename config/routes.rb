@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :users
   resources :favorites
+
+  get '/profile/:id', to: 'pages#profile', as: :profile
     # resources: favorites only: [:index, :new, :create, :destroy]
 end
