@@ -14,11 +14,12 @@
     </div>
 
       <br>
-      <% if current_user == @project.user %>
-        <%= link_to "Update project", edit_project_path, class: "btn btn-primary" %>
-      <% else current_user %>
-        <%= link_to "Search for some more science!", projects_path, class: "btn btn-success"%>
-      <% end %>
+      <!-- breaks the site -->
+      <%# if current_user == @project.user %>
+        <%#= link_to "Update project", edit_project_path, class: "btn btn-primary" %>
+      <%# else current_user %>
+        <%#= link_to "Search for some more science!", projects_path, class: "btn btn-success"%>
+      <%# end %>
 
       <div class="show_more_description">
           <p><%= @project.long_description %></p>
@@ -37,11 +38,13 @@
 
       <div>
         <!-- Shows owner information -->
-        <h4>Owner:</h4>
-        <%= link_to profile_path(@project.user_id) do %>
-          <%= cl_image_tag @project.user.photo, width: 300, crop: :fill, class: "avatar large" %>
-          <%= @project.user.first_name %> <%= @garden.user.last_name %>
-        <% end %>
+
+        <!-- breaks the site -->
+        <!-- <h4>Owner:</h4> -->
+        <%#= link_to profile_path(@project.user_id) do %>
+          <%#= cl_image_tag @project.user.photo, width: 300, crop: :fill, class: "avatar large" %>
+          <%#= @project.user.first_name %> <%#= @garden.user.last_name %>
+        <%# end %>
         <br>
       </div>
 

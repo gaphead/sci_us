@@ -10,6 +10,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.text :org_description
       t.boolean :active
       t.string :photo
+      # t.references :favorites, foreign_key: true
 
       t.timestamps
     end

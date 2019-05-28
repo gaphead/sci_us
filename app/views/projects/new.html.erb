@@ -11,8 +11,7 @@
       <%= f.input :long_description, label: 'Tell more in detail about the project and what a user will expect from participating' %>
       <%= f.input :location %>
       <%= f.input :photo %>
-      <!-- to add after the photo uploader has been included -->
-      <%#= f.input :photo_cache, as: :hidden %>
+      <%= f.input :photo_cache, as: :hidden %>
     <div>
     <%= f.submit "Submit Your Project", class: "btn btn-primary" %>
     <% end %>
