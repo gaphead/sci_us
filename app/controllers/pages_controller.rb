@@ -3,4 +3,9 @@ class PagesController < ApplicationController
 
   def home
   end
+
+    def profile
+    @user = User.find(params[:id])
+    @projects = Project.all
+  end
 end
