@@ -72,10 +72,41 @@ apairs = Project.new(
   active: true
 )
 
+seti = Project.new(
+  name: "SETI",
+  short_description: "Uses Internet-connected computers in the Search for Extraterrestrial Intelligence (SETI)",
+  long_description: "Radio telescope signals consist primarily of noise (from celestial sources and the receiver's electronics) and man-made signals such as TV stations, radar, and satellites. Modern radio SETI projects analyze the data digitally. More computing power enables searches to cover greater frequency ranges with more sensitivity. Radio SETI, therefore, has an insatiable appetite for computing power.",
+  url: "https://setiathome.berkeley.edu/",
+  location: "Online",
+  organization: "Berkeley",
+  org_description: "SETI@home was originally launched in May 1999",
+  active: true
+)
+
+mindmodeling = Project.new(
+  name: "MindModeling",
+  short_description: "MindModeling is a research project that uses volunteer computing for the advancement of cognitive science",
+  long_description: "The research focuses on utilizing computational cognitive process modeling to better understand the human mind. We need your help to improve on the scientific foundations that explain the mechanisms and processes that enable and moderate human performance and learning",
+  location: "Online",
+  organization: "University of Dayton Research Institute",
+  org_description: "Not for profit based in Dayton, OH",
+  active: true
+)
+
 print "Creating projects"
 
 apairs.remote_photo_url = "https://is4-ssl.mzstatic.com/image/thumb/Purple127/v4/c9/61/69/c96169d0-8eae-851b-e506-83396b270117/pr_source.jpg/246x0w.jpg"
 apairs.save
+
+print "."
+
+seti.remote_photo_url = "https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1357&q=80"
+seti.save
+
+print "."
+
+mindmodeling.remote_photo_url = "https://static.thenounproject.com/png/51575-200.png"
+mindmodeling.save
 
 print "."
 
