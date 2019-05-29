@@ -1,0 +1,46 @@
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: left;
+  margin-top: 30px;
+}
+
+.card {
+  box-shadow: 5px 5px 5px lightgrey;
+  border-radius: 25px
+}
+
+.fa-star {
+  margin-top: 15px;
+  margin-left: 15px;
+  color: white;
+}
+
+.fa-star:hover {
+  color: #FFE66D;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  height: 115px;
+
+}
+
+.card-photo {
+  height: 150px;
+  border-radius: 25px 25px 0px 0px;
+  background-size: cover;
+
+}
+
+.card-text {
+  font-style: italic;
+  font-size: 16px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 18px;
+}
