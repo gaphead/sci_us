@@ -33,24 +33,6 @@ erik.save
 
 print "."
 
-
-puts "done"
-
-
-fuck = Project.new(
-    name: 'starmap',
-    short_description: "help map the stars",
-    long_description: "scientisits need help recognizing constalations",
-    url: 'https://placeholder.com',
-    location: 'montreal',
-    organization: 'mcgill',
-    org_description: 'mcgill is shitty dumb university that sucks, but hey they do science somtimes',
-    active: true
-  )
-
-fuck.remote_photo_url = 'https://blog.bestbuy.ca/wp-content/uploads/2017/04/Telescopes-and-star-gazing-essentials-1.jpg'
-fuck.save
-
 alex.remote_photo_url = "https://www.alextangpsychology.com/uploads/8/3/0/2/83023440/published/file-000_3.jpeg?1496814685"
 alex.save
 
@@ -83,13 +65,25 @@ seti = Project.new(
   active: true
 )
 
-mindmodeling = Project.new(
+mind = Project.new(
   name: "MindModeling",
   short_description: "MindModeling is a research project that uses volunteer computing for the advancement of cognitive science",
   long_description: "The research focuses on utilizing computational cognitive process modeling to better understand the human mind. We need your help to improve on the scientific foundations that explain the mechanisms and processes that enable and moderate human performance and learning",
+  url: "https://mindmodeling.org/beta/"
   location: "Online",
   organization: "University of Dayton Research Institute",
   org_description: "Not for profit based in Dayton, OH",
+  active: true
+)
+
+stars = Project.new(
+  name: 'Starmap',
+  short_description: "Help map the stars",
+  long_description: "Scientisits need help recognizing constalations",
+  url: 'https://placeholder.com',
+  location: 'Montreal',
+  organization: 'Mcgill',
+  org_description: 'Mcgill is shitty dumb university that sucks, but hey they do science somtimes',
   active: true
 )
 
@@ -105,10 +99,14 @@ seti.save
 
 print "."
 
-mindmodeling.remote_photo_url = "https://static.thenounproject.com/png/51575-200.png"
-mindmodeling.save
+mind.remote_photo_url = "https://static.thenounproject.com/png/51575-200.png"
+mind.save
+
+print "."
+
+stars.remote_photo_url = 'https://blog.bestbuy.ca/wp-content/uploads/2017/04/Telescopes-and-star-gazing-essentials-1.jpg'
+stars.save
 
 print "."
 
 puts "Done"
-
