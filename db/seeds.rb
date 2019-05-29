@@ -25,3 +25,18 @@ erik.save
 print "."
 
 puts "done"
+
+
+fuck = Project.new(
+    name: 'starmap',
+    short_description: "help map the stars",
+    long_description: "scientisits need help recognizing constalations",
+    url: 'https://placeholder.com',
+    location: 'montreal',
+    organization: 'mcgill',
+    org_description: 'mcgill is shitty dumb university that sucks, but hey they do science somtimes',
+    active: true
+  )
+
+fuck.remote_photo_url = 'https://blog.bestbuy.ca/wp-content/uploads/2017/04/Telescopes-and-star-gazing-essentials-1.jpg'
+fuck.save
