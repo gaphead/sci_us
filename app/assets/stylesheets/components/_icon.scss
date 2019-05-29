@@ -1,8 +1,16 @@
+.search-container {
+  background: #F7FFF7;
+  align-items: center;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+
 .icons {
   display: flex;
-  justify-content: left;
-  margin-top: 25px;
-  margin-left: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .fa-rocket {

@@ -1,40 +1,46 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= cl_image_path @project.photo, crop: :fit unless @project.photo.blank? %>');">
 
-</div>
-
-<div class="project-container">
-  <div class="row">
-    <div class="col-sm-12 col-md-7">
-      <h1><%= @project.name %> </h1>
-        <div class="show-description">
-          <p><%= @project.short_description %></p>
-        </div>
-      </div>
-      <br>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= cl_image_path @project.photo, crop: :fit unless @project.photo.blank? %>');">
+    <div class="project-name">
+        <h1><%= @project.name %> </h1>
     </div>
 
-      <br>
-      <!-- breaks the site -->
+
+  </div>
+<div class='whole-page'>
+  <div class="project-container">
+    <div>
+      <div class="show-description">
+        <h2><%= @project.short_description %></h2>
+        <h3>this project has been favrotied <%= 0 %> times </h3>
+      </div>
+    </div>
+    <div>
+      <div class="show_more_description">
+      <p><%= @project.long_description %></p>
+      </div>
+      <div class="url_destination">
+      <p><%= @project.url %></p>
+      </div>
+    </div>
+    <div>
+      <div class="organization">
+      <h1><%= @project.organization%></h1>
+      </div>
+      <div class="org_description">
+      <h2><%=@project.org_description%></h2>
+      </div>
+    </div>
+  </div>
+</div>
+       <!-- breaks the site -->
       <%# if current_user == @project.user %>
         <%#= link_to "Update project", edit_project_path, class: "btn btn-primary" %>
       <%# else current_user %>
         <%#= link_to "Search for some more science!", projects_path, class: "btn btn-success"%>
       <%# end %>
 
-      <div class="show_more_description">
-          <p><%= @project.long_description %></p>
-        </div>
 
-        <div class="url_destination">
-          <p><%= @project.url %></p>
-        </div>
 
-    </div>
-
-    <div class="col-sm-12 col-md-1">
-    </div>
-
-    <div class="col-sm-12 col-md-4">
 
       <div>
         <!-- Shows owner information -->
@@ -45,9 +51,8 @@
           <%#= cl_image_tag @project.user.photo, width: 300, crop: :fill, class: "avatar large" %>
           <%#= @project.user.first_name %> <%#= @garden.user.last_name %>
         <%# end %>
-        <br>
       </div>
 
+      </div>
     </div>
-  </div>
-</div>
+

@@ -14,4 +14,29 @@
       </div>
     </div>
   <% end %>
+<div class='container'>
+  <div class='opener'>
+    <div class='text-center pt-4'>
+      <%= cl_image_tag @user.photo, class: "avatar-large", alt: "your profile picture", width: 100 %>
+    </div>
+    <div class='text-center pt-4'>
+      <h1><%= @user.first_name %> <%= @user.last_name %></h>
+    </div>
+    <div class='text-center pt-4'>
+      <p><%= @user.email %></p>
+      <p><%= @user.description %></p>
+    </div>
+    <div class="text-center pt-4">
+
+      <!-- check that this logic actually works to hide the edit button from other users' profiles -->
+      <% if current_user.id == @user.id %>
+        <%= link_to "Edit profile", edit_user_registration_path(@user), class: 'btn btn-secondary' %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="projects">
+    <% @user.projects.each do |project| %>
+      <%  %>
+  </div>
 </div>

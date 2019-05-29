@@ -5,8 +5,8 @@
 <% end %>
 
   <%= link_to root_path, class: "navbar-brand" do %>
-
-    <% end %>
+    <%= cl_image_tag "alskdfj", width: 50, id: "logo" %>
+  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -17,14 +17,14 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <% if @homepage %>
-            <a class="nav-link", href="/#about", id="about-link">About</a>
-          <% end %>
+          <%# if @homepage %>
+            <!-- <a class="nav-link", href="/#about", id="about-link">About</a> -->
+          <%# end %>
         </li>
       <li class="nav-item">
       </li>
         <li class="nav-item">
-          <%= link_to "have a project?", new_project_path, id: "nav-share",class: "nav-link" %>
+          <%= link_to "have a project?", new_project_path, id: "nav-share", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= cl_image_tag current_user.photo, width: 300, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
