@@ -5,3 +5,17 @@
 @import "banner";
 @import "cards";
 @import "icon";
+
+
+
+
+.whole-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.show-description {
+   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
