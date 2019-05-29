@@ -3,7 +3,11 @@ class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :create]
 
   def index
-    @projects = Project.all
+    if params[:query].present?
+      @projects = Project.search(params[:query])
+    else
+      @projects = Project.all
+    end
   end
 
   def create

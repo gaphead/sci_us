@@ -47,7 +47,7 @@
     <h5>Short Description</h5>
   </div> -->
 
-<!-- Search & Icons -->
+<!-- Icons -->
   <div class="search-container">
     <div class="icons">
       <!-- Animals -->
@@ -73,18 +73,22 @@
     </div>
   </div>
 
-  <!-- Cards -->
+  <!-- Search-->
+    <div class="seach">
+      <div class="search-bar">
+        <%= form_tag(projects_path, method: :get) do %>
+          <%= text_field_tag :query, params[:query], :placeholder => "Find Projects", class: "form-control", id: "landing-page-search-form" %>
+        <% end %>
+      </div>
+
+      <div class="submit-button">
+        <%= submit_tag("Search", :id=>"button", :class=>"btn btn-primary", :name=>"search") %>
+      </div>
+    </div>
+
+  <!-- Cards-->
   <div class="card-container">
     <!-- Search Bar -->
-    <div class="seach-bar">
-      <%= form_tag projects_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Search a project"
-        %>
-      <% end %>
-    </div>
     <!-- Card -->
     <% @projects.each do |p| %>
       <div class="card" style="width: 18rem;">
