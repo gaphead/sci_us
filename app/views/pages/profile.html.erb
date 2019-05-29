@@ -1,1 +1,17 @@
 <h1>Your Profile</h1>
+
+
+<h2>Favorite Projects</h2>
+<br>
+<div class='card-container'>
+  <% @user.projects.each do |project| %>
+    <div class="card-profile">
+      <div class="card-profile-infos flex-column">
+        <%= cl_image_tag project.photo, class: "" %>
+        <div class="text-center mt-4">
+          <h5> <%= project.name %> </h5>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

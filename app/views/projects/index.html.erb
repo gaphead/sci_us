@@ -19,7 +19,15 @@
     <!-- Card -->
     <div class="card" style="width: 18rem;">
       <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://cdn.cnn.com/cnnnext/dam/assets/190226205205-butterfly-sanctuary-border-wall-trump-weir-orig-00000712-large-169.jpg);">
-        <i class="fas fa-star fa-lg"></i>
+        <% if user_signed_in? %>
+          <%= link_to toggle_project_favorites_path(Project.first), method: :post do %>
+            <% if current_user.has_favorited?(Project.first) %>
+              <i id="star", class="fas fa-star fa-lg fa-rocket-click"></i>
+            <% else %>
+              <i id="star", class="fas fa-star fa-lg"></i>
+            <% end %>
+          <% end %>
+        <% end %>
       </div>
       <div class="card-body">
         <p class="card-title">Title Here</p>
