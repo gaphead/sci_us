@@ -5,7 +5,6 @@
   padding-bottom: 1px;
 }
 
-
 .icons {
   display: flex;
   justify-content: center;
@@ -13,30 +12,25 @@
   margin-bottom: 20px;
 }
 
-.fa-rocket {
+i.fas {
   color: #ABDAE1;
+  margin-left: 30px;
 }
 
-.fa-rocket:hover {
-  color: #fab95b;
-}
-
-.fa-seedling {
-  color: #ABDAE1;
-  margin-left: 25px;
-}
-
-.fa-seedling:hover {
+i.fas:hover {
   color: #72A1E5;
 }
 
-.fa-music {
-  color: #ABDAE1;
-  margin-left: 25px;
+#star-icon {
+  margin-top: 15px;
+  margin-left: 15px;
+  color: white;
 }
 
-.fa-music:hover {
-  color: #72A1E5;
+#star-icon:hover {
+  margin-top: 15px;
+  margin-left: 15px;
+  color: #FFE66D;
 }
 
 .fa-rocket-click {
