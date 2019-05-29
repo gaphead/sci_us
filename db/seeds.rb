@@ -68,7 +68,7 @@ seti = Project.new(
 mind = Project.new(
   name: "MindModeling",
   short_description: "MindModeling is a research project that uses volunteer computing for the advancement of cognitive science",
-  long_description: "The research focuses on utilizing computational cognitive process modeling to better understand the human mind. We need your help to improve on the scientific foundations that explain the mechanisms and processes that enable and moderate human performance and learning",
+  long_description: "The research focuses on utilizing computational cognitive process modeling to better understand the human mind",
   url: "https://mindmodeling.org/beta/",
   location: "Online",
   organization: "University of Dayton Research Institute",

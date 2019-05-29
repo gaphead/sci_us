@@ -8,19 +8,46 @@
 <!-- Search & Icons -->
   <div class="search-container">
     <div class="icons">
-      <i class="fas fa-rocket fa-2x"></i>
-      <i class="fas fa-seedling fa-2x"></i>
-      <i class="fas fa-music fa-2x"></i>
+      <!-- Animals -->
+      <i class="fas fa-frog fa-2x" title="Animals"></i>
+      <!-- Biology -->
+      <i class="fas fa-dna fa-2x" title="Biology"></i>
+      <!-- Chemistry -->
+      <i class="fas fa-flask fa-2x" title="Chemistry"></i>
+      <!-- Ecology -->
+      <i class="fas fa-seedling fa-2x" title="Ecology"></i>
+      <!-- History -->
+      <i class="fas fa-history fa-2x" title="History"></i>
+      <!-- Medicine -->
+      <i class="fas fa-stethoscope fa-2x" title="Medicine"></i>
+      <!-- Oceanography -->
+      <i class="fas fa-water fa-2x" title="Oceanography"></i>
+      <!-- Physics -->
+      <i class="fas fa-atom fa-2x" title="Physics"></i>
+      <!-- Space -->
+      <i class="fas fa-rocket fa-2x" title="Astrology"></i>
+      <!-- Social Studies -->
+      <i class="fas fa-user-circle fa-2x" title="Social Studies"></i>
     </div>
   </div>
 
   <!-- Cards -->
   <div class="card-container">
+    <!-- Search Bar -->
+    <div class="seach-bar">
+      <%= form_tag projects_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search a project"
+        %>
+      <% end %>
+    </div>
     <!-- Card -->
     <% @projects.each do |p| %>
       <div class="card" style="width: 18rem;">
         <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
-          <i class="fas fa-star fa-lg"></i>
+          <i class="fas fa-star fa-lg" id="star-icon"></i>
         </div>
         <div class="card-body">
           <p class="card-title"> <%= p.name %> </p>
