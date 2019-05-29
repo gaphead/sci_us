@@ -23,6 +23,7 @@
 }
 
 
+
 .carousel {
   display: flex;
   justify-content: center;
@@ -30,14 +31,30 @@
   flex-direction: column;
   background-size: cover;
   background-position: center;
-  height: 40vh;
-  overflow:hidden;
+  height: 60vh;
+  // width: 450px;
+  // height: 250px;
+
+  // .item {
+  //   overflow: hidden;
+
+  //   img {
+  //     height: 100%;
+  //     max-width: none;
+  //     left: 50%;
+  //     position: relative;
+  //     transform: translateX(-50%);
+  //     -webkit-transform: translateX(-50%);
+  //   }
+  // }
+
+
 }
 
-.carousel-caption {
-    //  margin-top: -5vh;
-  // bottom: 400px;
-    }
+.carousel-inner{
+  overflow:hidden;
+
+}
 
 .index-caption h5 {
   color: white;
@@ -51,8 +68,4 @@
   font-style: italic;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 14px;
-}
-
-#daphoto {
-  crop:fit;
 }
