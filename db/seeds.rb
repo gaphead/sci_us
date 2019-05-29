@@ -87,6 +87,17 @@ stars = Project.new(
   active: true
 )
 
+weather = Project.new(
+  name: 'Weather Rescue',
+  short_description: "Help unearth some of the UK's earliest weather records",
+  long_description: "Learning more about the weather relies on having detailed observations, but the further back in time we look the rarer these observations become.",
+  url: 'https://www.zooniverse.org/projects/edh/weather-rescue',
+  location: 'England',
+  organization: 'British Science Association',
+  org_description: 'The British Science Association (BSA)’s vision is a world where science is put at the heart of society and culture.',
+  active: true
+)
+
 print "Creating projects"
 
 apairs.remote_photo_url = "https://is4-ssl.mzstatic.com/image/thumb/Purple127/v4/c9/61/69/c96169d0-8eae-851b-e506-83396b270117/pr_source.jpg/246x0w.jpg"
@@ -106,6 +117,11 @@ print "."
 
 stars.remote_photo_url = 'https://blog.bestbuy.ca/wp-content/uploads/2017/04/Telescopes-and-star-gazing-essentials-1.jpg'
 stars.save
+
+print "."
+
+weather.remote_photo_url = 'https://www.queenelizabethparkuganda.com/wp-content/uploads/2019/03/placeholder_thumb_1152x648.jpg'
+weather.save
 
 print "."
 
