@@ -20,9 +20,7 @@
           <%# if @homepage %>
             <!-- <a class="nav-link", href="/#about", id="about-link">About</a> -->
           <%# end %>
-        <!--  </li> -->
-      <li class="nav-item">
-      </li>
+
         <li class="nav-item">
           <%= link_to "have a project?", new_project_path, id: "nav-share", class: "nav-link" %>
         </li>
@@ -45,9 +43,9 @@
           <% if @homepage %>
             <a class="nav-link" href="/#the sciUs story">About</a>
           <% end %>
+        </li>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
         </li>
         <li class="nav-item">
           <%= link_to "Sign Up", new_user_registration_path, class: "nav-link btn btn-sign-up" %>
