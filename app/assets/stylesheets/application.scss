@@ -11,3 +11,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+html {
+  text-decoration: none;
+  .hover{
+    text-decoration:none;
+  }
+}
