@@ -75,7 +75,7 @@
 <div class="search-container">
 
 <!-- Search-->
-  <div class="seach">
+  <div class="seach mt-4 mb-4">
     <div class="search-bar">
       <%= form_tag(projects_path, method: :get) do %>
         <%= text_field_tag :query, params[:query], :placeholder => "Find Interesting Projects Today!", class: "form-control", id: "landing-page-search-form" %>
@@ -84,14 +84,8 @@
   </div>
 
 <!-- Icons -->
-  <div class="icon-filter">
-    <%= simple_form_for(:category) do |form| %>
-      <!-- Edit w/ Ajax on Friday -->
-      <%= form.input :category, input_html: {checked: true}, class:  "hidden" %>
-      <%= form.button :submit, class: "btn btn-primary", id: "booking-button" %>
-    <% end %>
 
-    <div class="icons">
+    <div class="icons mt-5 mb-5">
       <!-- Animals -->
       <i class="fas fa-frog fa-2x filter" title="Animals"></i>
       <!-- Biology -->
@@ -119,11 +113,11 @@
 </div>
 
 <!-- Cards-->
-  <div class="card-container">
+  <div class="card-container mb-5">
     <!-- Search Bar -->
     <!-- Card -->
     <% @projects.each do |p| %>
-      <div class="card p.category" style="width: 20%;">
+      <div class="card <%= p.category %>" style="width: 20%;">
         <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
           <% if user_signed_in? %>
             <div data-project-id="<%= p.id %>">
@@ -137,7 +131,7 @@
             </div>
           <% end %>
         </div>
-        <div class="card-body">
+        <div class="card-body-">
           <p class="card-title"><%= p.name %></p>
           <p class="card-text"><%= p.short_description %></p>
         </div>
@@ -146,5 +140,5 @@
     <% end %>
   </div>
 
-  <!-- this will break -->
-  <%= javascript_include_tag "#{ Rails.root }/javascript/packs/card-filter.js" %>
+
+<%= javascript_pack_tag "card-filter" %>
