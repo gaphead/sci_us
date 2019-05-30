@@ -71,20 +71,19 @@
 </div>
 
 
-<!-- Search & Icons -->
-<div class="search-container">
+  <!-- Search & Icons -->
+  <div class="search-container">
 
-<!-- Search-->
-  <div class="seach mt-4 mb-4">
-    <div class="search-bar">
-      <%= form_tag(projects_path, method: :get) do %>
-        <%= text_field_tag :query, params[:query], :placeholder => "Find Interesting Projects Today!", class: "form-control", id: "landing-page-search-form" %>
-      <% end %>
+    <!-- Search-->
+    <div class="seach mt-4 mb-4">
+      <div class="search-bar">
+        <%= form_tag(projects_path, method: :get) do %>
+          <%= text_field_tag :query, params[:query], :placeholder => "Find Interesting Projects Today!", class: "form-control", id: "landing-page-search-form" %>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-<!-- Icons -->
-
+    <!-- Icons -->
     <div class="icons mt-5 mb-5">
       <!-- Animals -->
       <i class="fas fa-frog fa-2x filter" title="Animals"></i>
@@ -110,7 +109,7 @@
 
   </div>
 
-</div>
+
 
 <!-- Cards-->
   <div class="card-container mb-5">
@@ -136,7 +135,6 @@
           <p class="card-text"><%= p.short_description %></p>
         </div>
       </div>
-    <% end %>
     <% end %>
   </div>
 
