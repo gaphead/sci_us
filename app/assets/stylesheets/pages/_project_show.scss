@@ -2,18 +2,27 @@
   display: flex;
   flex-direction: row;
   background-color: #C1DFF0;
-  height: 100vh;
+  height: auto;
   flex-direction: column;
-  color: white
+  color: white;
+  background-position: center;
+  background: url("https://wallpaperplay.com/walls/full/4/f/9/51246.jpg") no-repeat center center fixed;
+  opacity: 0.70;
 }
 
 .participate {
-  margin-top: 75px;
   margin-left: 925px
 }
 
 .participate h3 {
   font-style: italic;
+}
+
+.project-img {
+  height: 250px;
+  width: 350px;
+  border-radius: 5px;
+  clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0 0);
 }
 
 .project-info {
