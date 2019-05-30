@@ -1,19 +1,16 @@
-
 .card-container {
   display: flex;
   justify-content: space-around;
   align-items: left;
   margin-top: 50px;
   flex-wrap: wrap;
-
 }
 
 .card {
   box-shadow: 5px 5px 5px lightgrey;
   border-radius: 25px;
-  margin: 2px;
-  max-height: 350px;
-  margin-bottom: 30px;
+  margin: 20px;
+  justify-content: flex-start !important;
 }
 
 .hide {
@@ -29,7 +26,7 @@
 }
 
 .card-photo {
-  height: 150px;
+  height: 250px;
   border-radius: 25px 25px 0px 0px;
   background-size: cover;
   object-fit: contain;
@@ -47,3 +44,12 @@
   text-decoration: underline;
   font-size: 18px;
 }
+
+.card-body-profile {
+  height: 150px;
+}
+
+.card-photo-profile {
+  height: 250px;
+}
+
