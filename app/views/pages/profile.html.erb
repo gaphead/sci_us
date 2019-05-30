@@ -1,42 +1,60 @@
-<h1><%= @user.first_name %>'s Profile</h1>
 
-<h2>Favorite Projects</h2>
-<br>
-<div class='card-container'>
-  <% @user.projects.each do |project| %>
-    <div class="card-profile">
-      <div class="card-profile-infos flex-column">
-        <%= cl_image_tag project.photo, class: "" %>
-        <div class="text-center mt-4">
-          <h5> <%= project.name %> </h5>
+<div class="row">
+  <div class="col-sm-12 col-md-4">
+    <div class='container'>
+      <div class='opener'>
+        <div class='text-center pt-4'>
+          <h1>My Profile</h1>
+          <%= cl_image_tag @user.photo, class: "avatar-large", alt: "your profile picture", width: 100 unless @user.photo.blank? %>
+        </div>
+        <div class='text-center pt-4'>
+          <h1><%= @user.first_name %> <%= @user.last_name %></h>
+        </div>
+        <div class='text-center pt-4'>
+          <p><%= @user.email %></p>
+          <p><%= @user.description %></p>
+        </div>
+        <div class="text-center pt-4">
+
+          <!-- check that this logic actually works to hide the edit button from other users' profiles -->
+          <% if current_user.id == @user.id %>
+            <%= link_to "Edit profile", edit_user_registration_path(@user), class: 'btn btn-secondary' %>
+          <% end %>
         </div>
       </div>
     </div>
-  <% end %>
-<div class='container'>
-  <div class='opener'>
-    <div class='text-center pt-4'>
-      <%= cl_image_tag @user.photo, class: "avatar-large", alt: "your profile picture", width: 100 %>
-    </div>
-    <div class='text-center pt-4'>
-      <h1><%= @user.first_name %> <%= @user.last_name %></h>
-    </div>
-    <div class='text-center pt-4'>
-      <p><%= @user.email %></p>
-      <p><%= @user.description %></p>
-    </div>
-    <div class="text-center pt-4">
-
-      <!-- check that this logic actually works to hide the edit button from other users' profiles -->
-      <% if current_user.id == @user.id %>
-        <%= link_to "Edit profile", edit_user_registration_path(@user), class: 'btn btn-secondary' %>
-      <% end %>
-    </div>
   </div>
-
-  <div class="projects">
-    <%# @user.projects.each do |project| %>
-      <%#  %>
-    <%# end %>
+  <div class="col-sm-12 col-md-7">
+    <div class="container">
+      <div class='opener'>
+        <div class='text-left pt-4'>
+          <h2>Favorite Projects</h2>
+          <br>
+          <div class="card-container card-container-profile">
+            <% @user.projects.each do |p| %>
+              <div class="card p.category" style="width: 40%;">
+                <div class="card-photo card-photo-profile" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
+                  <% if user_signed_in? %>
+                    <div data-project-id="<%= p.id %>">
+                      <%= link_to toggle_project_favorites_path(p), method: :post, remote: true do %>
+                        <% if current_user.has_favorited?(p) %>
+                          <i id="star", class="fas fa-star fa-lg fa-rocket-click"></i>
+                        <% else %>
+                          <i id="star", class="fas fa-star fa-lg"></i>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="card-body card-body-profile">
+                  <p class="card-title"><%= p.name %></p>
+                  <p class="card-text"><%= p.short_description %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
