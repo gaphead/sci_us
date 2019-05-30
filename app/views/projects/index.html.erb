@@ -1,48 +1,80 @@
 <div class="project-index-container">
   <!-- Banner -->
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.3)), url(https://static1.visitestonia.com/images/2890339/Estonian_forest_reasons_to_visit_Sven_Zacek.jpg);">
-    <h1>Featured Project</h1>
-    <h5>Short Description</h5>
+  <div id="carouselExampleControls"  class="carousel slide" data-interval="70090909" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" >
+      <img class="d-block w-100" src="https://picsum.photos/id/803/1500/500" alt="First slide">
+       <div class="carousel-caption d-none d-md-block">
+          <h5>Enviroment and Ecology</h5>
+          <p>Check out whate Nature has to offer</p>
+        </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://picsum.photos/id/1069/1500/500" >
+      <div class="carousel-caption d-none d-md-block">
+          <h5>Oceanography</h5>
+          <p>Search Beneath the Waves</p>
+        </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://picsum.photos/id/1073/1500/500" alt="Third slide">
+      <div class="carousel-caption d-none d-md-block">
+          <h5>History</h5>
+          <p>catalog the record of the past</p>
+        </div>
+    </div>
   </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
 
 <!-- Search & Icons -->
-  <div class="search-container">
-    <div class="icons">
-      <!-- Animals -->
-      <i class="fas fa-frog fa-2x" title="Animals"></i>
-      <!-- Biology -->
-      <i class="fas fa-dna fa-2x" title="Biology"></i>
-      <!-- Chemistry -->
-      <i class="fas fa-flask fa-2x" title="Chemistry"></i>
-      <!-- Ecology -->
-      <i class="fas fa-seedling fa-2x" title="Ecology"></i>
-      <!-- History -->
-      <i class="fas fa-history fa-2x" title="History"></i>
-      <!-- Medicine -->
-      <i class="fas fa-stethoscope fa-2x" title="Medicine"></i>
-      <!-- Oceanography -->
-      <i class="fas fa-water fa-2x" title="Oceanography"></i>
-      <!-- Physics -->
-      <i class="fas fa-atom fa-2x" title="Physics"></i>
-      <!-- Space -->
-      <i class="fas fa-rocket fa-2x" title="Astrology"></i>
-      <!-- Social Studies -->
-      <i class="fas fa-user-circle fa-2x" title="Social Studies"></i>
+<div class="search-container">
+
+<!-- Search-->
+  <div class="seach">
+    <div class="search-bar">
+      <%= form_tag(projects_path, method: :get) do %>
+        <%= text_field_tag :query, params[:query], :placeholder => "Find Interesting Projects Today!", class: "form-control", id: "landing-page-search-form" %>
+      <% end %>
     </div>
   </div>
 
-  <!-- Cards -->
+<!-- Icons -->
+  <div class="icons">
+    <!-- Animals -->
+    <i class="fas fa-frog fa-2x" title="Animals"></i>
+    <!-- Biology -->
+    <i class="fas fa-dna fa-2x" title="Biology"></i>
+    <!-- Chemistry -->
+    <i class="fas fa-flask fa-2x" title="Chemistry"></i>
+    <!-- Ecology -->
+    <i class="fas fa-seedling fa-2x" title="Ecology"></i>
+    <!-- History -->
+    <i class="fas fa-history fa-2x" title="History"></i>
+    <!-- Medicine -->
+    <i class="fas fa-stethoscope fa-2x" title="Medicine"></i>
+    <!-- Oceanography -->
+    <i class="fas fa-water fa-2x" title="Oceanography"></i>
+    <!-- Physics -->
+    <i class="fas fa-atom fa-2x" title="Physics"></i>
+    <!-- Space -->
+    <i class="fas fa-rocket fa-2x" title="Astrology"></i>
+    <!-- Social Studies -->
+    <i class="fas fa-user-circle fa-2x" title="Social Studies"></i>
+  </div>
+</div>
+
+<!-- Cards-->
   <div class="card-container">
     <!-- Search Bar -->
-    <div class="seach-bar">
-      <%= form_tag projects_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Search a project"
-        %>
-      <% end %>
-    </div>
     <!-- Card -->
     <% @projects.each do |p| %>
       <div class="card" style="width: 18rem;">

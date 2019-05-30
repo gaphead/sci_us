@@ -2,6 +2,11 @@ class Project < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   has_many :users, through: :favorites
 
+  include AlgoliaSearch
+  algoliasearch do
+    attribute :name, :short_description, :long_description
+  end
+
   validates :name, presence: true
   validates :organization, presence: true
   validates :org_description, presence: true

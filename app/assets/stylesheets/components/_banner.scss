@@ -21,3 +21,51 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 14px;
 }
+
+
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  // width: 450px;
+  // height: 250px;
+
+  // .item {
+  //   overflow: hidden;
+
+  //   img {
+  //     height: 100%;
+  //     max-width: none;
+  //     left: 50%;
+  //     position: relative;
+  //     transform: translateX(-50%);
+  //     -webkit-transform: translateX(-50%);
+  //   }
+  // }
+
+
+}
+
+.carousel-inner{
+  overflow:hidden;
+
+}
+
+.index-caption h5 {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.index-caption p {
+  color: white;
+  font-style: italic;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 14px;
+}

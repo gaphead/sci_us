@@ -12,6 +12,7 @@
       <div class="show-description">
         <h2><%= @project.short_description %></h2>
         <h3>this project has been favrotied <%= 0 %> times </h3>
+        <!-- work on once pushed -->
       </div>
     </div>
     <div>
@@ -23,11 +24,16 @@
       </div>
     </div>
     <div>
+      <div class='org-container'>
       <div class="organization">
       <h1><%= @project.organization%></h1>
       </div>
       <div class="org_description">
-      <h2><%=@project.org_description%></h2>
+      <p><%=@project.org_description%></p>
+      <!-- remove hard coded link to mcgill -->
+              <a class= ' learn-more-button' href="https://mcgill.ca/about/about-mcgill">learn more about <%=@project.organization%> </a>
+      </div>
+
       </div>
     </div>
   </div>
