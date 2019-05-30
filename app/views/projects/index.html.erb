@@ -35,58 +35,44 @@
 </div>
 
 
+<!-- Search & Icons -->
+<div class="search-container">
 
-
-
-
-
-
-
-  <!-- <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.3)), url(https://static1.visitestonia.com/images/2890339/Estonian_forest_reasons_to_visit_Sven_Zacek.jpg);">
-    <h1>Featured Project</h1>
-    <h5>Short Description</h5>
-  </div> -->
-
-<!-- Icons -->
-  <div class="search-container">
-    <div class="icons">
-      <!-- Animals -->
-      <i class="fas fa-frog fa-2x" title="Animals"></i>
-      <!-- Biology -->
-      <i class="fas fa-dna fa-2x" title="Biology"></i>
-      <!-- Chemistry -->
-      <i class="fas fa-flask fa-2x" title="Chemistry"></i>
-      <!-- Ecology -->
-      <i class="fas fa-seedling fa-2x" title="Ecology"></i>
-      <!-- History -->
-      <i class="fas fa-history fa-2x" title="History"></i>
-      <!-- Medicine -->
-      <i class="fas fa-stethoscope fa-2x" title="Medicine"></i>
-      <!-- Oceanography -->
-      <i class="fas fa-water fa-2x" title="Oceanography"></i>
-      <!-- Physics -->
-      <i class="fas fa-atom fa-2x" title="Physics"></i>
-      <!-- Space -->
-      <i class="fas fa-rocket fa-2x" title="Astrology"></i>
-      <!-- Social Studies -->
-      <i class="fas fa-user-circle fa-2x" title="Social Studies"></i>
+<!-- Search-->
+  <div class="seach">
+    <div class="search-bar">
+      <%= form_tag(projects_path, method: :get) do %>
+        <%= text_field_tag :query, params[:query], :placeholder => "Find Interesting Projects Today!", class: "form-control", id: "landing-page-search-form" %>
+      <% end %>
     </div>
   </div>
 
-  <!-- Search-->
-    <div class="seach">
-      <div class="search-bar">
-        <%= form_tag(projects_path, method: :get) do %>
-          <%= text_field_tag :query, params[:query], :placeholder => "Find Projects", class: "form-control", id: "landing-page-search-form" %>
-        <% end %>
-      </div>
+<!-- Icons -->
+  <div class="icons">
+    <!-- Animals -->
+    <i class="fas fa-frog fa-2x" title="Animals"></i>
+    <!-- Biology -->
+    <i class="fas fa-dna fa-2x" title="Biology"></i>
+    <!-- Chemistry -->
+    <i class="fas fa-flask fa-2x" title="Chemistry"></i>
+    <!-- Ecology -->
+    <i class="fas fa-seedling fa-2x" title="Ecology"></i>
+    <!-- History -->
+    <i class="fas fa-history fa-2x" title="History"></i>
+    <!-- Medicine -->
+    <i class="fas fa-stethoscope fa-2x" title="Medicine"></i>
+    <!-- Oceanography -->
+    <i class="fas fa-water fa-2x" title="Oceanography"></i>
+    <!-- Physics -->
+    <i class="fas fa-atom fa-2x" title="Physics"></i>
+    <!-- Space -->
+    <i class="fas fa-rocket fa-2x" title="Astrology"></i>
+    <!-- Social Studies -->
+    <i class="fas fa-user-circle fa-2x" title="Social Studies"></i>
+  </div>
+</div>
 
-      <div class="submit-button">
-        <%= submit_tag("Search", :id=>"button", :class=>"btn btn-primary", :name=>"search") %>
-      </div>
-    </div>
-
-  <!-- Cards-->
+<!-- Cards-->
   <div class="card-container">
     <!-- Search Bar -->
     <!-- Card -->
