@@ -6,24 +6,26 @@
   margin-top: 50px;
   flex-wrap: wrap;
 
-
 }
 
 .card {
   box-shadow: 5px 5px 5px lightgrey;
   border-radius: 25px;
   margin: 2px;
+  max-height: 350px;
+  margin-bottom: 30px;
 }
 
 .hide {
     display: none;
 }
 
-.card-body {
+.card-body- {
   display: flex;
   flex-direction: column;
   justify-content: top;
   height: 150px;
+  overflow: hidden;
 }
 
 .card-photo {
