@@ -1,64 +1,25 @@
+<!-- Whole Page -->
+<div class="show-page-container" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://wallpaperplay.com/walls/full/4/f/9/51246.jpg);">
 
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= cl_image_path @project.photo, crop: :fit unless @project.photo.blank? %>');">
-    <div class="project-name">
-        <h1><%= @project.name %> </h1>
-    </div>
-
-
+<!-- Introduction -->
+  <div class="participate">
+    <h1>Looking to Participate?</h1>
+    <h3>Selected Project: <%= @project.name %></h3>
   </div>
-<div class='whole-page'>
-  <div class="project-container">
-    <div>
-      <div class="show-description">
-        <h2><%= @project.short_description %></h2>
-        <h3>this project has been favrotied <%= 0 %> times </h3>
-        <!-- work on once pushed -->
-      </div>
-    </div>
-    <div>
-      <div class="show_more_description">
-      <p><%= @project.long_description %></p>
-      </div>
-      <div class="url_destination">
-      <p><%= @project.url %></p>
-      </div>
-    </div>
-    <div>
-      <div class='org-container'>
-      <div class="organization">
-      <h1><%= @project.organization%></h1>
-      </div>
-      <div class="org_description">
-      <p><%=@project.org_description%></p>
-      <!-- remove hard coded link to mcgill -->
-              <a class= ' learn-more-button' href="https://mcgill.ca/about/about-mcgill">learn more about <%=@project.organization%> </a>
-      </div>
 
-      </div>
-    </div>
+<!-- Project Info -->
+  <div class="project-info">
+    <br>
+    <h5><strong>At a Glance:</strong> <%=@project.short_description%> and is looking for participants like you to help push science forward!</h5>
+    <br>
+    <h5><strong>Organizer:  </strong><%=@project.organization%></h5>
+    <br>
+    <h5><strong>Organization Description:  </strong><%=@project.org_description%></h5>
+    <br>
+    <h5><strong>Description:  </strong><%=@project.long_description%></h5>
+    <br>
+    <br>
+    <br>
+    <%= link_to "Learn More", @project.url, class: 'btn btn-light', id: 'participate-btn' %>
   </div>
 </div>
-       <!-- breaks the site -->
-      <%# if current_user == @project.user %>
-        <%#= link_to "Update project", edit_project_path, class: "btn btn-primary" %>
-      <%# else current_user %>
-        <%#= link_to "Search for some more science!", projects_path, class: "btn btn-success"%>
-      <%# end %>
-
-
-
-
-      <div>
-        <!-- Shows owner information -->
-
-        <!-- breaks the site -->
-        <!-- <h4>Owner:</h4> -->
-        <%#= link_to profile_path(@project.user_id) do %>
-          <%#= cl_image_tag @project.user.photo, width: 300, crop: :fill, class: "avatar large" %>
-          <%#= @project.user.first_name %> <%#= @garden.user.last_name %>
-        <%# end %>
-      </div>
-
-      </div>
-    </div>
-
