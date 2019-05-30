@@ -83,13 +83,6 @@
     </div>
   </div>
 
-<!-- Icons -->
-  <div class="icon-filter">
-    <%= simple_form_for(:category) do |form| %>
-      <!-- Edit w/ Ajax on Friday -->
-      <%= form.input :category, input_html: {checked: true}, class:  "hidden" %>
-      <%= form.button :submit, class: "btn btn-primary", id: "booking-button" %>
-    <% end %>
 
     <div class="icons">
       <!-- Animals -->
@@ -120,28 +113,28 @@
 
 <!-- Cards-->
   <div class="card-container">
-    <!-- Search Bar -->
-    <!-- Card -->
     <% @projects.each do |p| %>
-      <div class="card p.category" style="width: 20%;">
-        <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
-          <% if user_signed_in? %>
-            <div data-project-id="<%= p.id %>">
-              <%= link_to toggle_project_favorites_path(p), method: :post, remote: true do %>
-                <% if current_user.has_favorited?(p) %>
-                  <i id="star", class="fas fa-star fa-lg fa-rocket-click"></i>
-                <% else %>
-                  <i id="star", class="fas fa-star fa-lg"></i>
+        <div class="card p.category" style="width: 20%;">
+          <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
+            <% if user_signed_in? %>
+              <div data-project-id="<%= p.id %>">
+                <%= link_to toggle_project_favorites_path(p), method: :post, remote: true do %>
+                  <% if current_user.has_favorited?(p) %>
+                    <i id="star", class="fas fa-star fa-lg fa-rocket-click"></i>
+                  <% else %>
+                    <i id="star", class="fas fa-star fa-lg"></i>
+                  <% end %>
                 <% end %>
-              <% end %>
-            </div>
-          <% end %>
+              </div>
+            <% end %>
+          </div>
+          <div class="card-body">
+            <%= link_to project_path(p.id), class: 'project_show_link' do %>
+            <p class="card-title"><%= p.name %></p>
+            <p class="card-text"><%= p.short_description %></p>
+            <% end %>
+          </div>
         </div>
-        <div class="card-body">
-          <p class="card-title"><%= p.name %></p>
-          <p class="card-text"><%= p.short_description %></p>
-        </div>
-      </div>
     <% end %>
   </div>
 
