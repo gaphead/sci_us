@@ -1,12 +1,30 @@
-.whole-page {
+.show-page-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #C1DFF0;
+  height: 100vh;
+  flex-direction: column;
+  color: white
+}
+
+.participate {
+  margin-top: 75px;
+  margin-left: 925px
+}
+
+.participate h3 {
+  font-style: italic;
+}
+
+.project-info {
   display: flex;
   flex-direction: column;
+  margin-left: 925px;
+  margin-right: 100px
 }
 
-.show-description {
-   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.project-info h5 {
+  margin-left: 25px;
+  margin-right: 25px;
+  font-size: 22px
 }
-
-

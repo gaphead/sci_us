@@ -1,8 +1,7 @@
-<div class="container">
-  <h1>Share your project!</h1>
-  <div>
-   <%= simple_form_for [@project] do |f| %>
-
+<div class="container mt-4 mb-5">
+  <h1 class="mb-3">Create your own research project!</h1>
+  <div class="form-inputs">
+    <%= simple_form_for [@project] do |f| %>
       <%= f.input :name %>
       <%= f.input :organization %>
       <%= f.input :org_description, label: 'Tell a bit about your organization' %>
@@ -12,8 +11,11 @@
       <%= f.input :location %>
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
-    <div>
-    <%= f.submit "Submit Your Project", class: "btn btn-primary" %>
-    <% end %>
   </div>
+
+      <div class="form-actions">
+        <%= f.submit "Submit Your Project", class: "btn btn-primary mt-4" %>
+      </div>
+    <% end %>
 </div>
+
