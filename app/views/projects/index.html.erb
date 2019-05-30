@@ -84,28 +84,38 @@
   </div>
 
 <!-- Icons -->
-  <div class="icons">
-    <!-- Animals -->
-    <i class="fas fa-frog fa-2x" title="Animals"></i>
-    <!-- Biology -->
-    <i class="fas fa-dna fa-2x" title="Biology"></i>
-    <!-- Chemistry -->
-    <i class="fas fa-flask fa-2x" title="Chemistry"></i>
-    <!-- Ecology -->
-    <i class="fas fa-seedling fa-2x" title="Ecology"></i>
-    <!-- History -->
-    <i class="fas fa-history fa-2x" title="History"></i>
-    <!-- Medicine -->
-    <i class="fas fa-stethoscope fa-2x" title="Medicine"></i>
-    <!-- Oceanography -->
-    <i class="fas fa-water fa-2x" title="Oceanography"></i>
-    <!-- Physics -->
-    <i class="fas fa-atom fa-2x" title="Physics"></i>
-    <!-- Space -->
-    <i class="fas fa-rocket fa-2x" title="Astrology"></i>
-    <!-- Social Studies -->
-    <i class="fas fa-user-circle fa-2x" title="Social Studies"></i>
+  <div class="icon-filter">
+    <%= simple_form_for(:category) do |form| %>
+      <!-- Edit w/ Ajax on Friday -->
+      <%= form.input :category, input_html: {checked: true}, class:  "hidden" %>
+      <%= form.button :submit, class: "btn btn-primary", id: "booking-button" %>
+    <% end %>
+
+    <div class="icons">
+      <!-- Animals -->
+      <i class="fas fa-frog fa-2x filter" title="Animals"></i>
+      <!-- Biology -->
+      <i class="fas fa-dna fa-2x filter" title="Biology"></i>
+      <!-- Chemistry -->
+      <i class="filter fas fa-flask fa-2x " title="Chemistry"></i>
+      <!-- Ecolofilter gy -->
+      <i class="filter fas fa-seedling fa-2x" title="Ecology"></i>
+      <!-- Histofilter ry -->
+      <i class="filter fas fa-history fa-2x" title="History"></i>
+      <!-- Medicfilter ine -->
+      <i class="filter fas fa-stethoscope fa-2x" title="Medicine"></i>
+      <!-- Oceanfilter ography -->
+      <i class="filter fas fa-water fa-2x" title="Oceanography"></i>
+      <!-- Physifilter cs -->
+      <i class="filter fas fa-atom fa-2x" title="Physics"></i>
+      <!-- Spacefilter  -->
+      <i class="filter fas fa-rocket fa-2x" title="Astrology"></i>
+      <!-- Sociafilter l Studies -->
+      <i class="filter fas fa-user-circle fa-2x" title="Social Studies"></i>
+    </div>
+
   </div>
+
 </div>
 
 <!-- Cards-->
@@ -113,8 +123,7 @@
     <!-- Search Bar -->
     <!-- Card -->
     <% @projects.each do |p| %>
-    <%= link_to(project_path(p.id)) do %>
-      <div class="card" style="width: 18rem;">
+      <div class="card p.category" style="width: 20%;">
         <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
           <% if user_signed_in? %>
             <div data-project-id="<%= p.id %>">
@@ -136,3 +145,6 @@
     <% end %>
     <% end %>
   </div>
+
+  <!-- this will break -->
+  <%= javascript_include_tag "#{ Rails.root }/javascript/packs/card-filter.js" %>

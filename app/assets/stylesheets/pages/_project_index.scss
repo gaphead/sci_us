@@ -1,0 +1,19 @@
+.show-description {
+   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.search-container {
+  background: #FCFCFF;
+  align-items: center;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: left;
+  margin-top: 50px;
+}

@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+Favorite.destroy_all
 Project.destroy_all
 User.destroy_all
 
@@ -51,7 +51,8 @@ apairs = Project.new(
   location: "Online",
   organization: "Independant Project",
   org_description: "Mathematically inclined researchers",
-  active: true
+  active: true,
+  category: "physics"
 )
 
 seti = Project.new(
@@ -62,7 +63,8 @@ seti = Project.new(
   location: "Online",
   organization: "Berkeley",
   org_description: "SETI@home was originally launched in May 1999",
-  active: true
+  active: true,
+  category: "astrology"
 )
 
 mind = Project.new(
@@ -73,7 +75,8 @@ mind = Project.new(
   location: "Online",
   organization: "University of Dayton Research Institute",
   org_description: "Not for profit based in Dayton, OH",
-  active: true
+  active: true,
+  category: "social studies"
 )
 
 stars = Project.new(
@@ -84,7 +87,8 @@ stars = Project.new(
   location: 'Montreal',
   organization: 'Mcgill',
   org_description: 'Mcgill is shitty dumb university that sucks, but hey they do science somtimes',
-  active: true
+  active: true,
+  category: "astrology"
 )
 
 weather = Project.new(
@@ -95,7 +99,8 @@ weather = Project.new(
   location: 'England',
   organization: 'British Science Association',
   org_description: 'The British Science Association (BSA)’s vision is a world where science is put at the heart of society and culture.',
-  active: true
+  active: true,
+  category: "ecology"
 )
 
 civ_war = Project.new(
@@ -106,7 +111,8 @@ civ_war = Project.new(
   location: "online",
   organization: " African American Civil War Museum",
   org_description: "African American Civil War Museum provides students of history with an opportunity to explore primary sources, whilst contributing to their preservation and study. It will also allow African American genealogists to link descendants to the soldiers and through them to earlier ancestors. The transcription process allows users to leave comments, raising awareness of individual soldier's stories and the challenges they faced in a white-dominated Army.",
-  active: true
+  active: true,
+  category: "history"
 )
 cosmic = Project.new(
   name: "Cosmic",
@@ -116,7 +122,8 @@ cosmic = Project.new(
   location: "online",
   organization: "PL Machine Learning and Instrument Autonomy group. ",
   org_description: "The Content-based Object Summarization to Monitor Infrequent Change (COSMIC) team is a part of the JPL Machine Learning and Instrument Autonomy group. We employ machine learning methods in support of scientific investigations and space exploration.",
-  active: true
+  active: true,
+  category: "astrology"
 )
 sci_lab = Project.new(
   name: "skill-lab-science-detective",
@@ -126,7 +133,8 @@ sci_lab = Project.new(
   location: "online",
   organization: "ScienceAtHome",
   org_description: "ScienceAtHome is a diverse team of scientists, game developers, designers and visual artists based at Aarhus University, Denmark. We create fun scientific games, with the aim of revolutionising scientific research and teaching by game-play!",
-  active: true
+  active: true,
+  category: "chemistry"
 )
 organ = Project.new(
   name: "Where are my body organs?",
@@ -136,7 +144,8 @@ organ = Project.new(
   location: "online",
   organization: "American Association of Anatomists",
   org_description: "The American Association of Anatomists was founded by Joseph Leidy in Washington, D.C. in 1888 for the “advancement of anatomical science.” Today, via research, education, and professional development activities, AAA serves as the professional home for an international community of biomedical researchers and educators focusing on the structural foundation of health and disease.",
-  active: true
+  active: true,
+  category: "medicine"
 )
 aliengame = Project.new(
   name: "alien game",
@@ -146,7 +155,8 @@ aliengame = Project.new(
   location: "browser",
   organization: "ScienceAtHome",
   org_description: "ScienceAtHome is a diverse team of scientists, game developers, designers and visual artists based at Aarhus University, Denmark. We create fun scientific games, with the aim of revolutionising scientific research and teaching by game-play!",
-  active: true
+  active: true,
+  category: "astrology"
 )
 
 print "Creating projects"
