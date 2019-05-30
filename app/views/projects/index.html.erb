@@ -113,6 +113,7 @@
     <!-- Search Bar -->
     <!-- Card -->
     <% @projects.each do |p| %>
+    <%= link_to(project_path(p.id)) do %>
       <div class="card" style="width: 18rem;">
         <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
           <% if user_signed_in? %>
@@ -132,5 +133,6 @@
           <p class="card-text"><%= p.short_description %></p>
         </div>
       </div>
+    <% end %>
     <% end %>
   </div>

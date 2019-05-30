@@ -3,11 +3,14 @@
   justify-content: space-around;
   align-items: left;
   margin-top: 50px;
+  flex-wrap: wrap;
 }
 
 .card {
   box-shadow: 5px 5px 5px lightgrey;
   border-radius: 25px;
+  margin: 20px;
+  justify-content: flex-start !important;
 }
 
 .card-body {
@@ -18,7 +21,7 @@
 }
 
 .card-photo {
-  height: 150px;
+  height: 250px;
   border-radius: 25px 25px 0px 0px;
   background-size: cover;
   object-fit: contain;
