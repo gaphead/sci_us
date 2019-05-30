@@ -8,6 +8,14 @@
   height: 80vh;
 }
 
+#show-banner {
+  height: 50vh;
+  width: 50vw;
+  border-style: solid;
+  border-color: #C1DFF0;
+  border-width: 8px;
+}
+
 .banner h1 {
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -22,7 +30,23 @@
   font-size: 14px;
 }
 
+#show-banner h1 {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 60px;
+  font-weight: bold;
+  margin-left: 50px;
+  margin-bottom: 25px;
+}
 
+#show-banner h5 {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 180px;
+}
 
 .carousel {
   display: flex;

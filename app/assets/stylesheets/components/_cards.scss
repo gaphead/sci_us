@@ -1,13 +1,18 @@
+
 .card-container {
   display: flex;
   justify-content: space-around;
   align-items: left;
   margin-top: 50px;
+  flex-wrap: wrap;
+
+
 }
 
 .card {
   box-shadow: 5px 5px 5px lightgrey;
   border-radius: 25px;
+  margin: 2px;
 }
 
 .hide {
