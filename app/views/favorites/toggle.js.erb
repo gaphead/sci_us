@@ -1,0 +1,8 @@
+// select the star element that got clicked on
+
+
+// toggle the .fa-rocket-click class on it
+// console.log(document.querySelector("[data-project-id='<%= @project.id %>'] a i"));
+
+document.querySelector("[data-project-id='<%= @project.id %>'] a i")
+  .classList.toggle('fa-rocket-click');
