@@ -86,7 +86,7 @@ stars = Project.new(
   url: 'https://placeholder.com',
   location: 'Montreal',
   organization: 'Mcgill',
-  org_description: 'Mcgill is shitty dumb university that sucks, but hey they do science somtimes',
+  org_description: 'Mcgill University',
   active: true,
   category: "astrology"
 )
@@ -114,6 +114,7 @@ civ_war = Project.new(
   active: true,
   category: "history"
 )
+
 cosmic = Project.new(
   name: "Cosmic",
   short_description: "Explore the surface of Mars!",
@@ -125,6 +126,7 @@ cosmic = Project.new(
   active: true,
   category: "astrology"
 )
+
 sci_lab = Project.new(
   name: "Skill Lab: Science Detective",
   short_description: "Have you ever thought about what makes you special as a gamer?",
@@ -136,6 +138,7 @@ sci_lab = Project.new(
   active: true,
   category: "chemistry"
 )
+
 organ = Project.new(
   name: "Where Are My Body Organs?",
   short_description: "Can you determine the location of the organs and structures within the human body?",
@@ -147,6 +150,7 @@ organ = Project.new(
   active: true,
   category: "medicine"
 )
+
 aliengame = Project.new(
   name: "Alien Game",
   short_description: "How to solve complex problems?",
@@ -170,6 +174,7 @@ owl = Project.new(
   active: true,
   category: "animals"
 )
+
 nycitysound = Project.new(
   name: "Sounds of New York City: (SONYC)",
   short_description: "Help us address one of the biggest issues facing urban residents.",
@@ -189,10 +194,11 @@ floatingForests = Project.new(
   url: "https://www.zooniverse.org/projects/zooniverse/floating-forests/about/team",
   location: "Online",
   organization: "personal reaserch",
-  org_description: "preofessors of the university of california",
+  org_description: "professors of the university of california",
   active: true,
   category: "oceanography"
 )
+
 snapshotzebra = Project.new(
   name: "Snapshot Mountain Zebra",
   short_description: "Help us explore the wildlife of Mountain Zebra National Park, South Africa!",
@@ -200,10 +206,23 @@ snapshotzebra = Project.new(
   url: "https://www.zooniverse.org/projects/meredithspalmer/snapshot-mountain-zebra",
   location: "Online",
   organization: "Nelson Mandela University",
-  org_description: "preofessors of the university of Nelson Mandela University",
+  org_description: "professors of the university of Nelson Mandela University",
   active: true,
   category: "animals"
 )
+
+monkeyhealth = Project.new(
+  name: "Monkey Health Exporer",
+  short_description: "Help us learn more about monkey health by identifying white blood cell types.",
+  long_description: "Our research team is studying the health of rhesus macaque monkeys on the island of Cayo Santiago in Puerto Rico. We are working with many other scientists as part of a large collaborative project to improve understanding of the relationship between the behaviour of the monkeys and the genes they have.",
+  url: "https://www.zooniverse.org/projects/mbarrierz/monkey-health-explorer",
+  location: "Online",
+  organization: "University of North Carolina",
+  org_description: "professors from the University of UNC",
+  active: true,
+  category: "biology"
+)
+
 
 
 
@@ -276,6 +295,11 @@ print "."
 
 weather.remote_photo_url = 'https://www.queenelizabethparkuganda.com/wp-content/uploads/2019/03/placeholder_thumb_1152x648.jpg'
 weather.save
+
+print "."
+
+monkeyhealth.remote_photo_url = "https://en.tengrinews.kz/userdata/news_en/2013/news_21610/photo_31201.jpg"
+monkeyhealth.save
 
 print "."
 
