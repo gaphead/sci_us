@@ -71,73 +71,71 @@
 </div>
 
 
-  <!-- Search & Icons -->
-  <div class="search-container">
+<!-- Search & Icons -->
+<div class="search-container">
 
-    <!-- Search-->
-    <div class="seach mt-4 mb-4">
-      <div class="search-bar">
-        <%= form_tag(projects_path, method: :get) do %>
-          <%= text_field_tag :query, params[:query], :placeholder => "Find Interesting Projects Today!", class: "form-control", id: "landing-page-search-form" %>
-        <% end %>
-      </div>
+  <!-- Search-->
+  <div class="seach mt-4 mb-4">
+    <div class="search-bar">
+      <%= form_tag(projects_path, method: :get) do %>
+        <%= text_field_tag :query, params[:query], :placeholder => "Find Interesting Projects Today!", class: "form-control", id: "landing-page-search-form" %>
+      <% end %>
     </div>
-
-
-    <!-- Icons -->
-    <div class="icons mt-5 mb-5">
-      <!-- Animals -->
-      <i class="fas fa-frog fa-2x filter" title="Animals"></i>
-      <!-- Biology -->
-      <i class="fas fa-dna fa-2x filter" title="Biology"></i>
-      <!-- Chemistry -->
-      <i class="filter fas fa-flask fa-2x " title="Chemistry"></i>
-      <!-- Ecolofilter gy -->
-      <i class="filter fas fa-seedling fa-2x" title="Ecology"></i>
-      <!-- Histofilter ry -->
-      <i class="filter fas fa-history fa-2x" title="History"></i>
-      <!-- Medicfilter ine -->
-      <i class="filter fas fa-stethoscope fa-2x" title="Medicine"></i>
-      <!-- Oceanfilter ography -->
-      <i class="filter fas fa-water fa-2x" title="Oceanography"></i>
-      <!-- Physifilter cs -->
-      <i class="filter fas fa-atom fa-2x" title="Physics"></i>
-      <!-- Spacefilter  -->
-      <i class="filter fas fa-rocket fa-2x" title="Astrology"></i>
-      <!-- Sociafilter l Studies -->
-      <i class="filter fas fa-user-circle fa-2x" title="Social Studies"></i>
-    </div>
-
   </div>
 
+  <!-- Icons -->
+  <div class="icons mt-5 mb-5">
+    <!-- Animals -->
+    <i class="fas fa-frog fa-2x filter" title="Animals"></i>
+    <!-- Biology -->
+    <i class="fas fa-dna fa-2x filter" title="Biology"></i>
+    <!-- Chemistry -->
+    <i class="filter fas fa-flask fa-2x " title="Chemistry"></i>
+    <!-- Ecolofilter gy -->
+    <i class="filter fas fa-seedling fa-2x" title="Ecology"></i>
+    <!-- Histofilter ry -->
+    <i class="filter fas fa-history fa-2x" title="History"></i>
+    <!-- Medicfilter ine -->
+    <i class="filter fas fa-stethoscope fa-2x" title="Medicine"></i>
+    <!-- Oceanfilter ography -->
+    <i class="filter fas fa-water fa-2x" title="Oceanography"></i>
+    <!-- Physifilter cs -->
+    <i class="filter fas fa-atom fa-2x" title="Physics"></i>
+    <!-- Spacefilter  -->
+    <i class="filter fas fa-rocket fa-2x" title="Astrology"></i>
+    <!-- Sociafilter l Studies -->
+    <i class="filter fas fa-user-circle fa-2x" title="Social Studies"></i>
+  </div>
+</div>
 
 
 <!-- Cards-->
-
-  <div class="card-container mb-5">
-    <% @projects.each do |p| %>
-        <div class="card <%=p.category%>" style="width: 20%;">
-          <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
-            <% if user_signed_in? %>
-              <div data-project-id="<%= p.id %>">
-                <%= link_to toggle_project_favorites_path(p), method: :post, remote: true do %>
-                  <% if current_user.has_favorited?(p) %>
-                    <i id="star", class="fas fa-star fa-lg fa-rocket-click"></i>
-                  <% else %>
-                    <i id="star", class="fas fa-star fa-lg"></i>
-                  <% end %>
-                <% end %>
-              </div>
+<div class="card-container mb-5">
+  <!-- Search Bar -->
+  <!-- Card -->
+  <% @projects.each do |p| %>
+    <div class="card <%= p.category %>" style="width: 20%;">
+      <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
+        <% if user_signed_in? %>
+          <div data-project-id="<%= p.id %>">
+            <%= link_to toggle_project_favorites_path(p), method: :post, remote: true do %>
+              <% if current_user.has_favorited?(p) %>
+                <i id="star", class="fas fa-star fa-lg fa-rocket-click"></i>
+              <% else %>
+                <i id="star", class="fas fa-star fa-lg"></i>
+              <% end %>
             <% end %>
           </div>
-          <div class="card-body">
-            <%= link_to project_path(p.id), class: 'project_show_link' do %>
-            <p class="card-title"><%= p.name %></p>
-            <p class="card-text"><%= p.short_description %></p>
-            <% end %>
-          </div>
+        <% end %>
+      </div>
+      <div class="card-body-">
+        <p class="card-title"><%= p.name %></p>
+        <p class="card-text"><%= p.short_description %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 
-        </div>
-    <% end %>
-  </div>
+<%= javascript_pack_tag "card-filter" %>
+
