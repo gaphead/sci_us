@@ -1,29 +1,52 @@
 <!-- Whole Page -->
 <div class="show-page-container">
 
-<!-- Corner Image -->
-  <div>
-    <img class="project-img" src="<%=@project.photo%>" align="right">
-  </div>
-<!-- Introduction -->
-  <div class="participate">
-    <h1>Looking to Participate?</h1>
-    <h3>Selected Project: <%= @project.name %></h3>
+  <!-- Left side of page -->
+  <div class="left-side">
+    <!-- Circular Picture -->
+    <div class="category-circle" id="circle">
+    </div>
   </div>
 
-<!-- Project Info -->
-  <div class="project-info">
-    <br>
-    <h5><strong>At a Glance:</strong> <%=@project.short_description%> and is looking for participants like you to help push science forward!</h5>
-    <br>
-    <h5><strong>Organizer:  </strong><%=@project.organization%></h5>
-    <br>
-    <h5><strong>Organization Description:  </strong><%=@project.org_description%></h5>
-    <br>
-    <h5><strong>Description:  </strong><%=@project.long_description%></h5>
-    <br>
-    <br>
-    <br>
-    <%= link_to "Learn More", @project.url, class: 'btn btn-light', id: 'participate-btn' %>
+  <!-- Right side of page -->
+  <div class="right-side">
+
+
+  <!-- Corner Image -->
+    <div class="category-triangle" id="triangle">
+      <!-- <img class="project-img" src="<%=@project.photo%>" align="right"> -->
+        <p id="category" align="center">Category<br /><%=@project.category.capitalize%></p>
+    </div>
+
+  <!-- Introduction -->
+    <!-- <div class="participate mr-5 ml-2"> Reintroduce next week-->
+    <div class="participate">
+      <h1>Looking to Participate?</h1>
+      <h3>Selected Project: <%= @project.name %></h3>
+      <!-- Need to make logic work -->
+      <p><i class="fas fa-star fa-lg" id="favor"></i> 5 Users Starred This Project</p>
+      <!-- Need to make logic work -->
+      <p><i class="fas fa-user fa-lg" id="user"></i> 10 Active Participants</p>
+    </div>
+
+  <!-- Project Info -->
+    <!-- <div class="project-info mr-5"> Reintroduce next week-->
+    <div class="project-info">
+      <br>
+      <h5><strong>At a Glance:</strong> <%=@project.short_description%> and is looking for participants like you to help push science forward!</h5>
+      <br>
+      <h5><strong>Organizer:  </strong><%=@project.organization%></h5>
+      <br>
+      <h5><strong>Organization Description:  </strong><%=@project.org_description%></h5>
+      <br>
+      <h5><strong>Description:  </strong><%=@project.long_description%></h5>
+      <br>
+      <br>
+      <%= link_to "Learn More", @project.url, class: 'btn btn-light', id: 'participate-btn'%>
+      <p align=center> <i>(Warning: You will be redirected to the project website)</i></p>
+      <i class="fas fa-sign-out-alt fa-2x" align=center id="exit"></i>
+    </div>
   </div>
+
+
 </div>
