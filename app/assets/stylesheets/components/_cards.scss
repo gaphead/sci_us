@@ -7,7 +7,7 @@
 }
 
 .card {
-  box-shadow: 5px 5px 5px lightgrey;
+  box-shadow: 2px 2px 2px lightgrey;
   border-radius: 25px;
   margin: 20px;
   justify-content: flex-start !important;
@@ -31,13 +31,11 @@
   background-size: cover;
   object-fit: contain;
   background-position: center;
-
 }
 
 .card-text {
   font-style: italic;
   font-size: 16px;
-
 }
 
 .card-title {
@@ -51,4 +49,13 @@
 
 .card-photo-profile {
   height: 250px;
+}
+
+.card-link {
+  color: black;
+}
+
+.card-link:hover {
+  text-decoration: none;
+  color: gray;
 }
