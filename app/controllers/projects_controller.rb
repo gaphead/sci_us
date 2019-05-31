@@ -12,6 +12,11 @@ class ProjectsController < ApplicationController
     else
       @projects = Project.all
     end
+
+    respond_to do |format|
+      format.html
+      format.js  # <-- will render `app/views/projects/index.js.erb`
+    end
   end
 
   def create
