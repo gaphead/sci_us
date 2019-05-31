@@ -47,8 +47,10 @@
                   <% end %>
                 </div>
                 <div class="card-body card-body-profile">
+                  <%= link_to project_path(p.id), class: 'project_show_link' do %>
                   <p class="card-title"><%= p.name %></p>
                   <p class="card-text"><%= p.short_description %></p>
+                  <% end %>
                 </div>
               </div>
             <% end %>

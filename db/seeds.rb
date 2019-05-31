@@ -76,7 +76,7 @@ mind = Project.new(
   organization: "University of Dayton Research Institute",
   org_description: "Not for profit based in Dayton, OH",
   active: true,
-  category: "social studies"
+  category: "social_studies"
 )
 
 stars = Project.new(
@@ -126,8 +126,8 @@ cosmic = Project.new(
   category: "astrology"
 )
 sci_lab = Project.new(
-  name: "skill-lab-science-detective",
-  short_description: "ave you ever thought about what makes you special as a gamer?",
+  name: "Skill Lab: Science Detective",
+  short_description: "Have you ever thought about what makes you special as a gamer?",
   long_description: "Skill Lab: Science Detective is a collection of minigames with a detective story theme that challenges your mind in different ways. The game enables you to test your gaming brain skills. In this process, ScienceAtHome can generate a map of your cognitive skills at different levels. We want to know your strengths and weaknesses for better understanding how they affect your performance in the other games from ScienceAtHome. Maybe having a good memory makes players rock the Alien Game? Is hand-eye coordination the basis for success in Quantum Moves? We can't wait to find out!",
   url: "https://www.scienceathome.org/games/skill-lab-science-detective/",
   location: "online",
@@ -137,7 +137,7 @@ sci_lab = Project.new(
   category: "chemistry"
 )
 organ = Project.new(
-  name: "Where are my body organs?",
+  name: "Where Are My Body Organs?",
   short_description: "Can you determine the location of the organs and structures within the human body?",
   long_description: "When the general population have to attend a GP appointment, Accident & Emergency, or any other healthcare visit they often describe pain or discomfort in a specific area, for instance stomach pain may be listed anywhere in the abdomen. The healthcare professional who diagnoses and treats you has studied anatomy and will know the structure(s) that are affected. However, some members of the public know a large amount of anatomy. An example would be someone who spends time in a gym, might have familiarity with, for examples some muscles. This research intends to highlight exactly how much the general public know about their own body and thus utilise it, via publication as a research article(s), to illustrate the need for sound anatomical knowledge from medical professionals and to help everyone understand where many of the common organs and structures are in the body. We also aim to highlight how anatomical knowledge is different across different groups of people, i.e is there a difference between males and females? If you have been to a visit a healthcare professional recently do you perform better, because you are more aware of structures? Does the knowledge of people change as they age?",
   url: "https://www.zooniverse.org/projects/h-spiers/where-are-my-body-organs",
@@ -148,8 +148,8 @@ organ = Project.new(
   category: "medicine"
 )
 aliengame = Project.new(
-  name: "alien game",
-  short_description: "how to solve complex problems?",
+  name: "Alien Game",
+  short_description: "How to solve complex problems?",
   long_description: "Computers are getting smarter and smarter every day. A computer can tell you which exit to take off the highway or what kind of books to read. The one thing computers can’t do (yet) is solve complex problems. And problem-solving is vital for business AND for building better computers!",
   url: "https://www.scienceathome.org/games/alien-game/",
   location: "browser",
@@ -159,22 +159,100 @@ aliengame = Project.new(
   category: "astrology"
 )
 
+owl = Project.new(
+  name: "Owl Watch",
+  short_description: "The western burrowing owl needs our help!",
+  long_description: "Wildwatch Burrowing Owl seeks to document the behaviors and developmental milestones of burrowing owl families “holed up” in Otay Mesa, CA. Motion-activated cameras are strategically positioned at burrow entrances to collect candid data. We need your help classifying the images! ",
+  url: "https://www.zooniverse.org/projects/sandiegozooglobal/wildwatch-burrowing-owl",
+  location: "Online",
+  organization: " Manitoba Burrowing Owl Recovery Program",
+  org_description: "The Manitoba Burrowing Owl Recovery Program is a reintroduction, research, and educational organization that was established in 2010 to address the on-going decline of Burrowing Owls in southwestern Manitoba. The program began by reintroducing a small number of owl pairs in 2010 with cooperation from private landowners in southwestern Manitoba.",
+  active: true,
+  category: "animals"
+)
+nycitysound = Project.new(
+  name: "Sounds of New York City: (SONYC)",
+  short_description: "Help us address one of the biggest issues facing urban residents.",
+  long_description: "Taking aim at New Yorkers’ biggest civic complaint – noise – a team of scientists from NYU, working with collaborators at Ohio State University, have launched a first-of-its-kind comprehensive research initiative to understand and address noise pollution in New York City and beyond. The project – which involves large-scale noise monitoring – leverages the latest in machine learning technology, big data analysis, and citizen science reporting to more effectively monitor, analyze, and mitigate urban noise pollution. Known as Sounds of New York City (SONYC), this multi-year project has received a $4.6 million grant from the National Science Foundation and has the support of City health and environmental agencies.",
+  url: "https://www.zooniverse.org/projects/anaelisa24/sounds-of-new-york-city-sonyc",
+  location: "Online",
+  organization: "NYU and Ohio State University",
+  org_description: "major universities in the USA",
+  active: true,
+  category: "social_studies"
+)
+
+floatingForests = Project.new(
+  name: "Floating Forests",
+  short_description: "Discover Floating Forests",
+  long_description: "Welcome to Floating Forests, where you can help us uncover the history of Giant Kelp forests around the globe. Most life on the seafloor can only be sampled by SCUBA divers or dredging up samples from the deep. This kind of data requires a ton of (really fun) effort to collect, but it means we’re limited to places we can get to! Given the worldwide distribution of kelp, we need your help to track it across time and space",
+  url: "https://www.zooniverse.org/projects/zooniverse/floating-forests/about/team",
+  location: "Online",
+  organization: "personal reaserch",
+  org_description: "preofessors of the university of california",
+  active: true,
+  category: "oceanography"
+)
+snapshotzebra = Project.new(
+  name: "Snapshot Mountain Zebra",
+  short_description: "Help us explore the wildlife of Mountain Zebra National Park, South Africa!",
+  long_description: "The Mountain Zebra National Park (MZNP), 28,412 hectares in size, is situated in the Eastern Cape province of South Africa and is found in a transitional area between the Grassland, Nama Karoo and Albany Thicket biomes. The uniqueness of this transitional area means the MZNP conserves important ecological processes. It is one of four National Parks, including Addo Elephant, Camdeboo and Karoo, that forms part of the Frontier cluster of the South African National Parks.",
+  url: "https://www.zooniverse.org/projects/meredithspalmer/snapshot-mountain-zebra",
+  location: "Online",
+  organization: "Nelson Mandela University",
+  org_description: "preofessors of the university of Nelson Mandela University",
+  active: true,
+  category: "animals"
+)
+
+
+
 print "Creating projects"
+
+snapshotzebra.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/92f22254-0e0a-44cb-a0dc-5d7d6f6d0f23.jpeg"
+snapshotzebra.save
+
+print "."
+
+nycitysound.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/940ed797-9f4e-4c69-b5e1-1f837527b112.png"
+nycitysound.save
+
+print "."
+
+owl.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/5dd03c83-53ea-4162-a1b5-2802939d10d3.jpeg"
+owl.save
+
+print "."
+
+floatingForests.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/546ce22c-f6b2-4fbb-a883-ab4157007659.png"
+floatingForests.save
+
+print "."
 
 civ_war.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/2d64c10f-b384-430a-82cd-c0cf6055ae06.jpeg"
 civ_war.save
 
+print "."
+
 cosmic.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/e448e31c-8555-4ad3-9f67-e46616861762.png"
 cosmic.save
+
+print "."
 
 sci_lab.remote_photo_url = "https://www.scienceathome.org/wp-content/uploads/2018/05/slsd1-1200x691.png"
 sci_lab.save
 
+print "."
+
 organ.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/fe9cc866-234f-4bf9-8019-b7d4db48efa1.jpeg"
 organ.save
 
+print "."
+
 aliengame.remote_photo_url = "https://www.scienceathome.org/wp-content/uploads/2017/02/Alien-Game-slideshow1-1200x663.jpg"
 aliengame.save
+
+print "."
 
 apairs.remote_photo_url = "https://is4-ssl.mzstatic.com/image/thumb/Purple127/v4/c9/61/69/c96169d0-8eae-851b-e506-83396b270117/pr_source.jpg/246x0w.jpg"
 apairs.save
