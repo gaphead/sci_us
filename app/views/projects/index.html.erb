@@ -77,8 +77,9 @@
   <!-- Search-->
   <div class="seach mt-4 mb-4">
     <div class="search-bar">
-      <%= form_tag(projects_path, method: :get) do %>
+      <%= form_tag(projects_path, method: :get, remote: true) do %>
         <%= text_field_tag :query, params[:query], :placeholder => "Find Interesting Projects Today!", class: "form-control", id: "landing-page-search-form" %>
+        <button type="submit" id="search_btn" style="display: none"></button>
       <% end %>
     </div>
   </div>
@@ -111,31 +112,17 @@
 
 <!-- Cards-->
 <div class="card-container mb-5">
-  <!-- Search Bar -->
   <!-- Card -->
-  <% @projects.each do |p| %>
-    <div class="card <%= p.category %>" style="width: 20%;">
-      <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
-        <% if user_signed_in? %>
-          <div data-project-id="<%= p.id %>">
-            <%= link_to toggle_project_favorites_path(p), method: :post, remote: true do %>
-              <% if current_user.has_favorited?(p) %>
-                <i id="star", class="fas fa-star fa-lg fa-rocket-click"></i>
-              <% else %>
-                <i id="star", class="fas fa-star fa-lg"></i>
-              <% end %>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-      <div class="card-body-">
-        <p class="card-title"><%= p.name %></p>
-        <p class="card-text"><%= p.short_description %></p>
-      </div>
-    </div>
-  <% end %>
+  <%= render "project_cards" %>
 </div>
 
+<script>
+  const myInput = document.getElementById("landing-page-search-form")
+  myInput.addEventListener("input", (event) => {
+    document.getElementById("search_btn").click()
+    // event.target.parentNode.submit()
+  })
+</script>
 
 <%= javascript_pack_tag "card-filter" %>
 
