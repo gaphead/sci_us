@@ -116,7 +116,7 @@
 
   <div class="card-container mb-5">
     <% @projects.each do |p| %>
-        <div class="card p.category" style="width: 20%;">
+        <div class="card <%=p.category%>" style="width: 20%;">
           <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
             <% if user_signed_in? %>
               <div data-project-id="<%= p.id %>">
@@ -137,10 +137,7 @@
             <% end %>
           </div>
 
-  
+
         </div>
     <% end %>
   </div>
-
-
-<%= javascript_pack_tag "card-filter" %>
