@@ -1,0 +1,11 @@
+ <!-- <% if user_signed_in? %>
+              <div data-project-id="<%= p.id %>">
+                 <%= link_to toggle_project_favorites_path(p), method: :post, remote: true do %>
+                  <% if current_user.has_favorited?(p) %>
+                    <i id="star", class="fas fa-star fa-lg fa-rocket-click"></i>
+                  <% else %>
+                    <i id="star", class="fas fa-star fa-lg"></i>
+                  <% end %>
+                <% end %>
+              </div>
+            <% end %> -->
