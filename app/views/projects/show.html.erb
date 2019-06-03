@@ -42,7 +42,7 @@
       <h5><strong>Description:  </strong><%=@project.long_description%></h5>
       <br>
       <br>
-      <%= link_to "Learn More", @project.url, class: 'btn btn-light', id: 'participate-btn'%>
+      <%= link_to "Learn More", { controller: :projects, action: :project_counter }  , class: 'btn btn-light', data: @project.category, id: 'participate-btn', method: :post %>
       <p align=center> <i>(Warning: You will be redirected to the project website)</i></p>
       <i class="fas fa-sign-out-alt fa-2x" align=center id="exit"></i>
     </div>
