@@ -52,7 +52,8 @@ apairs = Project.new(
   organization: "Independant Project",
   org_description: "Mathematically inclined researchers",
   active: true,
-  category: "physics"
+  category: "physics",
+  price_cents: 10000
 )
 
 seti = Project.new(
