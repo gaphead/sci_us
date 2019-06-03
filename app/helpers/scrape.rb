@@ -1,13 +1,21 @@
-require 'open-uri'
-require 'nokogiri'
+require 'json'
+serialized_projects = File.read('app/helpers/page_one_zooniverse.html')
+projects = JSON.parse(serialized_projects)
+url = "https://www.zooniverse.org"
 
-ingredient = 'chocolate'
-url = "http://www.letscookfrench.com/recipes/find-recipe.aspx?s=#{ingredient}"
-
-html_file = open(url).read
-html_doc = Nokogiri::HTML(html_file)
-
-html_doc.search('.m_titre_resultat a').each do |element|
-  puts element.text.strip
-  puts element.attribute('href').value
+projects["projects"].each do |project|
+  name = project["display_name"]
+  description = project["description"]
+  project_url = "#{url}/#{project['slug']}"
+  classifications = project["classifications_count"]
+  image_url = project['avatar_src']
+  new_project = Project.new(
+    name: name,
+    short_description: description,
+    url: project_url
+  )
+  new_project.remote_photo_url = "https://#{image_url}"
+  new_project.save!
 end
+
+# pp projects["projects"]
