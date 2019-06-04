@@ -7,8 +7,6 @@ class Project < ApplicationRecord
     attribute :name, :short_description, :long_description
   end
 
-  monetize :price_cents # List price in cents
-
   validates :name, presence: true
   # validates :organization, presence: true
   # validates :org_description, presence: true
