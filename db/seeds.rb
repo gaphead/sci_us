@@ -1,17 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'json'
 
 Favorite.destroy_all
 Project.destroy_all
 User.destroy_all
 
 # Users
-
 erik = User.new(
   first_name: "Erik",
   last_name: "Pendleton",
@@ -302,5 +295,37 @@ monkeyhealth.remote_photo_url = "https://en.tengrinews.kz/userdata/news_en/2013/
 monkeyhealth.save
 
 print "."
+
+puts ""
+puts "Creating projects from zoonistolen"
+
+
+
+# Runs through 4 different JSON files, parses, and creates projects
+counter = 1
+4.times do
+  break if counter > 4
+  serialized_projects = File.read("app/helpers/page_#{counter}_zooniverse.html")
+  projects = JSON.parse(serialized_projects)
+  url = "https://www.zooniverse.org"
+
+  projects["projects"].each do |project|
+    name = project["display_name"]
+    description = project["description"]
+    project_url = "#{url}/#{project['slug']}"
+    classifications = project["classifications_count"]
+    image_url = project['avatar_src']
+    new_project = Project.new(
+      name: name,
+      short_description: description,
+      url: project_url
+    )
+    new_project.remote_photo_url = "https://#{image_url}"
+    new_project.save!
+    print "."
+  end
+  counter += 1
+end
+
 
 puts "Done"
