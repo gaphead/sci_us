@@ -1,6 +1,6 @@
 require 'json'
 
-UserCatagoryCounter.destroy_all
+UserCategoryCounter.destroy_all
 Donation.destroy_all
 Favorite.destroy_all
 Project.destroy_all
