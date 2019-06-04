@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_145629) do
+ActiveRecord::Schema.define(version: 2019_06_04_164922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2019_06_04_145629) do
     t.datetime "updated_at", null: false
     t.string "category"
     t.integer "volunteers"
+    t.integer "price_cents", default: 0, null: false
+    t.integer "donation_cents", default: 0, null: false
   end
 
   create_table "user_category_counters", force: :cascade do |t|
