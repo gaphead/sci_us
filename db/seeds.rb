@@ -262,6 +262,8 @@ organ.save
 
 print "."
 
+
+
 aliengame.remote_photo_url = "https://www.scienceathome.org/wp-content/uploads/2017/02/Alien-Game-slideshow1-1200x663.jpg"
 aliengame.save
 
@@ -309,7 +311,7 @@ hist_words = %w()
 med_words = %w()
 ocean_words = %w()
 phys_words = %w()
-ast_words = %w()
+ast_words = %w(astronomy vibration space stars star galaxy galaxies hyper planet planets cosmic mars spacetime meteor meteors solar moon muon)
 social_words = %w()
 
 # Runs through 4 different JSON files, parses, and creates projects
