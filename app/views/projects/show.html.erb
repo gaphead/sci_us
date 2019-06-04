@@ -27,13 +27,22 @@
       <p><i class="fas fa-star fa-lg" id="favor"></i> 5 Users Starred This Project</p>
       <!-- Need to make logic work -->
       <p><i class="fas fa-user fa-lg" id="user"></i> 10 Active Participants</p>
+      <p><i class="fas fa-dollar-sign fa-lg" id="dollar"></i> Funding $340 / $500 </p>
     </div>
-
-  <!-- Project Info -->
+    <!-- Add a line showing how much funding is desired  -->
+    <!-- Stripe payment button  -->
+    <%= form_tag donations_path do %>
+      <%= hidden_field_tag 'project_id', @project.id %>
+      <%= submit_tag 'Donate Today!', class: 'btn btn-info', id: 'donate-btn'%>
+    <% end %>
+    <!-- Project Info -->
     <!-- <div class="project-info mr-5"> Reintroduce next week-->
     <div class="project-info">
       <br>
-      <h5><strong>At a Glance:</strong> <%=@project.short_description%> and is looking for participants like you to help push science forward!</h5>
+      <h5><strong>At a Glance:</strong> <%=@project.short_description%>
+        <br>
+        <br>
+        <%=@project.name %> is looking for participants like you to help push science forward!</h5>
       <br>
       <h5><strong>Organizer:  </strong><%=@project.organization%></h5>
       <br>
@@ -42,7 +51,7 @@
       <h5><strong>Description:  </strong><%=@project.long_description%></h5>
       <br>
       <br>
-      <%= link_to "Learn More", @project.url, class: 'btn btn-light', id: 'participate-btn'%>
+      <%= link_to "Learn More", { controller: :projects, action: :project_counter }  , class: 'btn btn-light', data: @project.category, id: 'participate-btn', method: :post %>
       <p align=center> <i>(Warning: You will be redirected to the project website)</i></p>
       <i class="fas fa-sign-out-alt fa-2x" align=center id="exit"></i>
     </div>

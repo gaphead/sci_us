@@ -11,7 +11,14 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :favorites, only: [:index]
+  resources :donations, only: [:show, :create]
+
+  resources :donations, only: [:show, :create] do
+  resources :payments, only: [:new, :create]
+end
 
   get '/profile/:id', to: 'pages#profile', as: :profile
+
+  post '/project/:id', to: 'projects#project_counter', as: :project_counter
     # resources: favorites only: [:index, :new, :create, :destroy]
 end

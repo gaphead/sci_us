@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_03_192827) do
+
+ActiveRecord::Schema.define(version: 2019_06_04_195855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "donations", force: :cascade do |t|
+    t.string "state"
+    t.string "project_id"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "CAD", null: false
+    t.jsonb "payment"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_donations_on_user_id"
+  end
 
   create_table "favorites", force: :cascade do |t|
     t.bigint "project_id"
@@ -38,8 +51,18 @@ ActiveRecord::Schema.define(version: 2019_06_03_192827) do
     t.datetime "updated_at", null: false
     t.string "category"
     t.integer "volunteers"
-    t.integer "goal"
-    t.integer "campaign_duration"
+    t.integer "donation_cents", default: 0, null: false
+    t.integer "current_funding", default: 0, null: false
+    t.integer "desired_funding", default: 500, null: false
+  end
+
+  create_table "user_category_counters", force: :cascade do |t|
+    t.string "category"
+    t.integer "counter"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_category_counters_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,6 +84,8 @@ ActiveRecord::Schema.define(version: 2019_06_03_192827) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "donations", "users"
   add_foreign_key "favorites", "projects"
   add_foreign_key "favorites", "users"
+  add_foreign_key "user_category_counters", "users"
 end
