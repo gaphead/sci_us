@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UserCatagoryCounterTest < ActiveSupport::TestCase
+class UserCategoryCounterTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
