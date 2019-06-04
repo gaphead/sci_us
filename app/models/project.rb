@@ -7,6 +7,8 @@ class Project < ApplicationRecord
     attribute :name, :short_description, :long_description
   end
 
+  monetize :donation_cents
+
   validates :name, presence: true
   # validates :organization, presence: true
   # validates :org_description, presence: true
