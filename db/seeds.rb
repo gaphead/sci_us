@@ -57,7 +57,7 @@ seti = Project.new(
   organization: "Berkeley",
   org_description: "SETI@home was originally launched in May 1999",
   active: true,
-  category: "astrology"
+  category: "astronomy"
 )
 
 mind = Project.new(
@@ -81,7 +81,7 @@ stars = Project.new(
   organization: 'Mcgill',
   org_description: 'Mcgill University',
   active: true,
-  category: "astrology"
+  category: "astronomy"
 )
 
 weather = Project.new(
@@ -117,7 +117,7 @@ cosmic = Project.new(
   organization: "PL Machine Learning and Instrument Autonomy group. ",
   org_description: "The Content-based Object Summarization to Monitor Infrequent Change (COSMIC) team is a part of the JPL Machine Learning and Instrument Autonomy group. We employ machine learning methods in support of scientific investigations and space exploration.",
   active: true,
-  category: "astrology"
+  category: "astronomy"
 )
 
 sci_lab = Project.new(
@@ -153,7 +153,7 @@ aliengame = Project.new(
   organization: "ScienceAtHome",
   org_description: "ScienceAtHome is a diverse team of scientists, game developers, designers and visual artists based at Aarhus University, Denmark. We create fun scientific games, with the aim of revolutionising scientific research and teaching by game-play!",
   active: true,
-  category: "astrology"
+  category: "astronomy"
 )
 
 owl = Project.new(
@@ -299,9 +299,20 @@ print "."
 puts ""
 puts "Creating projects from zoonistolen"
 
-
+# Define word arrays to match project descriptions to category
+animal_words = %w(fynbos wildlife owls mammal plant animals zebra hawk fauna bird monkey penguins invertibrates manatee grouse orangutan predators kruger seabirds seals giraffes lion bats cats)
+bio_words = %w()
+chem_words = %w()
+eco_words = %w()
+hist_words = %w()
+med_words = %w()
+ocean_words = %w()
+phys_words = %w()
+ast_words = %w()
+social_words = %w()
 
 # Runs through 4 different JSON files, parses, and creates projects
+category = ""
 counter = 1
 4.times do
   break if counter > 4
@@ -309,16 +320,70 @@ counter = 1
   projects = JSON.parse(serialized_projects)
   url = "https://www.zooniverse.org"
 
+  # Runs through each project
   projects["projects"].each do |project|
     name = project["display_name"]
     description = project["description"]
+    # Adds category to project based on description
+    animal_words.each do |animal_word|
+      if description.downcase.include?(animal_word)
+        category = "animals"
+      end
+    end
+    bio_words.each do |bio_word|
+      if description.downcase.include?(bio_word)
+        category = "biology"
+      end
+    end
+    chem_words.each do |chem_word|
+      if description.downcase.include?(chem_word)
+        category = "chemistry"
+      end
+    end
+    eco_words.each do |eco_word|
+      if description.downcase.include?(eco_word)
+        category = "ecology"
+      end
+    end
+    hist_words.each do |hist_word|
+      if description.downcase.include?(hist_word)
+        category = "histroy"
+      end
+    end
+    med_words.each do |med_word|
+      if description.downcase.include?(med_word)
+        category = "medicine"
+      end
+    end
+    ocean_words.each do |ocean_word|
+      if description.downcase.include?(ocean_word)
+        category = "oceanography"
+      end
+    end
+    phys_words.each do |phys_word|
+      if description.downcase.include?(phys_word)
+        category = "physics"
+      end
+    end
+    ast_words.each do |ast_word|
+      if description.downcase.include?(ast_word)
+        category = "astronomy"
+      end
+    end
+    social_words.each do |social_word|
+      if description.downcase.include?(social_word)
+        category = "social_studies"
+      end
+    end
+
     project_url = "#{url}/#{project['slug']}"
     classifications = project["classifications_count"]
     image_url = project['avatar_src']
     new_project = Project.new(
       name: name,
       short_description: description,
-      url: project_url
+      url: project_url,
+      category: category
     )
     new_project.remote_photo_url = "https://#{image_url}"
     new_project.save!

@@ -1,0 +1,20 @@
+
+
+
+.hover-text {
+display: none;
+}
+
+.first-login:hover + .hover-text {
+display: block;
+}
+
+
+
+.hover-text-arch  {
+display: none;
+}
+
+.Archivist:hover + .hover-text-arch {
+  display: block;
+}

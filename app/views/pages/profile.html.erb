@@ -23,6 +23,62 @@
         </div>
       </div>
     </div>
+    <div class="badges">
+      <h4>My Badges</h4>
+        <%unless UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"history").first.nil? %>
+          <%if UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"history").first.counter >= 5 %>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT70GqjHplhbPH-9nc8LbjpZSw7AovBvwF_bTL9guLGezvM43__CQ" alt="" height="42" width="42" class='Archivist'>
+          <%end%>
+        <%end%>
+          <%unless UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"animals").first.nil? %>
+            <%if UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"animals").first.counter >= 5 %>
+              <img src="https://cms-assets.tutsplus.com/uploads/users/107/posts/24710/image/35-flat-animals-fox.jpg" alt="" height="42" width="42" class='animal-lover'>
+            <%end%>
+          <%end%>
+       <%unless UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"oceanography").first.nil? %>
+          <%if UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"oceanography").first.counter >= 5 %>
+            <img src="https://www.nexvue.com/wp-content/uploads/2018/07/Fish-Icon-Circle.png" alt="" height="42" width="42" class='oceanmaster'>
+          <%end%>
+        <%end%>
+        <%unless UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"biology").first.nil? %>
+         <%if UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"biology").first.counter >= 5 %>
+       <img src="https://cdn0.iconfinder.com/data/icons/ecology-63/64/lab-biology-science-research-chemistry-512.png" alt="" height="42" width="42" class='biology'>
+       <%end%>
+         <%end%>
+          <%unless UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"chemistry").first.nil? %>
+            <%if UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"chemistry").first.counter >= 5 %>
+              <img src="https://image.flaticon.com/icons/png/512/562/562124.png" alt="" height="42" width="42" class='chemistry'>
+            <%end%>
+         <%end%>
+          <%unless UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"ecology").first.nil? %>
+            <%if UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"ecology").first.counter >= 5 %>
+              <img src="https://cdn0.iconfinder.com/data/icons/ecology-and-nature-vol-2/600/earth-globe-Conservation-Eco-ecology-nature-plant-product-environment-512.png" alt="" height="42" width="42" class='ecology'>
+            <%end%>
+         <%end%>
+         <%unless UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"medicine").first.nil? %>
+            <%if UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"medicine").first.counter >= 5 %>
+              <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/medicine-496-730486.png" alt="" height="42" width="42" class='medicine'>
+            <%end%>
+         <%end%>
+         <%unless UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"physics").first.nil? %>
+            <%if UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"physics").first.counter >= 5 %>
+              <img src="https://cdn3.iconfinder.com/data/icons/science-104/64/atom-nuclear-atomic-physics-education-512.png" alt="" height="42" width="42" class='physics'>
+            <%end%>
+         <%end%>
+         <%unless UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"social_studies").first.nil? %>
+            <%if UserCatagoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"social_studies").first.counter >= 5 %>
+              <img src="https://png.pngtree.com/svg/20150801/6f376f1d9e.png" alt="" height="42" width="42" class='social_studies'>
+            <%end%>
+         <%end%>
+      <img class="first-login" src="https://cdn2.iconfinder.com/data/icons/flaturici-set-4/512/rocket-512.png" alt="created account badge" height="42" width="42">
+      <div class="hover-text" >Welcome to the Community, Professor <%= @user.last_name %>!</div>
+      <div class="hover-text-arch">you are becoming quite the historian!</div>
+
+
+
+
+
+    </div>
   </div>
   <div class="col-sm-12 col-md-7">
     <div class="container">
@@ -55,6 +111,7 @@
               </div>
             <% end %>
           </div>
+
         </div>
       </div>
     </div>
