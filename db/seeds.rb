@@ -47,7 +47,8 @@ apairs = Project.new(
   organization: "Independant Project",
   org_description: "Mathematically inclined researchers",
   active: true,
-  category: "physics"
+  category: "physics",
+  desired_funding: 1000
 )
 
 seti = Project.new(
@@ -224,79 +225,79 @@ monkeyhealth = Project.new(
 print "Creating projects"
 
 snapshotzebra.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/92f22254-0e0a-44cb-a0dc-5d7d6f6d0f23.jpeg"
-snapshotzebra.save
+snapshotzebra.save!
 
 print "."
 
 nycitysound.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/940ed797-9f4e-4c69-b5e1-1f837527b112.png"
-nycitysound.save
+nycitysound.save!
 
 print "."
 
 owl.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/5dd03c83-53ea-4162-a1b5-2802939d10d3.jpeg"
-owl.save
+owl.save!
 
 print "."
 
 floatingForests.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/546ce22c-f6b2-4fbb-a883-ab4157007659.png"
-floatingForests.save
+floatingForests.save!
 
 print "."
 
 civ_war.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/2d64c10f-b384-430a-82cd-c0cf6055ae06.jpeg"
-civ_war.save
+civ_war.save!
 
 print "."
 
 cosmic.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/e448e31c-8555-4ad3-9f67-e46616861762.png"
-cosmic.save
+cosmic.save!
 
 print "."
 
 sci_lab.remote_photo_url = "https://www.scienceathome.org/wp-content/uploads/2018/05/slsd1-1200x691.png"
-sci_lab.save
+sci_lab.save!
 
 print "."
 
 organ.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/fe9cc866-234f-4bf9-8019-b7d4db48efa1.jpeg"
-organ.save
+organ.save!
 
 print "."
 
 
 
 aliengame.remote_photo_url = "https://www.scienceathome.org/wp-content/uploads/2017/02/Alien-Game-slideshow1-1200x663.jpg"
-aliengame.save
+aliengame.save!
 
 print "."
 
 apairs.remote_photo_url = "https://is4-ssl.mzstatic.com/image/thumb/Purple127/v4/c9/61/69/c96169d0-8eae-851b-e506-83396b270117/pr_source.jpg/246x0w.jpg"
-apairs.save
+apairs.save!
 
 print "."
 
 seti.remote_photo_url = "https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1357&q=80"
-seti.save
+seti.save!
 
 print "."
 
 mind.remote_photo_url = "https://static.thenounproject.com/png/51575-200.png"
-mind.save
+mind.save!
 
 print "."
 
 stars.remote_photo_url = 'https://blog.bestbuy.ca/wp-content/uploads/2017/04/Telescopes-and-star-gazing-essentials-1.jpg'
-stars.save
+stars.save!
 
 print "."
 
 weather.remote_photo_url = 'https://www.queenelizabethparkuganda.com/wp-content/uploads/2019/03/placeholder_thumb_1152x648.jpg'
-weather.save
+weather.save!
 
 print "."
 
 monkeyhealth.remote_photo_url = "https://en.tengrinews.kz/userdata/news_en/2013/news_21610/photo_31201.jpg"
-monkeyhealth.save
+monkeyhealth.save!
 
 print "."
 
