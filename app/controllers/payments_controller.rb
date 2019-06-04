@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-  before_action :set_order
+  before_action :set_donation
 
   def new
   end
@@ -13,20 +13,20 @@ class PaymentsController < ApplicationController
     charge = Stripe::Charge.create(
       customer:     customer.id, # You should store this customer id and re-use it.
       amount:       params[:amount],
-      description:  "Payment for Project #{@order.project_sku} for order #{@order.id}",
-      currency:     @order.amount.currency
+      description:  "Payment for Project for order #{@donation.id}",
+      currency:     @donation.amount.currency
     )
 
-    @order.update(payment: charge.to_json, state: 'paid', amount: params[:amount])
-    redirect_to order_path(@order)
+    @donation.update(payment: charge.to_json, state: 'paid', amount: params[:amount])
+    redirect_to donation_path(@donation)
   rescue Stripe::CardError => e
     flash[:alert] = e.message
-    redirect_to new_order_payment_path(@order)
+    redirect_to new_donation_payment_path(@donation)
   end
 
   private
 
-  def set_order
-    @order = current_user.orders.where(state: 'pending').find(params[:order_id])
+  def set_donation
+    @donation = current_user.donations.where(state: 'pending').find(params[:donation_id])
   end
 end

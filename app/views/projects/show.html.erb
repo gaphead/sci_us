@@ -31,7 +31,7 @@
     </div>
     <!-- Add a line showing how much funding is desired  -->
     <!-- Stripe payment button  -->
-    <%= form_tag orders_path do %>
+    <%= form_tag donations_path do %>
       <%= hidden_field_tag 'project_id', @project.id %>
       <%= submit_tag 'Donate Today!', class: 'btn btn-info', id: 'donate-btn'%>
     <% end %>

@@ -1,8 +1,8 @@
 <script src="https://checkout.stripe.com/checkout.js"></script>
 
-<h1>Purchase of Project <%= @order.project_sku %></h1>
+<h1>Purchase of Project</h1>
 
- <%= form_tag order_payments_path(@order) do %>
+ <%= form_tag donation_payments_path(@donation) do %>
   <div id="error_explanation">
     <% if flash[:error].present? %>
       <p><%= flash[:error] %></p>

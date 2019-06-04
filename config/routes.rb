@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :favorites, only: [:index]
-  resources :orders, only: [:show, :create]
+  resources :donations, only: [:show, :create]
 
-  resources :orders, only: [:show, :create] do
+  resources :donations, only: [:show, :create] do
   resources :payments, only: [:new, :create]
 end
 

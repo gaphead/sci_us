@@ -1,6 +1,6 @@
-class CreateOrders < ActiveRecord::Migration[5.2]
+class CreateDonations < ActiveRecord::Migration[5.2]
   def change
-    create_table :orders do |t|
+    create_table :donations do |t|
       t.string :state
       t.string :project_sku
       t.monetize :amount
