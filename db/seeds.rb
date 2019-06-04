@@ -312,6 +312,7 @@ ast_words = %w()
 social_words = %w()
 
 # Runs through 4 different JSON files, parses, and creates projects
+category = ""
 counter = 1
 4.times do
   break if counter > 4
@@ -381,7 +382,8 @@ counter = 1
     new_project = Project.new(
       name: name,
       short_description: description,
-      url: project_url
+      url: project_url,
+      category: category
     )
     new_project.remote_photo_url = "https://#{image_url}"
     new_project.save!
