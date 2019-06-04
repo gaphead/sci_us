@@ -18,5 +18,7 @@ Rails.application.routes.draw do
 end
 
   get '/profile/:id', to: 'pages#profile', as: :profile
+
+  post '/project/:id', to: 'projects#project_counter', as: :project_counter
     # resources: favorites only: [:index, :new, :create, :destroy]
 end

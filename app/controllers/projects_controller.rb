@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :setProject, only: [:show, :update, :destroy]
+  before_action :setProject, only: [:show, :update, :destroy, :project_counter]
   skip_before_action :authenticate_user!, only: [:index, :show, :create]
 
   def index
@@ -37,12 +37,28 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  def project_counter
+    counter = UserCatagoryCounter.where("user_id = ? AND category = ?", current_user.id, @project.category).first
+
+    if counter.nil?
+      counter = UserCatagoryCounter.new(user_id: current_user.id, category: @project.category, counter: 0)
+    end
+    counter.counter += 1
+    counter.save
+
+    redirect_to @project.url
+  end
+
   # def destroy
   # end
   private
 
   def project_params
-    params.require(:project).permit(:name, :short_description, :long_description, :url, :location, :organization, :photo, :photo_cache, :active, :org_description, :category)
+    params.require(:project).permit(:name, :short_description, :long_description, :category, :url, :location, :organization, :photo, :photo_cache, :active, :org_description)
+  end
+
+  def counter_params
+    params.require(:user_catagory_counter).permit(:user_id, :category)
   end
 
   def setProject

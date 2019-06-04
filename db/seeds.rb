@@ -58,7 +58,7 @@ seti = Project.new(
   organization: "Berkeley",
   org_description: "SETI@home was originally launched in May 1999",
   active: true,
-  category: "astrology"
+  category: "astronomy"
 )
 
 mind = Project.new(
@@ -82,7 +82,7 @@ stars = Project.new(
   organization: 'Mcgill',
   org_description: 'Mcgill University',
   active: true,
-  category: "astrology"
+  category: "astronomy"
 )
 
 weather = Project.new(
@@ -118,7 +118,7 @@ cosmic = Project.new(
   organization: "PL Machine Learning and Instrument Autonomy group. ",
   org_description: "The Content-based Object Summarization to Monitor Infrequent Change (COSMIC) team is a part of the JPL Machine Learning and Instrument Autonomy group. We employ machine learning methods in support of scientific investigations and space exploration.",
   active: true,
-  category: "astrology"
+  category: "astronomy"
 )
 
 sci_lab = Project.new(
@@ -154,7 +154,7 @@ aliengame = Project.new(
   organization: "ScienceAtHome",
   org_description: "ScienceAtHome is a diverse team of scientists, game developers, designers and visual artists based at Aarhus University, Denmark. We create fun scientific games, with the aim of revolutionising scientific research and teaching by game-play!",
   active: true,
-  category: "astrology"
+  category: "astronomy"
 )
 
 owl = Project.new(
