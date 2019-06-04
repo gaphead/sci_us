@@ -9,7 +9,8 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-ActiveRecord::Schema.define(version: 2019_06_03_170932) do
+
+ActiveRecord::Schema.define(version: 2019_06_03_173327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_06_03_170932) do
 
   create_table "donations", force: :cascade do |t|
     t.string "state"
-    t.string "project_id"
+    t.string "project_sku"
     t.integer "amount_cents", default: 0, null: false
     t.string "amount_currency", default: "CAD", null: false
     t.jsonb "payment"
@@ -41,18 +42,6 @@ ActiveRecord::Schema.define(version: 2019_06_03_170932) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.string "state"
-    t.string "project_sku"
-    t.integer "amount_cents", default: 0, null: false
-    t.string "amount_currency", default: "CAD", null: false
-    t.jsonb "payment"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_orders_on_user_id"
-  end
-
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "short_description"
@@ -67,7 +56,6 @@ ActiveRecord::Schema.define(version: 2019_06_03_170932) do
     t.datetime "updated_at", null: false
     t.string "category"
     t.integer "volunteers"
-    t.integer "donation_cents", default: 0, null: false
     t.integer "price_cents", default: 0, null: false
     t.string "sku"
   end
@@ -104,5 +92,4 @@ ActiveRecord::Schema.define(version: 2019_06_03_170932) do
   add_foreign_key "favorites", "projects"
   add_foreign_key "favorites", "users"
   add_foreign_key "user_catagory_counters", "users"
-  add_foreign_key "orders", "users"
 end

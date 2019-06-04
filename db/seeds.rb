@@ -1,5 +1,7 @@
 require 'json'
 
+UserCatagoryCounter.destroy_all
+Donation.destroy_all
 Favorite.destroy_all
 Project.destroy_all
 User.destroy_all
@@ -301,16 +303,16 @@ puts ""
 puts "Creating projects from zoonistolen"
 
 # Define word arrays to match project descriptions to category
-animal_words = %w(fynbos wildlife owls mammal plant animals zebra hawk fauna bird monkey penguins invertibrates manatee grouse orangutan predators kruger seabirds seals giraffes lion bats cats)
-bio_words = %w()
-chem_words = %w()
-eco_words = %w()
-hist_words = %w()
-med_words = %w()
-ocean_words = %w()
-phys_words = %w()
+animal_words = %w(fynbos wildlife owls mammal animals zebra hawk fauna bird monkey penguins invertibrates manatee grouse orangutan predators kruger seabirds seals giraffes lion bats cats)
+bio_words = %w(arthropods divserity species biological viruses cells organs medicine specimens brains antibiotics trail jarrah)
+# chem_words = %w()
+eco_words = %w(forests forest ocean marine vessel leaves plant plants climate weather manchester leaf)
+hist_words = %w(archivist archivists mysteries handwritten notes wwi military transcribe war cairo illustraions history historical)
+# med_words = %w()
+# ocean_words = %w()
+# phys_words = %w()
 ast_words = %w()
-social_words = %w()
+# social_words = %w()
 
 # Runs through 4 different JSON files, parses, and creates projects
 category = ""
@@ -336,48 +338,48 @@ counter = 1
         category = "biology"
       end
     end
-    chem_words.each do |chem_word|
-      if description.downcase.include?(chem_word)
-        category = "chemistry"
-      end
-    end
-    eco_words.each do |eco_word|
-      if description.downcase.include?(eco_word)
-        category = "ecology"
-      end
-    end
+    # chem_words.each do |chem_word|
+    #   if description.downcase.include?(chem_word)
+    #     category = "chemistry"
+    #   end
+    # end
+    # eco_words.each do |eco_word|
+    #   if description.downcase.include?(eco_word)
+    #     category = "ecology"
+    #   end
+    # end
     hist_words.each do |hist_word|
       if description.downcase.include?(hist_word)
         category = "histroy"
       end
     end
-    med_words.each do |med_word|
-      if description.downcase.include?(med_word)
-        category = "medicine"
-      end
-    end
-    ocean_words.each do |ocean_word|
-      if description.downcase.include?(ocean_word)
-        category = "oceanography"
-      end
-    end
-    phys_words.each do |phys_word|
-      if description.downcase.include?(phys_word)
-        category = "physics"
-      end
-    end
+    # med_words.each do |med_word|
+    #   if description.downcase.include?(med_word)
+    #     category = "medicine"
+    #   end
+    # end
+    # ocean_words.each do |ocean_word|
+    #   if description.downcase.include?(ocean_word)
+    #     category = "oceanography"
+    #   end
+    # end
+    # phys_words.each do |phys_word|
+    #   if description.downcase.include?(phys_word)
+    #     category = "physics"
+    #   end
+    # end
     ast_words.each do |ast_word|
       if description.downcase.include?(ast_word)
         category = "astronomy"
       end
     end
-    social_words.each do |social_word|
-      if description.downcase.include?(social_word)
-        category = "social_studies"
-      end
-    end
+    # social_words.each do |social_word|
+    #   if description.downcase.include?(social_word)
+    #     category = "social_studies"
+    #   end
+    # end
 
-    project_url = "#{url}/#{project['slug']}"
+    project_url = "#{url}/projects/#{project['slug']}"
     classifications = project["classifications_count"]
     image_url = project['avatar_src']
     new_project = Project.new(
