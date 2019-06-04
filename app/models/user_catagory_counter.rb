@@ -1,3 +1,3 @@
-class UserCatagoryCounter < ApplicationRecord
+class UserCategoryCounter < ApplicationRecord
   belongs_to :user
 end

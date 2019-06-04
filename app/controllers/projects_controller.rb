@@ -38,10 +38,10 @@ class ProjectsController < ApplicationController
   end
 
   def project_counter
-    counter = UserCatagoryCounter.where("user_id = ? AND category = ?", current_user.id, @project.category).first
+    counter = UserCategoryCounter.where("user_id = ? AND category = ?", current_user.id, @project.category).first
 
     if counter.nil?
-      counter = UserCatagoryCounter.new(user_id: current_user.id, category: @project.category, counter: 0)
+      counter = UserCategoryCounter.new(user_id: current_user.id, category: @project.category, counter: 0)
     end
     counter.counter += 1
     counter.save
@@ -58,7 +58,7 @@ class ProjectsController < ApplicationController
   end
 
   def counter_params
-    params.require(:user_catagory_counter).permit(:user_id, :category)
+    params.require(:user_category_counter).permit(:user_id, :category)
   end
 
   def setProject
