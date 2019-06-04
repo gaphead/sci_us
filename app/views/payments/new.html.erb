@@ -1,0 +1,33 @@
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<h1>Purchase of Project</h1>
+
+ <%= form_tag donation_payments_path(@donation) do %>
+  <div id="error_explanation">
+    <% if flash[:error].present? %>
+      <p><%= flash[:error] %></p>
+    <% end %>
+  </div>
+  <article>
+    <%= label_tag(:amount, 'Donation Amount:') %>
+    <%= text_field_tag(:amount) %>
+  </article>
+  <article>
+    <%= hidden_field_tag(:stripeToken) %>
+  </article>
+  <button id='donateButton'>Donate</button>
+
+  <script>
+    var handler = StripeCheckout.configure({
+      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+      locale: 'auto',
+      name: 'Sand Castles United',
+      description: 'One-time donation',
+      token: function(token) {
+        document.querySelector("input#stripeToken").value = token.id;
+        document.querySelector("form").submit();
+      }
+    });
+  </script>
+<% end %>
+

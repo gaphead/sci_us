@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :projects, through: :favorites
   has_many :user_catagory_counters
 
+  has_many :donations
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
