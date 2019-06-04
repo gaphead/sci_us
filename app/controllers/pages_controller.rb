@@ -4,6 +4,9 @@ class PagesController < ApplicationController
   def home
     @projects = Project.all
     @homepage = true
+
+    @nav_fixed = true
+    @footer_fixed = true
   end
 
   def profile

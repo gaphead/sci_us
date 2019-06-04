@@ -1,4 +1,20 @@
-<div class="banner banner-home" style="background-image: linear-gradient(rgba(0,60,46,0.0),rgba(0,60,46,0.4)), url(https://randomlybeingme.files.wordpress.com/2015/10/pale_blue_dot_1.jpg)">;
+<!-- The video -->
+<div class="container-video">
+  <div id="video">
+    <video autoplay muted loop id="myVideo" width="100%">
+      <source src="/assets/stars.mp4" type="video/mp4">
+    </video>
+  </div>
+  <!-- Optional: some overlay text to describe the video -->
+  <div class="overlay">
+    <h1>Heading</h1>
+    <p>Lorem ipsum...</p>
+    <!-- Use a button to pause/play the video with JavaScript -->
+    <%= link_to "Discover Research", projects_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<!-- <div class="banner banner-home" style="background-image: linear-gradient(rgba(0,60,46,0.0),rgba(0,60,46,0.4)), url(https://randomlybeingme.files.wordpress.com/2015/10/pale_blue_dot_1.jpg)">;
   <div class="container col-md-offset-2">
     <h1><strong>SciUs</strong></h1>
     <br>
@@ -7,18 +23,20 @@
     <br>
     <h1>Find and contribute to citizen science projects online or in your neighbourhood</h1>
     <br>
-    <%= link_to "Find Projects", projects_path, class: 'btn btn-primary' %>
   </div>
-</div>
-<div class="container col-md-offset-2 landing-community change-color">
+</div> -->
+
+<!-- <div class="container col-md-offset-2 landing-community change-color">
   <h2><strong>Search and connect with the community</strong></h2>
-  <h3>Find and contribute to science research in your neighbourhood.</h1>
+  <h3>Find and contribute to science research in your neighbourhood. SciUs connects you with real cutting edge research in many fields across the sciences. Unlock answers and contribute to real discoveries.</h3>
 </div>
 <div class="container col-md-offset-2 landing-about">
   <h2><strong>Why SCI US?</strong></h2>
   <h3>Participate in research of all kinds, from classifying galaxies to counting penguins to transcribing manuscripts. Whatever your interest, there's a science project for you.</h1>
 </div>
-
+ -->
 
 <script src=”https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>;
 <script src=”scripts.js”></script>
+
+

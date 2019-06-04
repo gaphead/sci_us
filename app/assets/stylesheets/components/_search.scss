@@ -1,4 +1,4 @@
-.seach {
+.search {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,12 +6,10 @@
 
 #landing-page-search-form {
   width: 50vw;
-  border-radius: 50px;
+  border-radius: 20px;
   margin-top: 15px;
   margin-bottom: 15px;
-  text-align: center;
-  font-style: italic;
-  font-weight: bold;
-  border-color: #ABDAE1;
-  color: #ABDAE1;
+  // text-align: center;
+  // border-color: #ABDAE1;
+  color: black;
 }

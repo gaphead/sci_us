@@ -4,30 +4,6 @@
 @import "project_index";
 @import "profile";
 
-.cat-filter {
-  margin: 16px;
-  display: flex;
-  flex-direction: column;
-  border: solid 1px rgb(20, 20, 20);
-  border-radius: 3px;
-  background-color: #FFF8F0;
-  color: rbg(20, 20, 20);
-}
-
-.cat-filter > i {
-  padding: 8px;
-  margin: 0 auto !important;
-  justify-content: center;
-  text-align: center;
-  color: #53687E;
-}
-
-.cat-filter > p {
-  padding: 8px;
-  margin: 0 auto !important;
-  justify-content: center;
-  text-align: center;
-}
-
-.cat-filter:hover {
+a:hover {
+  text-decoration: none !important;
 }

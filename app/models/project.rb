@@ -4,7 +4,7 @@ class Project < ApplicationRecord
 
   include AlgoliaSearch
   algoliasearch do
-    attribute :name, :short_description, :long_description
+    attribute :name, :short_description, :long_description, :category
   end
 
   monetize :donation_cents

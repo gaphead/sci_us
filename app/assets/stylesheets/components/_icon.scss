@@ -1,13 +1,27 @@
 .icons {
   display: flex;
-  justify-content: center;
+  // justify-content: space-between;
   margin-top: 20px;
   margin-bottom: 20px;
+  justify-content: flex-start;
+}
+
+.row-icons {
+  display: flex;
+  justify-content: space-around;
 }
 
 i.fas {
-  color: #ABDAE1;
+  color: gray;
   margin-left: 30px;
+}
+
+.ml-3 {
+  color: gray;
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: none !important;
+  }
 }
 
 i.fas:hover {
@@ -55,7 +69,6 @@ i.fas:hover {
 }
 
 .project_show_link:hover {
-
-text-decoration: none;
-color:black;
+  text-decoration: none;
+  color:black;
 }
