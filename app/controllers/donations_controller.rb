@@ -1,7 +1,7 @@
 class DonationsController < ApplicationController
   def create
     project = Project.find(params[:project_id])
-    donation = Donation.create!(state: 'pending', user: current_user)
+    donation = Donation.create!(project_id: project.id, state: 'pending', user: current_user)
 
     redirect_to new_donation_payment_path(donation)
   end

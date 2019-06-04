@@ -316,86 +316,86 @@ ast_words = %w(astronomy vibration space stars star galaxy galaxies hyper planet
 # social_words = %w()
 
 
-# Runs through 4 different JSON files, parses, and creates projects
-category = ""
-counter = 1
-4.times do
-  break if counter > 4
-  serialized_projects = File.read("app/helpers/page_#{counter}_zooniverse.html")
-  projects = JSON.parse(serialized_projects)
-  url = "https://www.zooniverse.org"
+# # Runs through 4 different JSON files, parses, and creates projects
+# category = ""
+# counter = 1
+# 4.times do
+#   break if counter > 4
+#   serialized_projects = File.read("app/helpers/page_#{counter}_zooniverse.html")
+#   projects = JSON.parse(serialized_projects)
+#   url = "https://www.zooniverse.org"
 
-  # Runs through each project
-  projects["projects"].each do |project|
-    name = project["display_name"]
-    description = project["description"]
-    # Adds category to project based on description
-    animal_words.each do |animal_word|
-      if description.downcase.include?(animal_word)
-        category = "animals"
-      end
-    end
-    bio_words.each do |bio_word|
-      if description.downcase.include?(bio_word)
-        category = "biology"
-      end
-    end
-    # chem_words.each do |chem_word|
-    #   if description.downcase.include?(chem_word)
-    #     category = "chemistry"
-    #   end
-    # end
-    # eco_words.each do |eco_word|
-    #   if description.downcase.include?(eco_word)
-    #     category = "ecology"
-    #   end
-    # end
-    hist_words.each do |hist_word|
-      if description.downcase.include?(hist_word)
-        category = "histroy"
-      end
-    end
-    # med_words.each do |med_word|
-    #   if description.downcase.include?(med_word)
-    #     category = "medicine"
-    #   end
-    # end
-    # ocean_words.each do |ocean_word|
-    #   if description.downcase.include?(ocean_word)
-    #     category = "oceanography"
-    #   end
-    # end
-    # phys_words.each do |phys_word|
-    #   if description.downcase.include?(phys_word)
-    #     category = "physics"
-    #   end
-    # end
-    ast_words.each do |ast_word|
-      if description.downcase.include?(ast_word)
-        category = "astronomy"
-      end
-    end
-    # social_words.each do |social_word|
-    #   if description.downcase.include?(social_word)
-    #     category = "social_studies"
-    #   end
-    # end
+#   # Runs through each project
+#   projects["projects"].each do |project|
+#     name = project["display_name"]
+#     description = project["description"]
+#     # Adds category to project based on description
+#     animal_words.each do |animal_word|
+#       if description.downcase.include?(animal_word)
+#         category = "animals"
+#       end
+#     end
+#     bio_words.each do |bio_word|
+#       if description.downcase.include?(bio_word)
+#         category = "biology"
+#       end
+#     end
+#     # chem_words.each do |chem_word|
+#     #   if description.downcase.include?(chem_word)
+#     #     category = "chemistry"
+#     #   end
+#     # end
+#     # eco_words.each do |eco_word|
+#     #   if description.downcase.include?(eco_word)
+#     #     category = "ecology"
+#     #   end
+#     # end
+#     hist_words.each do |hist_word|
+#       if description.downcase.include?(hist_word)
+#         category = "histroy"
+#       end
+#     end
+#     # med_words.each do |med_word|
+#     #   if description.downcase.include?(med_word)
+#     #     category = "medicine"
+#     #   end
+#     # end
+#     # ocean_words.each do |ocean_word|
+#     #   if description.downcase.include?(ocean_word)
+#     #     category = "oceanography"
+#     #   end
+#     # end
+#     # phys_words.each do |phys_word|
+#     #   if description.downcase.include?(phys_word)
+#     #     category = "physics"
+#     #   end
+#     # end
+#     ast_words.each do |ast_word|
+#       if description.downcase.include?(ast_word)
+#         category = "astronomy"
+#       end
+#     end
+#     # social_words.each do |social_word|
+#     #   if description.downcase.include?(social_word)
+#     #     category = "social_studies"
+#     #   end
+#     # end
 
-    project_url = "#{url}/projects/#{project['slug']}"
-    classifications = project["classifications_count"]
-    image_url = project['avatar_src']
-    new_project = Project.new(
-      name: name,
-      short_description: description,
-      url: project_url,
-      category: category
-    )
-    new_project.remote_photo_url = "https://#{image_url}"
-    new_project.save!
-    print "."
-  end
-  counter += 1
-end
+#     project_url = "#{url}/projects/#{project['slug']}"
+#     classifications = project["classifications_count"]
+#     image_url = project['avatar_src']
+#     new_project = Project.new(
+#       name: name,
+#       short_description: description,
+#       url: project_url,
+#       category: category
+#     )
+#     new_project.remote_photo_url = "https://#{image_url}"
+#     new_project.save!
+#     print "."
+#   end
+#   counter += 1
+# end
 
 
 puts "Done"
