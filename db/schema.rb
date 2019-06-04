@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_03_173327) do
+
+ActiveRecord::Schema.define(version: 2019_06_04_145645) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,8 +58,7 @@ ActiveRecord::Schema.define(version: 2019_06_03_173327) do
     t.datetime "updated_at", null: false
     t.string "category"
     t.integer "volunteers"
-    t.integer "price_cents", default: 0, null: false
-    t.string "sku"
+    t.integer "donation_cents", default: 0, null: false
   end
 
   create_table "user_category_counters", force: :cascade do |t|
@@ -92,4 +93,5 @@ ActiveRecord::Schema.define(version: 2019_06_03_173327) do
   add_foreign_key "favorites", "projects"
   add_foreign_key "favorites", "users"
   add_foreign_key "user_category_counters", "users"
+
 end
