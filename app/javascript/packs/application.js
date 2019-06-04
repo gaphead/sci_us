@@ -41,3 +41,9 @@ if (donateButton) {
     }
   });
 }
+
+const toast = $('#achievement-toast')
+
+if(toast) {
+  toast.toast('show')
+}
