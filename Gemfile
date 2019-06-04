@@ -21,6 +21,8 @@ gem 'carrierwave', '~> 1.2'
 gem 'algoliasearch-rails'
 gem 'money-rails', '~>1.12' # Gem to manage properties of money in ruby
 gem 'stripe' # Stripe gem
+gem 'nokogiri'
+gem 'json'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
