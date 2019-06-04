@@ -158,7 +158,6 @@ hist_words = %w(archivist archivists mysteries handwritten notes wwi military tr
 ast_words = %w(astronomy vibration space stars star galaxy galaxies hyper planet planets cosmic mars spacetime meteor meteors solar moon muon)
 # social_words = %w()
 
-
 # Runs through 4 different JSON files, parses, and creates projects
 category = ""
 counter = 1
@@ -239,6 +238,5 @@ counter = 1
   end
   counter += 1
 end
-
 
 puts "Done"

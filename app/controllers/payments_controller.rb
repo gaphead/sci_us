@@ -18,6 +18,10 @@ class PaymentsController < ApplicationController
     )
 
     @donation.update(payment: charge.to_json, state: 'paid', amount: params[:amount])
+    project = Project.find(@donation.project_id.to_i)
+    project.current_funding += @donation.amount.to_i
+    project.save!
+
     redirect_to donation_path(@donation)
   rescue Stripe::CardError => e
     flash[:alert] = e.message
