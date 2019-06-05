@@ -73,6 +73,18 @@ i.fas:hover {
   color:black;
 }
 
+.badges img {
+  opacity: 0.1;
+}
+
+.hover-text-arch  {
+display: none;
+}
+
+.Archivist:hover + .hover-text-arch {
+  display: block;
+}
+
 #star-show {
   font-weight: 24px;
 }
@@ -83,4 +95,5 @@ i.fas:hover {
 
 #heart-hand:hover {
   color:red;
+
 }

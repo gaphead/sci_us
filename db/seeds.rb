@@ -264,8 +264,8 @@ json_strings.each do |json_string|
     #   end
     # end
 
-    current_funding_arr = [4_235, 3_200, 900, 820, 600, 405, 375, 125]
-    desired_funding_arr = [1_000, 2_500, 3_000, 4_250, 5_000, 6_000]
+    current_funding_arr = [4_235, 3_200, 900, 820, 3_350, 405, 375, 2_000]
+    desired_funding_arr = [1_000, 2_500, 3_000, 4_250, 5_000]
 
     funding_goal = desired_funding_arr.sample
     actual_funding = current_funding_arr.shuffle.find { |num| num < funding_goal }
