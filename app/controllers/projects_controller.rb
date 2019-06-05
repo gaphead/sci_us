@@ -35,6 +35,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @donation_progress = ((@project.current_funding / @project.desired_funding.to_f)*100).to_i
   end
 
   def project_counter
