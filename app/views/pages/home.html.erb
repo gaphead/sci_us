@@ -22,20 +22,20 @@
 <!-- featured projects  -->
 <div class="container">
   <div class="header">
-    <i class="fa fa-star" aria-hidden="true"></i><h1>Featured Projects</h1>
+    <i class="fa fa-star" aria-hidden="true"></i><h3>Featured Projects</h3>
   </div>
   <div class="row">
       <% Project.where(category: "history").first(4).each do |p| %>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="card">
-            <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
-            </div>
             <%= link_to(project_path(p), class: "card-link") do %>
-              <div class="card-body-">
-                <p class="card-title"><%= p.name %></p>
-                <p class="card-text"><%= p.short_description %></p>
+              <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
               </div>
             <% end %>
+            <div class="card-body-">
+              <p class="card-title"><%= p.name %></p>
+              <p class="card-text"><%= p.short_description %></p>
+            </div>
           </div>
         </div>
       <% end %>
