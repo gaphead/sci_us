@@ -1,15 +1,20 @@
 .search {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
 #landing-page-search-form {
-  width: 50vw;
-  border-radius: 20px;
+  width: 300px;
+  border-radius: 5px;
   margin-top: 15px;
   margin-bottom: 15px;
   // text-align: center;
   // border-color: #ABDAE1;
   color: black;
+}
+
+.search-container {
+  background-image: url(https://picsum.photos/200/300);
+  width: 100%;
 }

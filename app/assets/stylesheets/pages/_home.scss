@@ -17,11 +17,11 @@
 }
 
 .container-video {
-  position:relative;
+  position: relative;
   height: 100vh;
   width: 100vw;
   #video {
-    position: absolute;
+    position: relative;
     z-index: 0;
     height: 100vh;
     width: 100vw;
@@ -38,4 +38,20 @@
   width: 100vw;
   color: white;
   padding: 20%;
+}
+
+.home-buttons {
+  padding-top: 50px;
+}
+
+// .home-header {
+//   padding-top: 100px;
+// }
+
+.browse-text {
+  margin-top: 50px;
+}
+
+.browse-header {
+  margin-top: 50px;
 }

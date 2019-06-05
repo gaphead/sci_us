@@ -2,10 +2,12 @@
 <!-- Search & Icons -->
 <div class="search-container">
   <div class="container">
-    <br>
-    <h2>Explore citizen science projects</h2>
-    <br>
-    <h5>Choose a field of research that interests you most!</h5>
+    <div class="browse-header">
+      <h3><strong>Explore citizen science projects and contribute to hundreds of experiments</strong></h3>
+    </div>
+  <!--   <div class="browse-text">
+      <p>Explore different fields of research to find hundreds of experiments to contribute to.</p>
+    </div> -->
 
   <!-- Icons -->
     <div class="icons mt-5 mb-5">
@@ -49,7 +51,7 @@
         <div class="col-sm-6 col-md-2 col-lg-1">
           <%= link_to projects_path(query: 'chemistry') do %>
             <i class="filter fas fa-flask fa-2x mr-3"></i>
-            <p class="ml-3">Astronomy</p>
+            <p class="ml-3">Chemistry</p>
           <% end %>
         </div>
           <!-- Medicine -->
@@ -85,27 +87,36 @@
   </div>
 </div> <!-- end of search container -->
 
-<!-- Cards-->
 
-  <!-- Search-->
-<div class="search mt-4 mb-4">
-  <div class="search-bar">
-    <br>
-    <h5>Narrow your search:</h5>
-    <%= form_tag(projects_path, method: :get) do %>
-      <%= text_field_tag :query, params[:query], :placeholder => "monkeys, forests....", class: "form-control", id: "landing-page-search-form" %>
-    <% end %>
-
-  </div>
-</div>
 
 <div class="container mb-5">
+    <!-- Search-->
+  <div class="search mt-4 mb-4">
+    <div class="search-bar">
+      <%= form_tag(projects_path, method: :get) do %>
+        <%= text_field_tag :query, params[:query], :placeholder => "What interests you most?", class: "form-control", id: "landing-page-search-form" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="search-bar">
+    <p><%= link_to 'Create an account', new_project_path %> to favorite projects to your profile and collect badges.</p>
+  </div>
+  <!-- Cards-->
   <div class="row">
     <% @projects.each do |p| %>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card card-index<%= p.category %>">
-          <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
-            <% if user_signed_in? %>
+          <%= link_to(project_path(p), class: "card-link") do %>
+            <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
+            </div>
+          <% end %>
+
+          <div class="card-body-">
+            <div class="star-project-tile">
+              <%= link_to(project_path(p), class: "card-link") do %>
+                <h5 class="card-title"><%= p.name %></h5>
+              <% end %>
+              <% if user_signed_in? %>
               <div data-project-id="<%= p.id %>">
                 <%= link_to toggle_project_favorites_path(p), method: :post, remote: true do %>
                   <% if current_user.has_favorited?(p) %>
@@ -115,15 +126,10 @@
                   <% end %>
                 <% end %>
               </div>
-            <% end %>
-          </div>
-
-          <%= link_to(project_path(p), class: "card-link") do %>
-            <div class="card-body-">
-              <p class="card-title"><%= p.name %></p>
-              <p class="card-text"><%= p.short_description %></p>
+              <% end %>
             </div>
-          <% end %>
+            <p class="card-text"><%= p.short_description %></p>
+          </div>
         </div>
       </div>
     <% end %>

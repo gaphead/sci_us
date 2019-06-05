@@ -6,6 +6,7 @@
 
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "logo.jpg", class: "avatar", width: 50, id: "logo" %>
+    <h5>scius</h5>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,9 +41,9 @@
         <li class="nav-item active">
         </li>
         <li class="nav-item">
-          <% if @homepage %>
-            <a class="nav-link" href="/#the sciUs story">About</a>
-          <% end %>
+          <%# if @homepage %>
+            <!-- <a class="nav-link" href="/#the sciUs story">About</a> -->
+          <%# end %>
         </li>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>

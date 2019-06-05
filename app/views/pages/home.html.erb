@@ -7,34 +7,42 @@
   </div>
   <!-- Optional: some overlay text to describe the video -->
   <div class="overlay">
-    <h1>Heading</h1>
-    <p>Lorem ipsum...</p>
-    <!-- Use a button to pause/play the video with JavaScript -->
-    <%= link_to "Discover Research", projects_path, class: 'btn btn-primary' %>
+    <div class="home-header d-none d-lg-block">
+      <h1><strong>Contribute to the next wave of scientific research</strong></h1>
+      <h5>Discover research projects or add your own to find participants</h5>
+    </div>
+    <div class="home-buttons">
+      <!-- Use a button to pause/play the video with JavaScript -->
+      <%= link_to "Browse Projects", projects_path, class: 'btn btn-primary' %>
+      <%= link_to "Start an Experiment", new_project_path, class: 'btn btn-warning' %>
+    </div>
   </div>
 </div>
 
-<!-- <div class="banner banner-home" style="background-image: linear-gradient(rgba(0,60,46,0.0),rgba(0,60,46,0.4)), url(https://randomlybeingme.files.wordpress.com/2015/10/pale_blue_dot_1.jpg)">;
-  <div class="container col-md-offset-2">
-    <h1><strong>SciUs</strong></h1>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h1>Find and contribute to citizen science projects online or in your neighbourhood</h1>
-    <br>
+<!-- featured projects  -->
+<div class="container">
+  <div class="header">
+    <i class="fa fa-star" aria-hidden="true"></i><h1>Featured Projects</h1>
   </div>
-</div> -->
+  <div class="row">
+      <% Project.where(category: "history").each do |p| %>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
+            </div>
+            <%= link_to(project_path(p), class: "card-link") do %>
+              <div class="card-body-">
+                <p class="card-title"><%= p.name %></p>
+                <p class="card-text"><%= p.short_description %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
 
-<!-- <div class="container col-md-offset-2 landing-community change-color">
-  <h2><strong>Search and connect with the community</strong></h2>
-  <h3>Find and contribute to science research in your neighbourhood. SciUs connects you with real cutting edge research in many fields across the sciences. Unlock answers and contribute to real discoveries.</h3>
-</div>
-<div class="container col-md-offset-2 landing-about">
-  <h2><strong>Why SCI US?</strong></h2>
-  <h3>Participate in research of all kinds, from classifying galaxies to counting penguins to transcribing manuscripts. Whatever your interest, there's a science project for you.</h1>
-</div>
- -->
+
 
 <script src=”https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>;
 <script src=”scripts.js”></script>
