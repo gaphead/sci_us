@@ -47,3 +47,11 @@ const toast = $('#achievement-toast')
 if(toast) {
   toast.toast('show')
 }
+
+const donationInput = document.querySelector("#amount")
+
+document.querySelectorAll(".donation-buttons button").forEach((button) => {
+  button.addEventListener("click", () => {
+    donationInput.value = button.dataset.amount
+  })
+})
