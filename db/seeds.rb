@@ -21,6 +21,14 @@ alex = User.new(
   password: "123456"
 )
 
+john = User.new(
+  first_name: "John",
+  last_name: "Pandit",
+  email: "john@email.com",
+  password: "123456"
+)
+
+
 print "Creating users"
 
 erik.remote_photo_url = "https://lh3.googleusercontent.com/-FqOP9ADmAUU/W04mHOMxzyI/AAAAAAAAABw/VlrHRB759PIx2SRuysFlMn0N8u7jpBqVQCEwYBhgL/w280-h280-p/ERik.png"
@@ -32,6 +40,9 @@ alex.remote_photo_url = "https://www.alextangpsychology.com/uploads/8/3/0/2/8302
 alex.save
 
 print "."
+
+john.remote_photo_url = "https://www.alextangpsychology.com/uploads/8/3/0/2/83023440/published/file-000_3.jpeg?1496814685"
+john.save
 
 puts "Done"
 
@@ -123,10 +134,17 @@ ebird = Project.new(
   organization: "Cornell Lab",
   org_description: "ScienceAtHome is a diverse team of scientists, game developers, designers and visual artists based at Aarhus University, Denmark. We create fun scientific games, with the aim of revolutionising scientific research and teaching by game-play!",
   active: true,
-  category: "animals"
+  category: "animals",
+  user: john,
+  rresearcherbio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, et nostrum. Consectetur consequuntur iure tenetur id voluptatibus neque, labore explicabo sapiente vero officiis, natus blanditiis necessitatibus quod, ipsam quas ad."
 )
 
 print "Creating projects"
+
+ebird.remote_photo_url = "https://images.unsplash.com/photo-1558692398-8045562d5988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+ebird.save
+
+print "."
 
 sci_lab.remote_photo_url = "https://www.scienceathome.org/wp-content/uploads/2018/05/slsd1-1200x691.png"
 sci_lab.save
@@ -153,10 +171,6 @@ mind.save
 
 print "."
 
-ebird.remote_photo_url = "https://images.unsplash.com/photo-1558692398-8045562d5988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-ebird.save
-
-print "."
 # stars.remote_photo_url = 'https://blog.bestbuy.ca/wp-content/uploads/2017/04/Telescopes-and-star-gazing-essentials-1.jpg'
 # stars.save
 

@@ -1,6 +1,7 @@
 class Project < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   has_many :users, through: :favorites
+  belongs_to :user, optional: true
   has_many :donations
 
   include AlgoliaSearch
