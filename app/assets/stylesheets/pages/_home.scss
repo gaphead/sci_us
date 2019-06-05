@@ -18,12 +18,10 @@
 
 .container-video {
   position: relative;
-  height: 100vh;
   width: 100vw;
   #video {
     position: relative;
     z-index: 0;
-    height: 100vh;
     width: 100vw;
     top:0;
   }
@@ -44,14 +42,24 @@
   padding-top: 50px;
 }
 
-// .home-header {
-//   padding-top: 100px;
-// }
-
 .browse-text {
   margin-top: 50px;
 }
 
 .browse-header {
   margin-top: 50px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 50px 0px 10px 10px;
+}
+
+.header i {
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: -10px;
+  color: black;
+  font-size: 22px;
 }
