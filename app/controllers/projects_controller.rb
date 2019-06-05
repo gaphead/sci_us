@@ -46,7 +46,14 @@ class ProjectsController < ApplicationController
     counter.counter += 1
     counter.save
 
-    redirect_to @project.url
+    if counter.counter == 5
+      redirect_to @project.url, flash: {
+        message: "ACHIEVEMENT FOR #{counter.category.upcase}",
+        category: counter.category
+      }
+    else
+      redirect_to @project.url
+    end
   end
 
   # def destroy
