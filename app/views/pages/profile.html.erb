@@ -4,8 +4,8 @@
     <div class='container'>
       <div class='opener'>
         <div class='text-center pt-4'>
-          <h1>My Profile</h1>
-          <%= cl_image_tag @user.photo, class: "avatar-large", alt: "your profile picture", width: 100 unless @user.photo.blank? %>
+          <h4>Profile</h4>
+          <%= cl_image_tag @user.photo, class: "avatar-small", alt: "your profile picture", width: 100 unless @user.photo.blank? %>
         </div>
         <div class='text-center pt-4'>
           <h1><%= @user.first_name %> <%= @user.last_name %></h>
@@ -49,7 +49,7 @@
     <div class="container">
       <div class='opener'>
         <div class='text-left pt-4'>
-          <h2>Favorite Projects</h2>
+          <h4>Favorite Projects</h4>
           <br>
           <div class="card-container card-container-profile">
             <% @user.projects.each do |p| %>
