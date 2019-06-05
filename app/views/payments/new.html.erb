@@ -1,33 +1,50 @@
 <script src="https://checkout.stripe.com/checkout.js"></script>
 
-<h1>Purchase of Project</h1>
+<div class="new-donation-container">
+  <div class="donation-card">
+    <!-- Title -->
+    <h3><b>Donate to <%= @donation.project.name%></b></h3>
+    <br>
+    <!-- Image -->
+    <div class="donation-image" style="background-image: url(<%= @donation.project.photo %>); background-size: cover; background-position: center center;"></div>
+    <br>
+    <!-- Buttons -->
+    <div class="donation-buttons">
+      <button type="button" class="btn btn-success" id="donate-amount-btn">C$10</button>
+      <button type="button" class="btn btn-success" id="donate-amount-btn">C$20</button>
+      <button type="button" class="btn btn-success" id="donate-amount-btn">C$50</button>
+      <button type="button" class="btn btn-success" id="donate-amount-btn">$100</button>
+      <button type="button" class="btn btn-success" id="donate-amount-btn">$200</button>
+    </div>
+    <br>
+     <%= form_tag donation_payments_path(@donation) do %>
+      <div id="error_explanation">
+        <% if flash[:error].present? %>
+          <p><%= flash[:error] %></p>
+        <% end %>
+      </div>
+      <article>
+        <%= text_field_tag(:amount) %>
+        <button id='donateButton'>Donate</button>
+      </article>
+      <article>
+        <%= hidden_field_tag(:stripeToken) %>
+      </article>
 
- <%= form_tag donation_payments_path(@donation) do %>
-  <div id="error_explanation">
-    <% if flash[:error].present? %>
-      <p><%= flash[:error] %></p>
+      <script>
+        var handler = StripeCheckout.configure({
+          key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+          locale: 'auto',
+          name: 'Project Name',
+          description: 'One-time donation',
+          token: function(token) {
+            document.querySelector("input#stripeToken").value = token.id;
+            document.querySelector("form").submit();
+          }
+        });
+      </script>
     <% end %>
   </div>
-  <article>
-    <%= label_tag(:amount, 'Donation Amount:') %>
-    <%= text_field_tag(:amount) %>
-  </article>
-  <article>
-    <%= hidden_field_tag(:stripeToken) %>
-  </article>
-  <button id='donateButton'>Donate</button>
+</div>
 
-  <script>
-    var handler = StripeCheckout.configure({
-      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
-      locale: 'auto',
-      name: 'Project Name',
-      description: 'One-time donation',
-      token: function(token) {
-        document.querySelector("input#stripeToken").value = token.id;
-        document.querySelector("form").submit();
-      }
-    });
-  </script>
-<% end %>
 

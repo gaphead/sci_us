@@ -1,5 +1,3 @@
-
-
 .learn-more-button {
  border: 2px solid transparent;
     color: blue;
@@ -48,4 +46,17 @@
     background-color: rgba(31,24,55,0.8);
     border-color: rgba(255,255,255,0.2);
   }
+}
+
+#donate-amount-btn {
+  color: white;
+  font-weight: bold;
+  width: 100px;
+  border-radius: 10px;
+  margin: 5px
+}
+
+#donate-submit-btn {
+  font-weight: bold;
+  width: 100px;
 }

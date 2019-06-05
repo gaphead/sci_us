@@ -1,0 +1,33 @@
+  .new-donation-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .donation-card {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 700px;
+    height: 550px;
+    border: 1px solid green;
+    border-radius: 50px;
+  }
+
+  .donation-image {
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+    background-image: url('');
+  }
+
+  .donation-buttons {
+    width: 350px;
+    height: 100px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
