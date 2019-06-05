@@ -1,6 +1,21 @@
-<h1 align=center>Thank You for Donating <%= @donation.user.first_name  %>!</h1>
-<br>
-<h3 align=center>Status: <%= @donation.state.capitalize %></h3>
-<h3 align=center>Amount: <%= humanized_money_with_symbol(@donation.amount) %></h3>
-<br>
-<h5 align=center> <%= link_to "Browse More Projects", projects_path %></h5>
+<div class="paid-donation-container">
+  <div class="paid-donation-card">
+    <!-- Header -->
+    <h1 align=center>Thank You for Donating <%= @donation.user.first_name  %>!</h1>
+    <br>
+    <!-- Icon -->
+    <div align=center><i class="fas fa-hand-holding-heart fa-4x" id="heart-hand"></i></div>
+    <br>
+    <br>
+    <!-- Payment Info -->
+    <h3 align=center>Amount: <%= humanized_money_with_symbol(@donation.amount) %></h3>
+    <h3 align=center>Status: <%= @donation.state.capitalize %></h3>
+    <br>
+    <br>
+    <!-- Links -->
+    <div class=donation-links>
+      <h5 align=center> <%= link_to "Back to Project", project_path(@donation.project_id) %></h5>
+      <h5 align=center> <%= link_to "Browse Projects", projects_path %></h5>
+    </div>
+  </div>
+</div>
