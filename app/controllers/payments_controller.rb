@@ -22,10 +22,9 @@ class PaymentsController < ApplicationController
     project.current_funding += @donation.amount.to_i
     project.save!
 
-    redirect_to donation_path(@donation)
+    redirect_to donation_path(@donation), flash: { message: "Badge Unlocked: Donation" }
   rescue Stripe::CardError => e
-    flash[:alert] = e.message
-    redirect_to new_donation_payment_path(@donation)
+    redirect_to new_donation_payment_path(@donation), alert: e.message
   end
 
   private
