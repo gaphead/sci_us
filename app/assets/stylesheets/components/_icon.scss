@@ -1,9 +1,8 @@
 .icons {
   display: flex;
   // justify-content: space-between;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  justify-content: flex-start;
+  justify-content: center;
+  margin-right: 200px;
 }
 
 .row-icons {
@@ -21,17 +20,18 @@ i.fas {
   text-decoration: none !important;
   &:hover {
     text-decoration: none !important;
+    color: #3bb4c1;
   }
 }
 
 i.fas:hover {
-  color: #72A1E5;
+  color: #3bb4c1;
 }
 
 #star {
   margin-top: 15px;
   margin-left: 15px;
-  color: white;
+  color: rgba(0,0,0,.2);
 }
 
 #star:hover {
@@ -72,3 +72,4 @@ i.fas:hover {
   text-decoration: none;
   color:black;
 }
+

@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2019_06_04_195855) do
     t.datetime "updated_at", null: false
     t.string "category"
     t.integer "volunteers"
+    t.integer "goal"
+    t.integer "campaign_duration"
     t.integer "donation_cents", default: 0, null: false
     t.integer "current_funding", default: 0, null: false
     t.integer "desired_funding", default: 500, null: false
