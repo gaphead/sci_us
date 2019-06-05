@@ -1,0 +1,23 @@
+.paid-donation-container {
+  display: flex;
+  justify-content: center;
+}
+
+.paid-donation-card {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 700px;
+  height: 450px;
+  border: 2px solid #51D6FF;
+  border-radius: 50px;
+}
+
+.donation-links {
+  width:400px ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
