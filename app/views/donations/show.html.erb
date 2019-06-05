@@ -1,5 +1,6 @@
-<h1>Donation</h1>
-<ul>
-  <li>Status: <%= @donation.state %></li>
-  <li>Amount: <%= humanized_money_with_symbol(@donation.amount) %></li>
-<ul>
+<h1 align=center>Thank You for Donating <%= @donation.user.first_name  %>!</h1>
+<br>
+<h3 align=center>Status: <%= @donation.state.capitalize %></h3>
+<h3 align=center>Amount: <%= humanized_money_with_symbol(@donation.amount) %></h3>
+<br>
+<h5 align=center> <%= link_to "Browse More Projects", projects_path %></h5>
