@@ -6,7 +6,7 @@
 }
 
 #nav-fixed {
-  position: fixed;
+  position: absolute;
   top: 0px;
   right: 0px;
   left: 0px;
@@ -20,3 +20,32 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.nav-fixed > a {
+  color: white !important;
+}
+
+.nav-share > a {
+  color: white !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(255,255,255,0.7);
+  &:hover {
+    color: white;
+  }
+}
+
+.navbar-light .navbar-brand {
+  color: rgb(96,58,8);
+  font-weight: bolder;
+  font-size: 25px;
+  padding: 0px 20px;
+  &:hover {
+    color: rgb(96,58,8);
+  }
+}
+
+
+
+

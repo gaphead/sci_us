@@ -7,8 +7,8 @@
 }
 
 .card {
-  box-shadow: 2px 2px 2px lightgrey;
-  border-radius: 10px;
+  box-shadow: 1px 1px 1px lightgrey;
+  border-radius: 3px;
   margin: 20px 0px;
   justify-content: flex-start !important;
 }
@@ -28,15 +28,15 @@
 
 .card-photo {
   height: 250px;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 3px 3px 0px 0px;
   background-size: cover;
   object-fit: contain;
   background-position: center;
 }
 
 .card-text {
-  font-style: italic;
-  font-size: 16px;
+  font-size: 15px;
+  color:gray;
 }
 
 .card-title {
