@@ -53,7 +53,7 @@ apairs = Project.new(
 seti = Project.new(
   name: "SETI",
   short_description: "Uses Internet-connected computers in the Search for Extraterrestrial Intelligence (SETI)",
-  long_description: "Radio telescope signals consist primarily of noise (from celestial sources and the receiver's electronics) and man-made signals such as TV stations, radar, and satellites. Modern radio SETI projects analyze the data digitally. More computing power enables searches to cover greater frequency ranges with more sensitivity. Radio SETI, therefore, has an insatiable appetite for computing power.",
+  long_description: "Radio telescope signals consist primarily of noise (from celestial sources and the receiver's electronics) and man-made signals such as TV stations, radar, and satellites. Modern radio SETI projects analyze the data digitally. More computing power enables searches to cover greater frequency ranges with more sensitivity. Radio SETI, therefore, has an insatiable appetite for computing power. Help us search for aliens!",
   url: "https://setiathome.berkeley.edu/",
   location: "Online",
   organization: "Berkeley",
@@ -178,9 +178,6 @@ hist_words = %w(archivist archivists mysteries handwritten notes wwi military tr
 ast_words = %w(astronomy vibration space stars star galaxy galaxies hyper planet planets cosmic mars spacetime meteor meteors solar moon muon)
 # social_words = %w()
 
-
-
-
 category = ""
 
 # This is the data from ZNV converted to an array of giant strings
@@ -253,6 +250,12 @@ json_strings.each do |json_string|
     #   end
     # end
 
+    current_funding_arr = [4_235, 3_200, 900, 820, 600, 405, 375, 125]
+    desired_funding_arr = [1_000, 2_500, 3_000, 4_250, 5_000, 6_000]
+
+    funding_goal = desired_funding_arr.sample
+    actual_funding = current_funding_arr.shuffle.find { |num| num < funding_goal }
+
     project_url = "#{url}/projects/#{project['slug']}"
     classifications = project["classifications_count"]
     image_url = project['avatar_src']
@@ -260,7 +263,9 @@ json_strings.each do |json_string|
       name: name,
       short_description: description,
       url: project_url,
-      category: category
+      category: category,
+      desired_funding: funding_goal,
+      current_funding: actual_funding
     )
     new_project.remote_photo_url = "https://#{image_url}"
     new_project.save!
