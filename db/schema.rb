@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_195855) do
+ActiveRecord::Schema.define(version: 2019_06_05_152830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,8 +55,13 @@ ActiveRecord::Schema.define(version: 2019_06_04_195855) do
     t.integer "donation_cents", default: 0, null: false
     t.integer "current_funding", default: 0, null: false
     t.integer "desired_funding", default: 500, null: false
-    t.integer "goal"
-    t.integer "campaign_duration"
+    t.text "context"
+    t.text "significance"
+    t.text "goals"
+    t.date "timedate"
+    t.text "timetext"
+    t.text "rresearcherbio"
+    t.text "about"
   end
 
   create_table "user_category_counters", force: :cascade do |t|
