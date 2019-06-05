@@ -1,4 +1,24 @@
 <!-- Whole Page -->
+<div class="show-page-container">
+
+  <!-- Left side of page -->
+  <div class="left-side">
+    <!-- Circular Picture -->
+    <div class="category-circle" id="circle">
+    </div>
+  </div>
+
+  <!-- Right side of page -->
+  <div class="right-side">
+
+
+  <!-- Corner Image -->
+    <div class="category-triangle" id="triangle">
+      <!-- <img class="project-img" src="<%=@project.photo%>" align="right"> -->
+        <p id="category" align="center">Category<br /><%=@project.category.capitalize%></p>
+    </div>
+
+<!-- Introduction -->
 <div class="container project-intro">
   <div class="project-name-photo col-sm-12 col-md-8">
     <br>
@@ -10,11 +30,18 @@
     <!-- Need to make logic work -->
     <p><i class="fas fa-star fa-lg" id="favor"></i> 5 Users Starred This Project</p>
     <!-- Need to make logic work -->
-    <p><i class="fas fa-dollar-sign fa-lg" id="dollar"></i> 3 Users Backed This Project</p>
 
-    <p><i class="fas fa-dollar-sign fa-lg" id="dollar"></i> Funding $340 / $500 </p>
+    <p><i class="fas fa-user fa-lg" id="user"></i> 10 Active Participants</p>
+     <!-- Progress Bar -->
+     <div class="progress" style="height: 25px;">
+      <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: <%= @donation_progress %>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+        <%= @donation_progress %>%
+      </div>
+     </div>
+     <br>
+
     <!-- Put users who are backing the project -->
-     <!-- Add a line showing how much funding is desired  -->
+    <!-- Add a line showing how much funding is desired  -->
     <!-- Stripe payment button  -->
     <%= form_tag donations_path do %>
       <%= hidden_field_tag 'project_id', @project.id %>
