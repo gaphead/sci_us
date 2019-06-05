@@ -110,6 +110,22 @@ aliengame = Project.new(
   category: "astronomy"
 )
 
+ebird = Project.new(
+  name: "Cornell's Birdfeeder Watch",
+  short_description: "Watch and listen to help us better understand Red-Tailed Hawk vocalizations and behavior. Join the Bird Cams Lab to document Red-tailed Hawk behavior and vocalizations using clips from a 24/7 camera at a Red-Tailed Hawk nest on Cornell University's campus. The Bird Cams Lab is a new project from the Cornell Lab of Ornithology, funded by the National Science Foundation. The project aims to connect cam viewers with researchers in an online space to co-create scientific investigations, involving viewers in every step of the scientific process: observing, questioning, collecting and analyzing data, and sharing results.",
+  long_description: "Previous researchers that have documented Red-tailed vocalizations have been mostly limited to what they can hear on the ground or when briefly checking a nest. The 24/7 Red-tailed Hawk cam gives us the chance to document vocalizations right at the nest for the entire season without disturbing the birds! Join us for this first round of clips in which we will look at the first week of footage after the nestlings start to hatch. We also invite you to learn more about the Bird Cams Lab project and sign up to help us test new activities for co-created research investigations.",
+  about: "It's long been known that many bird species interact and share space at bird feeders, but there are still many questions to answer about the factors that influence these interactions. In this iteration of Battling Birds, we will take a look at footage from the Cornell Lab of Ornithology's Sapsucker Woods FeederWatch Cam, and note the number of species, the number of individuals, and whether there are any displacements, one type of aggressive interaction. This will help us answer the main research question, How does the diversity of species and abundance of individuals affect behavioral interactions (specifically displacements) at a feeder?",
+  context: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo possimus fugit, harum architecto corporis vitae iste ducimus corrupti sapiente. Nam voluptate quaerat dolore sapiente rem veritatis possimus nulla quos debitis.",
+  significance: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit id aspernatur, totam qui ut voluptatum, perspiciatis quia dolor consequuntur a, odio veniam quas fugit! In voluptatem blanditiis reprehenderit, numquam a.",
+  goals: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates alias optio nulla quibusdam, nemo et perferendis! Repellat, eos, nobis ea nostrum eaque ex non quis quam et aliquid iusto saepe.",
+  url: "http://cams.allaboutbirds.org/channel/40/Cornell_Lab_FeederWatch_Cam/",
+  location: "browser",
+  organization: "Cornell Lab",
+  org_description: "ScienceAtHome is a diverse team of scientists, game developers, designers and visual artists based at Aarhus University, Denmark. We create fun scientific games, with the aim of revolutionising scientific research and teaching by game-play!",
+  active: true,
+  category: "animals"
+)
+
 print "Creating projects"
 
 sci_lab.remote_photo_url = "https://www.scienceathome.org/wp-content/uploads/2018/05/slsd1-1200x691.png"
@@ -137,6 +153,10 @@ mind.save
 
 print "."
 
+ebird.remote_photo_url = "https://images.unsplash.com/photo-1558692398-8045562d5988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+ebird.save
+
+print "."
 # stars.remote_photo_url = 'https://blog.bestbuy.ca/wp-content/uploads/2017/04/Telescopes-and-star-gazing-essentials-1.jpg'
 # stars.save
 
