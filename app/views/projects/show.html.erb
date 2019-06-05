@@ -87,7 +87,8 @@
       <p><%= @project.rresearcherbio %></p>
     </div>
 
-    <i class="fas fa-sign-out-alt fa-2x" id="exit"></i><%= link_to "Participate", { controller: :projects, action: :project_counter }  , class: 'btn btn-light', data: @project.category, id: 'participate-btn', method: :post %><p>External Link</p>
+    <i class="fas fa-sign-out-alt fa-2x" id="exit"></i><%= link_to "Participate", { controller: :projects, action: :project_counter }  , class: 'btn btn-light', data: @project.category, id: 'participate-btn',target: :_blank, method: :post %><p>External Link</p>
+
 
   </div>
 </div>
