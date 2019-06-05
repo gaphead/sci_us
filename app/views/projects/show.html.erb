@@ -7,7 +7,7 @@
     <br>
     <h2><strong><%= @project.name %></strong></h2>
     <br>
-    <h5>Research lead by</h5> <%= @user_id %>
+    <h5>Research lead by <%#= @project.user.first_name unless @project.user.first_name.blank? %> <%#= @project.user.last_name unless @project.user.last_name.blank? %></h5>
     <br>
     <%= cl_image_tag(@project.photo, width: 600, height: 400, crop: :fill, gravity: :face) %>
     <div class="category-triangle" id="triangle">
@@ -15,8 +15,8 @@
     </div>
     <!-- Need to make logic work -->
 
-    <h5>Save this project to your favorites</h5>
     <% if user_signed_in? %>
+      <h5>Save this project to your favorites</h5>
     <div data-project-id="<%= @project.id %>">
       <%= link_to toggle_project_favorites_path(@project.id), method: :post, remote: true do %>
         <% if current_user.has_favorited?(@project) %>
@@ -37,6 +37,7 @@
     <!-- Put users who are backing the project -->
     <!-- Add a line showing how much funding is desired  -->
     <!-- Stripe payment button  -->
+    <h5>Enjoy this project? Help fund the research.</h5>
     <%= form_tag donations_path do %>
       <%= hidden_field_tag 'project_id', @project.id %>
       <%= submit_tag 'Fund Project', class: 'btn btn-info', id: 'donate-btn'%>
@@ -62,18 +63,18 @@
       <p><%= @project.context %></p>
     </div>
     <div class="show-section">
-      <h2>What is the significance of this project?</h2>
+      <h2>Why is it significant?</h2>
       <p><%=@project.significance%></p>
     </div>
     <div class="show-section">
-      <h2>What are the goals of this project?</h2>
+      <h2>Project Goals</h2>
       <p><%= @project.goals %></p>
     </div>
-    <div class="show-section">
+  <!--   <div class="show-section">
       <h2>Project Timeline</h2>
       <p><%= @project.timedate %></p>
       <p><%= @project.timetext %></p>
-    </div>
+    </div> -->
     <%#= link_to "Learn More", { controller: :projects, action: :project_counter }  , class: 'btn btn-light', data: @project.category, id: 'participate-btn', method: :post %><!-- <p>(Warning: You will be redirected to the project website)</p>
     <i class="fas fa-sign-out-alt fa-2x" align=center id="exit"></i> -->
     <div class="show-section">
@@ -81,6 +82,7 @@
 
       <p><%=@project.org_description%></p>
       <p><%#= @project.user_id %></p>
+      <%#= @project.user.photo %>
       <p><%= @project.rresearcherbio %></p>
     </div>
 
