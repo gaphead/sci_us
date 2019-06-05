@@ -1,0 +1,6 @@
+meta_product_name: "Scius"
+meta_title: "Scius - Science for all"
+meta_description: "Contribute to the next wave of scientific research.
+Discover existing projects or add your own."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
