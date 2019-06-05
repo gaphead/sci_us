@@ -37,8 +37,8 @@
     <h2>What is the significance of this project?<%#=@project.organization%></h2>
     <h2>What are the goals of this project?<%#=@project.%></h2>
     <h2>Project Timeline<%#=@project.%></h2>
-    <%#= link_to "Learn More", { controller: :projects, action: :project_counter }  , class: 'btn btn-light', data: @project.category, id: 'participate-btn', method: :post %><!-- <p>(Warning: You will be redirected to the project website)</p>
-    <i class="fas fa-sign-out-alt fa-2x" align=center id="exit"></i> -->
+    <%= link_to "Learn More", { controller: :projects, action: :project_counter }  , class: 'btn btn-light', data: @project.category, id: 'participate-btn',target: :_blank, method: :post %><p>(Warning: You will be redirected to the project website)</p>
+    <i class="fas fa-sign-out-alt fa-2x" align=center id="exit"></i>
     <h2>Meet the team</h2>
     <p><%=@project.org_description%></p>
     <h2>Project backers</h2>

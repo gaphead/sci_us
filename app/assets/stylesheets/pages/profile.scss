@@ -9,7 +9,21 @@ display: none;
 display: block;
 }
 
+#Archivist {
+  opacity: 0.1;
+}
 
+.Archivist-active {
+  opacity: 1;
+}
+
+
+#animals{
+opacity: 0.1;
+}
+.animals-active{
+opacity: 1;
+}
 
 .hover-text-arch  {
 display: none;
