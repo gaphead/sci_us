@@ -19,6 +19,9 @@
   font-weight: bold;
   border-radius: 10px;
   margin-bottom: 25px;
+  color: white;
+  background-color: #ee4540;
+  font-size: 20px;
 }
 
 #donate-btn {
@@ -39,15 +42,29 @@
   }
 }
 
+.btn-primary:active, .btn-primary:focus {
+  background-color: rgba(31,24,55,0.8) !important;
+  border-color: rgba(255,255,255,0.2) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .btn-warning {
   background-color: rgba(0,0,0,0.4);
   font-size: 24px;
   border-color: rgba(255,255,255,0.2);
-  // margin-left: -5px;
+  margin-left: -5px;
   &:hover {
     background-color: rgba(31,24,55,0.8);
     border-color: rgba(255,255,255,0.2);
   }
+}
+
+.btn-warning:active, .btn-primary:focus {
+  background-color: rgba(31,24,55,0.8) !important;
+  border-color: rgba(255,255,255,0.2) !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 #donate-amount-btn {
@@ -64,15 +81,18 @@
 }
 
 .btn-browse {
-  background-color: rgba(199,44,65,0.8);
+  background-color: rgba(238,69,64,0.9);
   font-size: 18px;
   border-color: rgba(255,255,255,0.2);
   color: white;
   border-radius: 5px;
+  padding: 10px 15px;
   &:hover {
-    background-color: rgb(199,44,65);
+    background-color: rgba(238,69,64,1);
     border-color: rgba(255,255,255,0.2);
     color: white;
     border-radius: 5px;
   }
 }
+
+

@@ -72,6 +72,43 @@
   padding-top: 140px;
 }
 
-#progress {
-  background-color: red;
+.project-info > p {
+  padding-top: 20px;
+}
+
+.project-info > p {
+  font-size: 16px;
+}
+
+.show-section {
+  margin: 75px 0px;
+}
+
+.show-section > p {
+  padding-top: 10px;
+}
+
+.project-photo {
+  width: 100%;
+  padding-right: 20px;
+}
+
+.fund-button {
+  display: flex;
+  align-items: center;
+}
+
+.project-favorite {
+  display: flex;
+  align-items: center;
+  margin: 30px 0px;
+}
+
+.project-favorite > i {
+  margin-bottom: 15px;
+}
+
+.show-intro-container {
+  display: flex;
+  justify-content: space-between;
 }

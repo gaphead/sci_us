@@ -8,7 +8,6 @@ class ProjectsController < ApplicationController
     # elsif f.submit # check this line
     #   @projects = @proejcts.reject do |p|
     #     p.c =
-
     else
       @projects = Project.all
     end

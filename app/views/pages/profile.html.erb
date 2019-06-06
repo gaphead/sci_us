@@ -127,12 +127,11 @@
           <p>Go back to browse to find more research.</p>
         </div>
         <div>
-          <%= link_to "Browse All", projects_path, class: "btn btn-browse" %>
+          <%= link_to "Browse All", projects_path, class: "btn-browse" %>
         </div>
       </div>
 
       <div class="card-container card-container-profile">
-
         <% @user.projects.each do |p| %>
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="card card-index<%= p.category %>">
@@ -140,7 +139,6 @@
               <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
               </div>
               <% end %>
-
               <div class="card-body-">
                 <div class="star-project-tile">
                   <%= link_to(project_path(p), class: "card-link") do %>
@@ -163,8 +161,6 @@
             </div>
           </div>
         <% end %>
-
-
       </div>
     </div>
   </div>

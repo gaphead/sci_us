@@ -12,5 +12,7 @@ class PagesController < ApplicationController
   def profile
     @user = User.find(params[:id])
     @projects = Project.all
+
+    @footer_fixed = true
   end
 end
