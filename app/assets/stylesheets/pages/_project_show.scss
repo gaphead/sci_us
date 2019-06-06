@@ -81,7 +81,7 @@
 }
 
 .show-section {
-  margin: 75px 0px;
+  margin: 0px 50px 75px 0px;
 }
 
 .show-section > p {
@@ -91,20 +91,20 @@
 .project-photo {
   width: 100%;
   padding-right: 20px;
+  height: 500px;
 }
 
 .fund-button {
-  display: flex;
-  align-items: center;
+  margin-left: -25px;
 }
 
 .project-favorite {
   display: flex;
   align-items: center;
-  margin: 30px 0px;
+  // margin: 30px 0px;
 }
 
-.project-favorite > i {
+#star-show {
   margin-bottom: 15px;
 }
 
@@ -112,3 +112,43 @@
   display: flex;
   justify-content: space-between;
 }
+
+.show-image {
+  position: relative;
+}
+
+.show-image-description {
+  position: absolute;
+  top: 300px;
+  padding: 0px 200px;
+  color: white;
+}
+
+.project-text {
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+}
+
+.project-significance {
+  display: flex;
+}
+
+.participate-fund-container {
+  position: sticky;
+  top: 0;
+}
+
+.project-favorite > p {
+  margin-bottom: 0px !important;
+}
+
+.funding-amounts {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.funding-title > p {
+  color: gray;
+}
+

@@ -5,12 +5,14 @@
 }
 
 .search-container {
-  background: #FCFCFF;
+  // background: #FCFCFF;
   align-items: center;
   padding-top: 1px;
   padding-bottom: 1px;
   display: flex;
   justify-content: center;
+  background-image: url(https://images.unsplash.com/photo-1475906089153-644d9452ce87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+  padding-bottom: 50px;
 }
 
 .cat-filter {
@@ -51,4 +53,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+.progress-card {
+  margin: 0px 15px;
 }

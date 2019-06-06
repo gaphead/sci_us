@@ -1,5 +1,15 @@
 
 .progress {
-  background-color: red !important;
   color: black;
+  height: 35px;
+  background-color: lightgrey;
+  width: 100%;
+  border-radius: 25px;
+}
+
+#test-amount {
+  padding-top: 15px;
+  font-size: 18px;
+  color: white;
+  padding-left: 15px;
 }
