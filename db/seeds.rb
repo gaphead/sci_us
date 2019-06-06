@@ -135,7 +135,7 @@ ebird = Project.new(
   organization: "Cornell Lab",
   org_description: "ScienceAtHome is a diverse team of scientists, game developers, designers and visual artists based at Aarhus University, Denmark. We create fun scientific games, with the aim of revolutionising scientific research and teaching by game-play!",
   active: true,
-  category: "animal",
+  category: "animals",
   user: catherine,
   rresearcherbio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, et nostrum. Consectetur consequuntur iure tenetur id voluptatibus neque, labore explicabo sapiente vero officiis, natus blanditiis necessitatibus quod, ipsam quas ad.",
   current_funding: 3000,
