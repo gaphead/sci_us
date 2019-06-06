@@ -6,7 +6,9 @@
     <br>
     <h2><strong><%= @project.name %></strong></h2>
     <br>
-    <h5>Research lead by <%= @project.user.first_name unless @project.user.first_name.blank? %> <%= @project.user.last_name unless @project.user.last_name.blank? %></h5>
+    <% if @project.user.nil? == false %>
+      <h5>Research lead by <%= @project.user.first_name %> <%= @project.user.last_name %></h5>
+    <% end %>
     <br>
     <%= cl_image_tag(@project.photo, crop: :fill, gravity: :face, class: "project-photo") %>
     <div class="category-triangle" id="triangle">
