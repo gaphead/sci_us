@@ -49,41 +49,41 @@ puts "Done"
 
 # Projects
 
-apairs = Project.new(
-  name: "Amicable Pairs",
-  short_description: "Uses Internet-connected computers to find new amicable pairs",
-  long_description: "Though mathematics is not an experimental science, mathematicians often look for examples to test conjectures (which they then hope to prove). As the number of examples increases, so does (in a sense) their understanding of the distribution. The goal is to collect all amicable numbers up to a very large limit. This data will facilitate theoretical research in the field: 1, 2, 3 to name a few examples. It will also help to improve understanding of the properties of Divisor function.",
-  url: "https://sech.me/ap/index.html",
-  location: "Online",
-  organization: "Independant Project",
-  org_description: "Mathematically inclined researchers",
-  active: true,
-  category: "physics"
-)
+# apairs = Project.new(
+#   name: "Amicable Pairs",
+#   short_description: "Uses Internet-connected computers to find new amicable pairs",
+#   long_description: "Though mathematics is not an experimental science, mathematicians often look for examples to test conjectures (which they then hope to prove). As the number of examples increases, so does (in a sense) their understanding of the distribution. The goal is to collect all amicable numbers up to a very large limit. This data will facilitate theoretical research in the field: 1, 2, 3 to name a few examples. It will also help to improve understanding of the properties of Divisor function.",
+#   url: "https://sech.me/ap/index.html",
+#   location: "Online",
+#   organization: "Independant Project",
+#   org_description: "Mathematically inclined researchers",
+#   active: true,
+#   category: "physics"
+# )
 
-seti = Project.new(
-  name: "SETI",
-  short_description: "Uses Internet-connected computers in the Search for Extraterrestrial Intelligence (SETI)",
-  long_description: "Radio telescope signals consist primarily of noise (from celestial sources and the receiver's electronics) and man-made signals such as TV stations, radar, and satellites. Modern radio SETI projects analyze the data digitally. More computing power enables searches to cover greater frequency ranges with more sensitivity. Radio SETI, therefore, has an insatiable appetite for computing power. Help us search for aliens!",
-  url: "https://setiathome.berkeley.edu/",
-  location: "Online",
-  organization: "Berkeley",
-  org_description: "SETI@home was originally launched in May 1999",
-  active: true,
-  category: "astronomy"
-)
+# seti = Project.new(
+#   name: "SETI",
+#   short_description: "Uses Internet-connected computers in the Search for Extraterrestrial Intelligence (SETI)",
+#   long_description: "Radio telescope signals consist primarily of noise (from celestial sources and the receiver's electronics) and man-made signals such as TV stations, radar, and satellites. Modern radio SETI projects analyze the data digitally. More computing power enables searches to cover greater frequency ranges with more sensitivity. Radio SETI, therefore, has an insatiable appetite for computing power. Help us search for aliens!",
+#   url: "https://setiathome.berkeley.edu/",
+#   location: "Online",
+#   organization: "Berkeley",
+#   org_description: "SETI@home was originally launched in May 1999",
+#   active: true,
+#   category: "astronomy"
+# )
 
-mind = Project.new(
-  name: "MindModeling",
-  short_description: "Uses volunteer computing for the advancement of cognitive science",
-  long_description: "The research focuses on utilizing computational cognitive process modeling to better understand the human mind",
-  url: "https://mindmodeling.org/beta/",
-  location: "Online",
-  organization: "University of Dayton Research Institute",
-  org_description: "Not for profit based in Dayton, OH",
-  active: true,
-  category: "social_studies"
-)
+# mind = Project.new(
+#   name: "MindModeling",
+#   short_description: "Uses volunteer computing for the advancement of cognitive science",
+#   long_description: "The research focuses on utilizing computational cognitive process modeling to better understand the human mind",
+#   url: "https://mindmodeling.org/beta/",
+#   location: "Online",
+#   organization: "University of Dayton Research Institute",
+#   org_description: "Not for profit based in Dayton, OH",
+#   active: true,
+#   category: "social_studies"
+# )
 
 # stars = Project.new(
 #   name: 'Starmap',
@@ -151,20 +151,20 @@ print "Creating projects"
 
 # print "."
 
-apairs.remote_photo_url = "https://is4-ssl.mzstatic.com/image/thumb/Purple127/v4/c9/61/69/c96169d0-8eae-851b-e506-83396b270117/pr_source.jpg/246x0w.jpg"
-apairs.save
+# apairs.remote_photo_url = "https://is4-ssl.mzstatic.com/image/thumb/Purple127/v4/c9/61/69/c96169d0-8eae-851b-e506-83396b270117/pr_source.jpg/246x0w.jpg"
+# apairs.save
 
-print "."
+# print "."
 
-seti.remote_photo_url = "https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1357&q=80"
-seti.save
+# seti.remote_photo_url = "https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1357&q=80"
+# seti.save
 
-print "."
+# print "."
 
-mind.remote_photo_url = "https://static.thenounproject.com/png/51575-200.png"
-mind.save
+# mind.remote_photo_url = "https://static.thenounproject.com/png/51575-200.png"
+# mind.save
 
-print "."
+# print "."
 
 ebird.remote_photo_url = "https://images.unsplash.com/photo-1558692398-8045562d5988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
 ebird.save

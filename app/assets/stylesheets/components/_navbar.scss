@@ -13,6 +13,13 @@
   z-index: 100;
 }
 
+#nav-fixed > a {
+  color: white !important;
+  &:hover {
+    color: white !important;
+  }
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -21,19 +28,14 @@
   width: 40px;
 }
 
-.nav-fixed > a {
-  color: white !important;
-}
-
 .nav-share > a {
-  color: white !important;
+  // color: white !important;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(255,255,255,0.7);
-  &:hover {
-    color: white;
-  }
+  // color: rgba(255,255,255,0.7);
+  // &:hover {
+  //   color: white;
 }
 
 .navbar-light .navbar-brand {
@@ -41,9 +43,6 @@
   font-weight: bolder;
   font-weight: 40px;
   padding: 10px 20px;
-  &:hover {
-    color: #ee4540;
-  }
 }
 
 
