@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
 
   def index
     if params[:query].present?
-      @projects = Project.search(params[:query])
+      @projects = Project.search_by_descrptions_name_and_category(params[:query])
     # elsif f.submit # check this line
     #   @projects = @proejcts.reject do |p|
     #     p.c =
@@ -47,9 +47,9 @@ class ProjectsController < ApplicationController
     counter.counter += 1
     counter.save
 
-    if counter.counter == 5
+    if counter.counter == 1
       redirect_to @project.url, flash: {
-        message: "ACHIEVEMENT FOR #{counter.category.upcase}",
+        message: "You just got as badge in the #{counter.category} catagory",
         category: counter.category
       }
     else

@@ -14,6 +14,13 @@ erik = User.new(
   password: "123456"
 )
 
+aaron = User.new(
+  first_name: 'Aaron',
+  last_name: 'feldman',
+  email: 'emailaaron@email.com',
+  password: '123456'
+  )
+
 alex = User.new(
   first_name: "Alex",
   last_name: "Wagon",
@@ -48,12 +55,16 @@ alex.save
 
 print "."
 
+
 catherine.remote_photo_url = "https://images.unsplash.com/photo-1551863863-e01bbf274ef6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
+
 catherine.save
 
 puts "Done"
 
 
+aaron.remote_photo_url = 'https://scontent.fyxk1-1.fna.fbcdn.net/v/t1.0-9/20770194_10155113158529825_624466131833219709_n.jpg?_nc_cat=102&_nc_ht=scontent.fyxk1-1.fna&oh=a7f8a061b0c8bf25c64da97f7d5a404c&oe=5D52B8E5'
+aaron.save
 # Projects
 
 # apairs = Project.new(
@@ -164,8 +175,10 @@ pcam = Project.new(
   org_description: "Westminster undergraduate students have been working alongside experts on a number of cool projects. They assist in the yearly banding effort, help to establish a minimum banding size for baby pelicans and measure the mortality of pelicans on Gunnison Island, and assist in analyzing the images from the PELIcams.",
   active: true,
   category: "animals",
+
   user: john,
   rresearcherbio: "",
+
   current_funding: 1500,
   desired_funding: 4000
 )

@@ -8,11 +8,11 @@
   <div class="card-body">
     <h5 class="card-title"> <%= @user.first_name %> <%= @user.last_name %> </h5>
     <%= cl_image_tag @user.photo, class: "avatar-large", align: "center", alt: "your profile picture", width: 100 unless @user.photo.blank? %>
-    <p class="card-text">This is your profile! view you badges earned and favroited projects here!</p>
+    <p class="card-text mt-4">This is your profile! View your achievements and favroited projects here!</p>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><%= @user.email %></li>
-    <li class="list-group-item">researcher : <% if @user.researcher_status == true%>
+    <li class="list-group-item">researcher: <% if @user.researcher_status == true%>
       yes
       <% else %>
       no
@@ -45,10 +45,9 @@
     <div class="col-sm-12 col-md-8">
       <div class="container">
         <div class='opener'>
-          <div class='text-left pt-4'>
+          <div class='text-left pt-5'>
             <h5>Badges</h5>
-            <br>
-            <br class ='border'>
+            <!-- <br class ='border'> -->
             <div class="badges">
               <div class="card-product">
                 <img class="first-login" src="https://cdn2.iconfinder.com/data/icons/flaturici-set-4/512/rocket-512.png" alt="created account badge" height="42" width="42"style='opacity: 1;' >
