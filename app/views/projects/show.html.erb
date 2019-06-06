@@ -14,70 +14,71 @@
     <div class="category-triangle" id="triangle">
       <p id="category">Category: <%=@project.category.capitalize%></p>
     </div>
-  </div>
-    <!-- Project Info -->
-  <div class="d-none col-md-1 col-lg-1">
-  </div>
 
-  <div class="project-info col-sm-12 col-md-4 col-lg-4">
-    <h2>About this project</h2>
-    <p><%=@project.about%></p>
-  </div>
-</div>
-
-<hr>
-
-<div class="container project-significance">
-  <div class= "project-text col-sm-12 col-md-8 col-lg-8">
     <div class="show-section">
       <br>
-      <h2>What is the context of this research?</h2>
+    <div class="show-section">
+      <h2>About this project</h2>
+      <p><%=@project.about %></p>
+    </div>
+          <h2>What is the context of this research?</h2>
       <p><%= @project.context %></p>
     </div>
     <div class="show-section">
-      <h2>Why is it significant?</h2>
+      <h2>What is the significance of this research?</h2>
       <p><%=@project.significance%></p>
     </div>
     <div class="show-section">
       <h2>Project Goals</h2>
       <p><%= @project.goals %></p>
     </div>
-
     <div class="show-section">
       <h2>Meet the team</h2>
-
+      <% if @project.user.nil? == false %>
+        <div class="researcher-bio">
+          <div>
+            <%= cl_image_tag @project.user.photo, class: "avatar-small", align: "center", alt: "", width: 100 %>
+          </div>
+          <div>
+            <p><%= @project.rresearcherbio %></p>
+          </div>
+        </div>
+      <% end %>
       <p><%=@project.org_description%></p>
       <p><%#= @project.user_id %></p>
       <%#= @project.user.photo %>
-      <p><%= @project.rresearcherbio %></p>
     </div>
-
+  </div>
+    <!-- Project Info -->
+  <div class="d-none col-md-1 col-lg-1">
   </div>
 
-  <div id="project-info-links" class="col-sm-12 col-md-4 col-lg-4">
+ <div id="project-info-links" class="col-sm-12 col-md-4 col-lg-4">
     <div class="participate-fund-container">
       <br>
       <br>
       <!-- participate  -->
       <%= link_to "Participate", { controller: :projects, action: :project_counter }  , class: 'btn btn-light', data: @project.category, id: 'participate-btn',target: :_blank, method: :post %>
       <!-- save to favorites -->
-      <% if user_signed_in? %>
-        <div class="project-favorite">
-          <div>
-            <p>Save this project to your favorites:</p>
-          </div>
-          <div data-project-id="<%= @project.id %>">
-            <%= link_to toggle_project_favorites_path(@project.id), method: :post, remote: true do %>
-              <% if current_user.has_favorited?(@project) %>
-                <i id="star star-show", class="fas fa-star fa-lg fa-rocket-click"></i>
-              <% else %>
-                <i id="star star-show", class="fas fa-star fa-lg"></i>
+      <div class="favorite-fund">
+        <% if user_signed_in? %>
+          <div class="project-favorite">
+            <div class="favorite-padding">
+              <p>Save this project to your favorites </p>
+            </div>
+            <div data-project-id="<%= @project.id %>">
+              <%= link_to toggle_project_favorites_path(@project.id), method: :post, remote: true do %>
+                <% if current_user.has_favorited?(@project) %>
+                  <i id="star star-show", class="fas fa-star fa-lg fa-rocket-click"></i>
+                <% else %>
+                  <i id="star star-show", class="fas fa-star fa-lg"></i>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
-        </div>
-        <% end %>
-      <br>
+          <% end %>
+        <br>
+      </div>
         <div class="fund-section">
           <div class="fund-button">
             <%= form_tag donations_path do %>
@@ -107,4 +108,7 @@
       </div>
     </div>
   </div>
+
 </div>
+
+
