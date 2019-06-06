@@ -280,9 +280,9 @@ json_strings.each do |json_string|
       category: category,
       desired_funding: funding_goal,
       current_funding: actual_funding
-    )
-    new_project.remote_photo_url = "https://#{image_url}"
-    new_project.save!
+    ) unless name == "PELIcams"
+    new_project.remote_photo_url = "https://#{image_url}" unless name == "PELIcams"
+    new_project.save! unless name == "PELIcams"
     print "."
   end
 end

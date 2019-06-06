@@ -1,9 +1,11 @@
 <!-- The video -->
 <div class="container-video">
   <div id="video">
-    <video autoplay muted loop id="myVideo" width="100%">
+    <%= video_tag("stars.mp4", {autoplay: true, muted: true, loop: true, width: "100%", id:"myVideo"}) %>
+    <!-- <video autoplay muted loop id="myVideo" width="100%">
       <source src="/assets/stars.mp4" type="video/mp4">
-    </video>
+     -->
+   <!-- </video> -->
   </div>
   <!-- Optional: some overlay text to describe the video -->
   <div class="overlay">
