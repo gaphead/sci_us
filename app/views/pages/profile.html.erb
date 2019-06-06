@@ -8,11 +8,11 @@
   <div class="card-body">
     <h5 class="card-title"> <%= @user.first_name %> <%= @user.last_name %> </h5>
     <%= cl_image_tag @user.photo, class: "avatar-large", align: "center", alt: "your profile picture", width: 100 unless @user.photo.blank? %>
-    <p class="card-text">THis is your profile! view you badges earned and favroited projects here!</p>
+    <p class="card-text">This is your profile! view you badges earned and favroited projects here!</p>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><%= @user.email %></li>
-    <li class="list-group-item">reasercher : <% if @user.researcher_status == true%>
+    <li class="list-group-item">researcher : <% if @user.researcher_status == true%>
       yes
       <% else %>
       no
@@ -62,11 +62,13 @@
                 <% archivist = UserCategoryCounter.find_by("user_id = ? AND category = ?", params[:id].to_i, "history") %>
                 <img src="https://cdn4.iconfinder.com/data/icons/unigrid-flat-multimedia-vol-5/90/020_244_scroll_paper_text_old_log_history_manuscript-512.png" alt="" height="42" width="42" style="<%= 'opacity: 1;' if archivist && archivist.counter >= 1 %>">
                 <div class="card-product-infos">
-                  <h2>Archivist</h2>
+
                   <% archivist = UserCategoryCounter.find_by("user_id = ? AND category = ?", params[:id].to_i, "history") %>
                   <% if archivist && archivist.counter >= 1 %>
+                  <h2 id='h2grey'>Archivist</h2>
                     <p> You are becoming quite a historian</p>
                   <% else %>
+                  <h2>Archivist</h2 class='h2black'>
                     <p>Participate in at least one history related project</p>
                   <% end %>
                 </div>
