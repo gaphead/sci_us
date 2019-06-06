@@ -89,7 +89,16 @@
             <p class="ml-3 mt-2">Social Studies</p>
           </div>
         </div> -->
+        <!-- Search-->
+        </div>
       </div>
+        <div class="search mt-4 mb-4">
+          <div class="search-bar">
+            <%= form_tag(projects_path, method: :get) do %>
+              <%= text_field_tag :query, params[:query], :placeholder => "What interests you most?", class: "form-control", id: "landing-page-search-form" %>
+            <% end %>
+          </div>
+        </div>
     </div>
   </div>
 </div> <!-- end of search container -->
@@ -97,17 +106,7 @@
 
 
 <div class="container mb-5">
-    <!-- Search-->
-  <div class="search mt-4 mb-4">
-    <div class="search-bar">
-      <%= form_tag(projects_path, method: :get) do %>
-        <%= text_field_tag :query, params[:query], :placeholder => "What interests you most?", class: "form-control", id: "landing-page-search-form" %>
-      <% end %>
-    </div>
-  </div>
-  <div class="search-bar">
-    <!-- <p><%#= link_to 'Create an account', new_project_path %> to favorite projects to your profile and collect badges.</p> -->
-  </div>
+
   <!-- Cards-->
   <div class="row">
     <% @projects.each do |p| %>
