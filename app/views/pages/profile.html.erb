@@ -8,7 +8,7 @@
   <div class="card-body">
     <h5 class="card-title"> <%= @user.first_name %> <%= @user.last_name %> </h5>
     <%= cl_image_tag @user.photo, class: "avatar-large", align: "center", alt: "your profile picture", width: 100 unless @user.photo.blank? %>
-    <p class="card-text mt-4">This is your profile! View your achievements and favroited projects here!</p>
+    <p class="card-text mt-4">View your achievements and favroited projects here.</p>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><%= @user.email %></li>
@@ -46,7 +46,7 @@
       <div class="container">
         <div class='opener'>
           <div class='text-left pt-5'>
-            <h5>Badges</h5>
+            <h5>Achievements</h5>
             <!-- <br class ='border'> -->
             <div class="badges">
               <div class="card-product">
@@ -68,7 +68,7 @@
                     <p> You are becoming quite a historian</p>
                   <% else %>
                   <h2>Archivist</h2 class='h2black'>
-                    <p>Participate in at least one history related project</p>
+                    <p>Participate in at least one history-related project</p>
                   <% end %>
                 </div>
               </div>
@@ -80,9 +80,9 @@
                   <h2>Protector</h2>
                   <% animal = UserCategoryCounter.find_by("user_id = ? AND category = ?", params[:id].to_i, "animals") %>
                   <% if animal && animal.counter >= 1 %>
-                    <p> you're reaserch is deer to us</p>
+                    <p> Your support is deer to us</p>
                   <% else %>
-                    <p>Participate in at least one animal related project</p>
+                    <p>Participate in at least one animal-related project</p>
                   <% end %>
                 </div>
               </div>
@@ -96,7 +96,7 @@
                   <% if spaaaace && spaaaace.counter >= 1 %>
                     <p> Beam Me Up Scotty!</p>
                   <% else %>
-                    <p>Participate in at least one astronomy related project</p>
+                    <p>Participate in at least one astronomy-related project</p>
                   <% end %>
                 </div>
               </div>
@@ -108,9 +108,9 @@
                   <h2>A Collection of Cells</h2>
                   <% bio = UserCategoryCounter.find_by("user_id = ? AND category = ?", params[:id].to_i, "biology") %>
                   <% if bio && bio.counter >= 1 %>
-                    <p> let's not be anemones</p>
+                    <p>Let's not be anenomes</p>
                   <% else %>
-                    <p>Participate in at least one biology related project</p>
+                    <p>Participate in at least one biology-related project</p>
                   <% end %>
                 </div>
               </div>
@@ -124,7 +124,7 @@
                   <% if bio && bio.counter >= 1 %>
                     <p> keep going and you will find a reaction!</p>
                   <% else %>
-                    <p>Participate in at least one chemistry related project</p>
+                    <p>Participate in at least one chemistry-related project</p>
                   <% end %>
                 </div>
               </div>
@@ -137,7 +137,7 @@
                   <% if eco && eco.counter >= 1 %>
                     <p>Ecology is all of us</p>
                   <% else %>
-                    <p>Participate in at least one ecology related project</p>
+                    <p>Participate in at least one ecology-related project</p>
                   <% end %>
                 </div>
               </div>
@@ -167,7 +167,7 @@
     <div class='container favorited-profile'>
       <div class="favorited-profile-header">
         <div>
-          <h5>Projects that you have favorited</h5>
+          <h5>Favorited Projects</h5>
         </div>
         <div>
           <%= link_to "Browse All", projects_path, class: "btn-browse" %>
