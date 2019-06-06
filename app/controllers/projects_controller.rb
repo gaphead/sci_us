@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
 
   def index
     if params[:query].present?
-      @projects = Project.search(params[:query])
+      @projects = Project.search_by_descrptions_name_and_category(params[:query])
     # elsif f.submit # check this line
     #   @projects = @proejcts.reject do |p|
     #     p.c =

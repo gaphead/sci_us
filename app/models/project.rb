@@ -4,10 +4,12 @@ class Project < ApplicationRecord
   belongs_to :user, optional: true
   has_many :donations
 
-  include AlgoliaSearch
-  algoliasearch do
-    attribute :name, :short_description, :long_description, :category
-  end
+  include PgSearch
+  pg_search_scope :search_by_descrptions_name_and_category,
+    against: [ :short_description, :long_description, :category, :name ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 
   monetize :donation_cents
 
