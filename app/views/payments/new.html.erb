@@ -3,14 +3,14 @@
 <div class="new-donation-container">
   <div class="donation-card">
     <!-- Title -->
-    <h3><b>Back <%= @donation.project.name%></b></h3>
+    <h5>Back <strong><%= @donation.project.name%></strong></h5>
     <br>
     <!-- Image -->
     <div class="donation-image" style="background-image: url(<%= @donation.project.photo %>); background-size: cover; background-position: center center;"></div>
     <br>
     <!-- Buttons -->
     <div class="donation-buttons">
-      <button type="button" class="btn btn-success" id="donate-amount-btn" data-amount="10">C$10</button>
+      <button type="button" class="btn btn-success" id="donate-amount-btn"data-amount="10">C$10</button>
       <button type="button" class="btn btn-success" id="donate-amount-btn"data-amount="20">C$20</button>
       <button type="button" class="btn btn-success" id="donate-amount-btn"data-amount="50">C$50</button>
       <button type="button" class="btn btn-success" id="donate-amount-btn"data-amount="100">C$100</button>
@@ -24,7 +24,8 @@
         <% end %>
       </div>
       <article>
-        <%= text_field_tag(:amount, "", :placeholder => "50")%>
+        <span>C$</span>
+        <%= text_field_tag(:amount, "", :placeholder => "0")%>
         <button id='donateButton'>Donate</button>
       </article>
       <article>
