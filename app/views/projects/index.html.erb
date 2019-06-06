@@ -135,7 +135,7 @@
           <!-- progress bar   -->
           <div class="progress-card">
             <div id="progress-all">
-              <div class="progress" style="height: 20px; background-color: lightgrey; width: 100%; border-radius: 50px; border: 1px;">
+              <div class="progress" style="height: 18px; background-color: lightgrey; width: 100%; border-radius: 50px; border: 1px;">
                 <div id="progress" class="progress-bar bg-info" role="progressbar" style="width: <%= ((p.current_funding / p.desired_funding.to_f)*100).to_i %>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                   <p id="test-amount"><%= ((p.current_funding / p.desired_funding.to_f)*100).to_i %>%</p>
                 </div>
