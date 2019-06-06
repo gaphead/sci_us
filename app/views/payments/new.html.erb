@@ -35,7 +35,7 @@
         var handler = StripeCheckout.configure({
           key: '<%= Rails.configuration.stripe[:publishable_key] %>',
           locale: 'auto',
-          name: 'Project Name',
+          name: 'scius',
           description: 'One-time donation',
           token: function(token) {
             document.querySelector("input#stripeToken").value = token.id;

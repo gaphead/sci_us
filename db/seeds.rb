@@ -121,6 +121,9 @@ puts "Done"
 #   category: "astronomy"
 # )
 
+
+print "Creating projects"
+
 ebird = Project.new(
   name: "Cornell's Birdfeeder Watch",
   short_description: "Watch and listen to help us better understand Red-Tailed Hawk vocalizations and behavior. Join the Bird Cams Lab to document Red-tailed Hawk behavior and vocalizations using clips from a 24/7 camera at a Red-Tailed Hawk nest on Cornell University's campus. The Bird Cams Lab is a new project from the Cornell Lab of Ornithology, funded by the National Science Foundation. The project aims to connect cam viewers with researchers in an online space to co-create scientific investigations, involving viewers in every step of the scientific process: observing, questioning, collecting and analyzing data, and sharing results.",
@@ -139,8 +142,23 @@ ebird = Project.new(
   rresearcherbio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, et nostrum. Consectetur consequuntur iure tenetur id voluptatibus neque, labore explicabo sapiente vero officiis, natus blanditiis necessitatibus quod, ipsam quas ad."
 )
 
-print "Creating projects"
-
+pcam = Project.new(
+  name: "PELIcams",
+  short_description: "Pelicans at Great Salt Lake need your help and so do the scientists who study them!",
+  long_description: "The Great Salt Lake PELI Project (Partnership for Education and Longitudinal Investigation of American White Pelicans) aims to understand the effects of water diversion and climate change on the migration patterns, breeding behavior, and survival rates of the pelicans on Gunnison Island. Great Salt Lake Institute undergraduate students work in partnership with the Utah Division of Wildlife Resources and their robust pelican research program.",
+  about: "PELI Project (Partnership in Education and Longitudinal Investigation of American White Pelicans at Great Salt Lake, Utah) began in 2017 to further understand pelicans nesting on Great Salt Lake's Gunnison Island and the effects of our changing environment on their life history. Utah Division of Wildlife Resources, Tracy Aviary, MesoWest at the University of Utah, and Great Salt Lake Institute at Westminster College have combined forces to put 15 PELIcams on pelican breeding grounds.",
+  context: "The first phase of the PELI project was installing 15 PELIcams on Gunnison Island, the protected breeding grounds of the pelicans. Installed in early March 2017, these cameras allow us to monitor the pelican colonies, taking a picture every three minutes. A time-lapse of the 2018 breeding season can be seen below.",
+  significance: "Pelicans are Great Salt Lake's polar bear. We hope the PELIcams on Gunnison Island will connect the world to the effects of water diversions, climate change and human disinterest in the weird, smelly and hemispherically important Great Salt Lake!",
+  goals: "We need your help to go through the multitude of pictures to document disturbance, predators, extreme weather and rarely-observed nesting behaviors.",
+  url: "https://www.westminstercollege.edu/campus-life/centers-and-institutes/great-salt-lake-institute/pelicam",
+  location: "Online",
+  organization: "Westminster College",
+  org_description: "Westminster undergraduate students have been working alongside experts on a number of cool projects. They assist in the yearly banding effort, help to establish a minimum banding size for baby pelicans and measure the mortality of pelicans on Gunnison Island, and assist in analyzing the images from the PELIcams.",
+  active: true,
+  category: "animals",
+  user: john,
+  rresearcherbio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, et nostrum. Consectetur consequuntur iure tenetur id voluptatibus neque, labore explicabo sapiente vero officiis, natus blanditiis necessitatibus quod, ipsam quas ad."
+)
 # sci_lab.remote_photo_url = "https://www.scienceathome.org/wp-content/uploads/2018/05/slsd1-1200x691.png"
 # sci_lab.save
 
@@ -168,6 +186,14 @@ print "Creating projects"
 
 ebird.remote_photo_url = "https://images.unsplash.com/photo-1558692398-8045562d5988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
 ebird.save
+
+print "."
+
+pcam.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/2ab1eff8-1532-4059-8513-09e41eb96694.jpeg"
+pcam.save
+
+print "."
+pcam.save
 
 print "."
 
@@ -220,7 +246,7 @@ json_strings.each do |json_string|
     end
     animal_words.each do |animal_word|
       if description.downcase.include?(animal_word)
-        category = "animals"
+          category = "animals"
       end
     end
     bio_words.each do |bio_word|
@@ -280,10 +306,12 @@ json_strings.each do |json_string|
       category: category,
       desired_funding: funding_goal,
       current_funding: actual_funding
-    ) unless name == "PELIcams"
-    new_project.remote_photo_url = "https://#{image_url}" unless name == "PELIcams"
-    new_project.save! unless name == "PELIcams"
-    print "."
+    )
+    unless name == "PELIcams"
+      new_project.remote_photo_url = "https://#{image_url}"
+      new_project.save!
+      print "."
+    end
   end
 end
 
