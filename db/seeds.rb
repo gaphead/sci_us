@@ -41,8 +41,8 @@ alex.save
 
 print "."
 
-john.remote_photo_url = "https://www.alextangpsychology.com/uploads/8/3/0/2/83023440/published/file-000_3.jpeg?1496814685"
-john.save
+catherine.remote_photo_url = "https://images.unsplash.com/photo-1551863863-e01bbf274ef6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
+catherine.save
 
 puts "Done"
 
@@ -127,17 +127,17 @@ print "Creating projects"
 ebird = Project.new(
   name: "Cornell's Birdfeeder Watch",
   short_description: "Bird feeders offer great opportunities to observe complex species interactions. Help us understand them!",
-  about: "It's long been known that many bird species interact and share space at bird feeders, but there are still many questions to answer about the factors that influence these interactions. <br> In this iteration of Battling Birds, we will take a look at footage from the Cornell Lab of Ornithology's Sapsucker Woods FeederWatch Cam, and note the number of species, the number of individuals, and whether there are any displacements, one type of aggressive interaction. This will help us answer the main research question, How does the diversity of species and abundance of individuals affect behavioral interactions (specifically displacements) at a feeder?",
+  about: "It's long been known that many bird species interact and share space at bird feeders, but there are still many questions to answer about the factors that influence these interactions. In this iteration of Battling Birds, we will take a look at footage from the Cornell Lab of Ornithology's Sapsucker Woods FeederWatch Cam, and note the number of species, the number of individuals, and whether there are any displacements, one type of aggressive interaction. This will help us answer the main research question, How does the diversity of species and abundance of individuals affect behavioral interactions (specifically displacements) at a feeder?",
   significance: "With your help, we can better understand how diversity and abundance affect the social dynamics at a bird feeder—as well as how these dynamics may shift when conditions change. Previous researchers that have documented Red-tailed vocalizations have been mostly limited to what they can hear on the ground or when briefly checking a nest. The 24/7 Red-tailed Hawk cam gives us the chance to document vocalizations right at the nest for the entire season without disturbing the birds! Join us for this first round of clips in which we will look at the first week of footage after the nestlings start to hatch. We also invite you to learn more about the Bird Cams Lab project and sign up to help us test new activities for co-created research investigations.",
-  goals: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates alias optio nulla quibusdam, nemo et perferendis! Repellat, eos, nobis ea nostrum eaque ex non quis quam et aliquid iusto saepe. <br>    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia veniam minus suscipit fugit a, explicabo omnis excepturi earum cum neque doloremque cupiditate mollitia officia impedit id nisi aperiam facilis dolorem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime architecto possimus expedita totam sint. Consequatur enim in, iure tempore minus iusto aperiam! Esse asperiores nam expedita laudantium reiciendis officiis incidunt!",
-  url: "project-favorite",
+  goals: "Watch close-up views of birds from your own home as you help make new discoveries using the Cornell Lab of Ornithology’s live streaming cams. Supported by the National Science Foundation, the Bird Cams Lab project joins viewers around the world to reveal new insights about the lives of birds based on observations from our live cams. Think of it as field biology in your living room: observing birds, asking questions, and joining a research team along with other viewers and scientists to make discoveries.",
+  url: "http://cams.allaboutbirds.org/channel/40/Cornell_Lab_FeederWatch_Cam/",
   location: "browser",
   organization: "Cornell Lab",
-  org_description: "ScienceAtHome is a diverse team of scientists, game developers, designers and visual artists based at Aarhus University, Denmark. We create fun scientific games, with the aim of revolutionising scientific research and teaching by game-play!",
+  org_description: "The Cornell Lab of Ornithology is a member-supported[1] unit of Cornell University in Ithaca, New York which studies birds and other wildlife. It is housed in the Imogene Powers Johnson Center for Birds and Biodiversity in Sapsucker Woods Sanctuary. Approximately 250 scientists, professors, staff, and students work in a variety of programs devoted to the Lab's mission: interpreting and conserving the Earth's biological diversity through research, education, and citizen science focused on birds. Work at the Lab is supported primarily by its 75,000 members. The Cornell Lab publishes books under the Cornell Lab Publishing Group, a quarterly publication, Living Bird magazine, and a monthly electronic newsletter. It manages numerous citizen-science projects and websites, including the Webby Award-winning All About Birds.",
   active: true,
   category: "animals",
   user: catherine,
-  rresearcherbio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, et nostrum. Consectetur consequuntur iure tenetur id voluptatibus neque, labore explicabo sapiente vero officiis, natus blanditiis necessitatibus quod, ipsam quas ad.",
+  rresearcherbio: "I have worked in the field of wildlife conservation in a variety of settings around the world over the last 20 years: field work, laboratories, zoos, aquaria, and wildlife sanctuaries. My undergraduate degree is in Environmental Biology from Columbia University. I received a DVM from Tufts University in 2004 and an MPH from the University of Iowa in 2010. I am currently in my last year of the MVetSci Conservation Medicine program at University of Edinburgh working on my dissertation project. I am interested in zoonotic diseases and have been especially curious about the tick-borne pathogens on Guam as I have seen devastating illness in animals.",
   current_funding: 3000,
   desired_funding: 7000
 )
@@ -157,7 +157,7 @@ pcam = Project.new(
   active: true,
   category: "animals",
   user: john,
-  rresearcherbio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, et nostrum. Consectetur consequuntur iure tenetur id voluptatibus neque, labore explicabo sapiente vero officiis, natus blanditiis necessitatibus quod, ipsam quas ad.",
+  rresearcherbio: "",
   current_funding: 1500,
   desired_funding: 4000
 )
@@ -186,7 +186,7 @@ pcam = Project.new(
 
 # print "."
 
-ebird.remote_photo_url = "https://images.unsplash.com/photo-1558692398-8045562d5988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+ebird.remote_photo_url = "https://images.unsplash.com/photo-1444465146604-4fe67bfac6e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80"
 ebird.save
 
 print "."
