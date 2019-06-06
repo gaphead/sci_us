@@ -55,10 +55,6 @@
 
  <div id="project-info-links" class="col-sm-12 col-md-4 col-lg-4">
     <div class="participate-fund-container">
-      <br>
-      <br>
-      <!-- participate  -->
-      <%= link_to "Participate", { controller: :projects, action: :project_counter }  , class: 'btn btn-light', data: @project.category, id: 'participate-btn',target: :_blank, method: :post %>
       <!-- save to favorites -->
       <div class="favorite-fund">
         <% if user_signed_in? %>
@@ -80,12 +76,6 @@
         <br>
       </div>
         <div class="fund-section">
-          <div class="fund-button">
-            <%= form_tag donations_path do %>
-              <%= hidden_field_tag 'project_id', @project.id %>
-              <%= submit_tag 'Fund Project', class: 'btn btn-info', id: 'donate-btn'%>
-            <% end %>
-          </div>
         <!-- Progress Bar -->
           <div id="progress-all">
             <div class="progress" style="height: 28px; background-color: lightgrey; width: 100%; border-radius: 50px; border: 1px;">
@@ -105,6 +95,15 @@
             </div>
           </div>
         </div>
+        <div class="fund-button">
+          <%= form_tag donations_path do %>
+            <%= hidden_field_tag 'project_id', @project.id %>
+            <%= submit_tag 'Fund Project', class: 'btn btn-info', id: 'donate-btn'%>
+          <% end %>
+        </div>
+        <br>
+        <!-- participate  -->
+        <%= link_to "Participate in #{@project.name}", { controller: :projects, action: :project_counter }  , class: 'btn btn-light', data: @project.category, id: 'participate-btn',target: :_blank, method: :post %>
       </div>
     </div>
   </div>
