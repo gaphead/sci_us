@@ -49,7 +49,7 @@ class ProjectsController < ApplicationController
 
     if counter.counter == 1
       redirect_to @project.url, flash: {
-        message: "You just got as badge in the #{counter.category} catagory",
+        message: "You just got an achievment in the #{counter.category} catagory",
         category: counter.category
       }
     else
