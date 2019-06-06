@@ -139,7 +139,9 @@ ebird = Project.new(
   active: true,
   category: "animals",
   user: john,
-  rresearcherbio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, et nostrum. Consectetur consequuntur iure tenetur id voluptatibus neque, labore explicabo sapiente vero officiis, natus blanditiis necessitatibus quod, ipsam quas ad."
+  rresearcherbio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, et nostrum. Consectetur consequuntur iure tenetur id voluptatibus neque, labore explicabo sapiente vero officiis, natus blanditiis necessitatibus quod, ipsam quas ad.",
+  current_funding: 3000,
+  desired_funding: 7000
 )
 
 pcam = Project.new(
@@ -157,7 +159,9 @@ pcam = Project.new(
   active: true,
   category: "animals",
   user: john,
-  rresearcherbio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, et nostrum. Consectetur consequuntur iure tenetur id voluptatibus neque, labore explicabo sapiente vero officiis, natus blanditiis necessitatibus quod, ipsam quas ad."
+  rresearcherbio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, et nostrum. Consectetur consequuntur iure tenetur id voluptatibus neque, labore explicabo sapiente vero officiis, natus blanditiis necessitatibus quod, ipsam quas ad.",
+  current_funding: 1500,
+  desired_funding: 4000
 )
 # sci_lab.remote_photo_url = "https://www.scienceathome.org/wp-content/uploads/2018/05/slsd1-1200x691.png"
 # sci_lab.save
