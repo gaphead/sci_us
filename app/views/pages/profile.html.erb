@@ -1,83 +1,170 @@
+<div class="profile-intro-container">
+  <div class="row">
+    <div class="col-sm-12 col-md-2 container">
+      <div class='container'>
+        <div class='opener'>
+          <div class='text-center pt-4'>
+            <h5>Profile</h1>
+            <%= cl_image_tag @user.photo, class: "avatar-large", alt: "your profile picture", width: 100 unless @user.photo.blank? %>
+          </div>
+        <!--   <div class='text-center pt-4'>
+            <h1><%= @user.first_name %> <%= @user.last_name %></h>
+          </div> -->
+          <div class='text-center pt-4'>
+            <p><%= @user.email %></p>
+            <p><%= @user.description %></p>
+          </div>
+          <div class="text-center pt-4">
 
-<div class="row">
-  <div class="col-sm-12 col-md-4">
-    <div class='container'>
-      <div class='opener'>
-        <div class='text-center pt-4'>
-          <h4>Profile</h4>
-          <%= cl_image_tag @user.photo, class: "avatar-small", alt: "your profile picture", width: 100 unless @user.photo.blank? %>
-        </div>
-        <div class='text-center pt-4'>
-          <h1><%= @user.first_name %> <%= @user.last_name %></h>
-        </div>
-        <div class='text-center pt-4'>
-          <p><%= @user.email %></p>
-          <p><%= @user.description %></p>
-        </div>
-        <div class="text-center pt-4">
-
-          <!-- check that this logic actually works to hide the edit button from other users' profiles -->
-          <% if current_user.id == @user.id %>
-            <%= link_to "Edit profile", edit_user_registration_path(@user), class: 'btn btn-secondary' %>
-          <% end %>
+            <!-- check that this logic actually works to hide the edit button from other users' profiles -->
+            <% if current_user.id == @user.id %>
+              <%= link_to "Edit profile", edit_user_registration_path(@user), class: 'btn btn-secondary' %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-    <div class="badges">
-      <h4>My Badges</h4>
-      <% archivist = UserCategoryCounter.find_by("user_id = ? AND category = ?",params[:id].to_i ,"history") %>
-      <img src="https://cdn4.iconfinder.com/data/icons/unigrid-flat-multimedia-vol-5/90/020_244_scroll_paper_text_old_log_history_manuscript-512.png" alt="" height="42" width="42" style="<%= 'opacity: 1;' if archivist && archivist.counter >= 5 %>">
+    <div class="col-sm-12 col-md-8">
+      <div class="container">
+        <div class='opener'>
+          <div class='text-left pt-4'>
+            <h5>Badges</h5>
+            <div class="badges">
+                <%unless UserCategoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"history").first.nil? %>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT70GqjHplhbPH-9nc8LbjpZSw7AovBvwF_bTL9guLGezvM43__CQ" alt="" height="42" width="42" id='#Archivist' class="<%= 'Archivist-active' if UserCategoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"history").first.counter >= 5 %>">
+                <%end%>
+                  <%unless UserCategoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"animals").first.nil? %>
+                      <img src="https://cms-assets.tutsplus.com/uploads/users/107/posts/24710/image/35-flat-animals-fox.jpg" alt="" height="42" width="42" id='#animals' class= "<%= 'animals-active' if UserCategoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"animals").first.counter >= 5 %>">
+                  <%end%>
+                  <%unless UserCategoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"astronomy").first.nil? %>
+                    <%if UserCategoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"astronomy").first.counter >= 5 %>
+                      <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/meteor-1427675-1207105.png" alt="" height="42" width="42" class='astronomy'>
+                    <%end%>
+                  <%end%>
+                <%unless UserCategoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"biology").first.nil? %>
+                 <%if UserCategoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"biology").first.counter >= 5 %>
+              <img src="https://cdn0.iconfinder.com/data/icons/ecology-63/64/lab-biology-science-research-chemistry-512.png" alt="" height="42" width="42" class='biology'>
+              <%end%>
+                <%end%>
+                  <%unless UserCategoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"chemistry").first.nil? %>
+                    <%if UserCategoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"chemistry").first.counter >= 5 %>
+                      <img src="https://image.flaticon.com/icons/png/512/562/562124.png" alt="" height="42" width="42" class='chemistry'>
+                    <%end%>
+                <%end%>
+                  <%unless UserCategoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"ecology").first.nil? %>
+                    <%if UserCategoryCounter.where("user_id = ? AND category = ?",params[:id].to_i ,"ecology").first.counter >= 5 %>
+                      <img src="https://cdn0.iconfinder.com/data/icons/ecology-and-nature-vol-2/600/earth-globe-Conservation-Eco-ecology-nature-plant-product-environment-512.png" alt="" height="42" width="42" class='ecology'>
+                    <%end%>
+                <%end%>
+                <% if current_user.researcher_status == true %>
+                  <img src="https://cdn1.iconfinder.com/data/icons/occupations-3/100/17-512.png" alt="" height="42" width="42" class='reasearcher'>
+                <%end%>
 
-          <% animal = UserCategoryCounter.find_by("user_id = ? AND category = ?",params[:id].to_i ,"animals") %>
-      <img src="https://cdn0.iconfinder.com/data/icons/hipster/128/Hipster-06-512.png" alt="" height="42" width="42"style="<%= 'opacity: 1;' if animal && animal.counter >= 5 %>">
 
-      <% astronomy = UserCategoryCounter.find_by("user_id = ? AND category = ?",params[:id].to_i ,"astronomy") %>
-      <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/meteor-1427675-1207105.png" alt="" height="42" width="42" style="<%= 'opacity: 1;' if astronomy && astronomy.counter >= 5 %>">
-      <% biology = UserCategoryCounter.find_by("user_id = ? AND category = ?",params[:id].to_i ,"biology") %>
-        <img src="https://cdn0.iconfinder.com/data/icons/ecology-63/64/lab-biology-science-research-chemistry-512.png" alt="" height="42" width="42" style="<%= 'opacity: 1;' if biology && biology.counter >= 5 %>">
-      <% chemistry = UserCategoryCounter.find_by("user_id = ? AND category = ?",params[:id].to_i ,"chemistry") %>
-        <img src="https://image.flaticon.com/icons/png/512/562/562124.png" alt="" height="42" width="42" style="<%= 'opacity: 1;' if chemistry && chemistry.counter >= 5 %>">
-      <% ecology = UserCategoryCounter.find_by("user_id = ? AND category = ?",params[:id].to_i ,"ecology") %>
-        <img src="https://cdn0.iconfinder.com/data/icons/ecology-and-nature-vol-2/600/earth-globe-Conservation-Eco-ecology-nature-plant-product-environment-512.png" alt="" height="42" width="42" style="<%= 'opacity: 1;' if ecology && ecology.counter >= 5 %>">
-
-        <img src="https://cdn2.iconfinder.com/data/icons/rewards-1/512/present-512.png" alt="" height="42" width="42" style="<%= 'opacity: 1;' unless Donation.where(user_id: current_user.id).empty?%>">
-
-        <img class="first-login" src="https://cdn2.iconfinder.com/data/icons/flaturici-set-4/512/rocket-512.png" alt="created account badge" height="42" width="42" style="opacity: 1" data-toggle="tooltip" data-placement="top" title="Welcome to the Community, Professor <%= @user.last_name%>" >
-    </div>
-  </div>
-  <div class="col-sm-12 col-md-7">
-    <div class="container">
-      <div class='opener'>
-        <div class='text-left pt-4'>
-          <h4>Favorite Projects</h4>
-          <br>
-          <div class="card-container card-container-profile">
-            <% @user.projects.each do |p| %>
-              <div class="card p.category" style="width: 40%;">
-                <div class="card-photo card-photo-profile" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
-                  <% if user_signed_in? %>
-                    <div data-project-id="<%= p.id %>">
-                      <%= link_to toggle_project_favorites_path(p), method: :post, remote: true do %>
-                        <% if current_user.has_favorited?(p) %>
-                          <i id="star", class="fas fa-star fa-lg fa-rocket-click"></i>
-                        <% else %>
-                          <i id="star", class="fas fa-star fa-lg"></i>
-                        <% end %>
-                      <% end %>
-                    </div>
-                  <% end %>
-                </div>
-                <div class="card-body card-body-profile">
-                  <%= link_to project_path(p.id), class: 'project_show_link' do %>
-                  <p class="card-title"><%= p.name %></p>
-                  <p class="card-text"><%= p.short_description %></p>
-                  <% end %>
+              <div class="card-product">
+                <img class="first-login" src="https://cdn2.iconfinder.com/data/icons/flaturici-set-4/512/rocket-512.png" alt="created account badge" height="42" width="42">
+                <div class="card-product-infos">
+                  <h2>Product name</h2>
+                  <p>Product description with <strong>relevant info</strong> only.</p>
                 </div>
               </div>
-            <% end %>
-          </div>
+              <div class="hover-text" >Welcome to the Community, Professor <%= @user.last_name %>!</div>
+              <div class="hover-text-arch">you are becoming quite the historian!</div>
 
+              <div class="card-product">
+                <img class="first-login" src="https://cdn2.iconfinder.com/data/icons/flaturici-set-4/512/rocket-512.png" alt="created account badge" height="42" width="42">
+                <div class="card-product-infos">
+                  <h2>Product name</h2>
+                  <p>Product description with <strong>relevant info</strong> only.</p>
+                </div>
+              </div>
+
+              <div class="card-product">
+                <img class="first-login" src="https://cdn2.iconfinder.com/data/icons/flaturici-set-4/512/rocket-512.png" alt="created account badge" height="42" width="42">
+                <div class="card-product-infos">
+                  <h2>Product name</h2>
+                  <p>Product description with <strong>relevant info</strong> only.</p>
+                </div>
+              </div>
+
+              <div class="card-product">
+                <img class="first-login" src="https://cdn2.iconfinder.com/data/icons/flaturici-set-4/512/rocket-512.png" alt="created account badge" height="42" width="42">
+                <div class="card-product-infos">
+                  <h2>Product name</h2>
+                  <p>Product description with <strong>relevant info</strong> only.</p>
+                </div>
+              </div>
+
+              <div class="card-product">
+                <img class="first-login" src="https://cdn2.iconfinder.com/data/icons/flaturici-set-4/512/rocket-512.png" alt="created account badge" height="42" width="42">
+                <div class="card-product-infos">
+                  <h2>Product name</h2>
+                  <p>Product description with <strong>relevant info</strong> only.</p>
+                </div>
+              </div>
+
+              <div class="card-product">
+                <img class="first-login" src="https://cdn2.iconfinder.com/data/icons/flaturici-set-4/512/rocket-512.png" alt="created account badge" height="42" width="42">
+                <div class="card-product-infos">
+                  <h2>Product name</h2>
+                  <p>Product description with <strong>relevant info</strong> only.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 col-md-8 container">
+    <div class='container favorited-profile'>
+      <div class="favorited-profile-header">
+        <div>
+          <h5>Projects that you have favorited</h5>
+          <p>Go back to browse to find more research.</p>
+        </div>
+        <div>
+          <%= link_to "Browse All", projects_path, class: "btn btn-browse" %>
+        </div>
+      </div>
+
+      <div class="card-container card-container-profile">
+
+        <% @user.projects.each do |p| %>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-index<%= p.category %>">
+              <%= link_to(project_path(p), class: "card-link") do %>
+              <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
+              </div>
+              <% end %>
+
+              <div class="card-body-">
+                <div class="star-project-tile">
+                  <%= link_to(project_path(p), class: "card-link") do %>
+                    <h5 class="card-title"><%= p.name %></h5>
+                  <% end %>
+                  <% if user_signed_in? %>
+                  <div data-project-id="<%= p.id %>">
+                    <%= link_to toggle_project_favorites_path(p), method: :post, remote: true do %>
+                    <% if current_user.has_favorited?(p) %>
+                      <i id="star", class="fas fa-star fa-lg fa-rocket-click"></i>
+                    <% else %>
+                      <i id="star", class="fas fa-star fa-lg"></i>
+                    <% end %>
+                    <% end %>
+                  </div>
+                  <% end %>
+                </div>
+                <p class="card-text"><%= p.short_description %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+
       </div>
     </div>
   </div>

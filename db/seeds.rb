@@ -97,29 +97,29 @@ mind = Project.new(
 #   category: "astronomy"
 # )
 
-sci_lab = Project.new(
-  name: "Skill Lab: Science Detective",
-  short_description: "Have you ever thought about what makes you special as a gamer?",
-  long_description: "Skill Lab: Science Detective is a collection of minigames with a detective story theme that challenges your mind in different ways. The game enables you to test your gaming brain skills. In this process, ScienceAtHome can generate a map of your cognitive skills at different levels. We want to know your strengths and weaknesses for better understanding how they affect your performance in the other games from ScienceAtHome. Maybe having a good memory makes players rock the Alien Game? Is hand-eye coordination the basis for success in Quantum Moves? We can't wait to find out!",
-  url: "https://www.scienceathome.org/games/skill-lab-science-detective/",
-  location: "online",
-  organization: "ScienceAtHome",
-  org_description: "ScienceAtHome is a diverse team of scientists, game developers, designers and visual artists based at Aarhus University, Denmark. We create fun scientific games, with the aim of revolutionising scientific research and teaching by game-play!",
-  active: true,
-  category: "chemistry"
-)
+# sci_lab = Project.new(
+#   name: "Skill Lab: Science Detective",
+#   short_description: "Have you ever thought about what makes you special as a gamer?",
+#   long_description: "Skill Lab: Science Detective is a collection of minigames with a detective story theme that challenges your mind in different ways. The game enables you to test your gaming brain skills. In this process, ScienceAtHome can generate a map of your cognitive skills at different levels. We want to know your strengths and weaknesses for better understanding how they affect your performance in the other games from ScienceAtHome. Maybe having a good memory makes players rock the Alien Game? Is hand-eye coordination the basis for success in Quantum Moves? We can't wait to find out!",
+#   url: "https://www.scienceathome.org/games/skill-lab-science-detective/",
+#   location: "online",
+#   organization: "ScienceAtHome",
+#   org_description: "ScienceAtHome is a diverse team of scientists, game developers, designers and visual artists based at Aarhus University, Denmark. We create fun scientific games, with the aim of revolutionising scientific research and teaching by game-play!",
+#   active: true,
+#   category: "chemistry"
+# )
 
-aliengame = Project.new(
-  name: "Alien Game",
-  short_description: "How to solve complex problems?",
-  long_description: "Computers are getting smarter and smarter every day. A computer can tell you which exit to take off the highway or what kind of books to read. The one thing computers can’t do (yet) is solve complex problems. And problem-solving is vital for business AND for building better computers!",
-  url: "https://www.scienceathome.org/games/alien-game/",
-  location: "browser",
-  organization: "ScienceAtHome",
-  org_description: "ScienceAtHome is a diverse team of scientists, game developers, designers and visual artists based at Aarhus University, Denmark. We create fun scientific games, with the aim of revolutionising scientific research and teaching by game-play!",
-  active: true,
-  category: "astronomy"
-)
+# aliengame = Project.new(
+#   name: "Alien Game",
+#   short_description: "How to solve complex problems?",
+#   long_description: "Computers are getting smarter and smarter every day. A computer can tell you which exit to take off the highway or what kind of books to read. The one thing computers can’t do (yet) is solve complex problems. And problem-solving is vital for business AND for building better computers!",
+#   url: "https://www.scienceathome.org/games/alien-game/",
+#   location: "browser",
+#   organization: "ScienceAtHome",
+#   org_description: "ScienceAtHome is a diverse team of scientists, game developers, designers and visual artists based at Aarhus University, Denmark. We create fun scientific games, with the aim of revolutionising scientific research and teaching by game-play!",
+#   active: true,
+#   category: "astronomy"
+# )
 
 ebird = Project.new(
   name: "Cornell's Birdfeeder Watch",
@@ -141,20 +141,15 @@ ebird = Project.new(
 
 print "Creating projects"
 
-ebird.remote_photo_url = "https://images.unsplash.com/photo-1558692398-8045562d5988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-ebird.save
+# sci_lab.remote_photo_url = "https://www.scienceathome.org/wp-content/uploads/2018/05/slsd1-1200x691.png"
+# sci_lab.save
 
-print "."
+# print "."
 
-sci_lab.remote_photo_url = "https://www.scienceathome.org/wp-content/uploads/2018/05/slsd1-1200x691.png"
-sci_lab.save
+# aliengame.remote_photo_url = "https://www.scienceathome.org/wp-content/uploads/2017/02/Alien-Game-slideshow1-1200x663.jpg"
+# aliengame.save
 
-print "."
-
-aliengame.remote_photo_url = "https://www.scienceathome.org/wp-content/uploads/2017/02/Alien-Game-slideshow1-1200x663.jpg"
-aliengame.save
-
-print "."
+# print "."
 
 apairs.remote_photo_url = "https://is4-ssl.mzstatic.com/image/thumb/Purple127/v4/c9/61/69/c96169d0-8eae-851b-e506-83396b270117/pr_source.jpg/246x0w.jpg"
 apairs.save
@@ -168,6 +163,11 @@ print "."
 
 mind.remote_photo_url = "https://static.thenounproject.com/png/51575-200.png"
 mind.save
+
+print "."
+
+ebird.remote_photo_url = "https://images.unsplash.com/photo-1558692398-8045562d5988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+ebird.save
 
 print "."
 
