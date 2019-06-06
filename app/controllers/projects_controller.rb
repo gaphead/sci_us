@@ -47,9 +47,9 @@ class ProjectsController < ApplicationController
     counter.counter += 1
     counter.save
 
-    if counter.counter == 5
+    if counter.counter == 1
       redirect_to @project.url, flash: {
-        message: "ACHIEVEMENT FOR #{counter.category.upcase}",
+        message: "You just got as badge in the #{counter.category} catagory",
         category: counter.category
       }
     else
