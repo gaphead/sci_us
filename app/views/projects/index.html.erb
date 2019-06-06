@@ -3,58 +3,65 @@
 <div class="search-container">
   <div class="container">
     <div class="browse-header">
-      <h3><strong>Explore citizen science projects and contribute to hundreds of experiments</strong></h3>
+      <h3 class="text-center"><strong>Explore citizen science projects and contribute to hundreds of experiments</strong></h3>
     </div>
   <!--   <div class="browse-text">
       <p>Explore different fields of research to find hundreds of experiments to contribute to.</p>
     </div> -->
 
   <!-- Icons -->
-    <div class="icons mt-5 mb-5">
-      <div class="row row-icons">
+    <div class="icons mt-5 mb-5 text-center">
+      <div class="row row-icons text-center">
         <!-- Animals -->
-        <div class="col-sm-6 col-md-2 col-lg-1">
-          <%= link_to projects_path(query: 'animals') do %>
-            <i class="fas fa-frog fa-2x filter text-center"></i>
-            <p class="ml-3">Animals</p>
+        <div class="col-sm-6 col-md-2 col-lg-1 d-flex flex-direction-column">
+          <%= link_to projects_path(query: 'animals'), class: "text-center" do %>
+            <i class="fas fa-frog fa-2x filter"></i>
+            <p class="i-filt">Animals</p>
           <% end %>
         </div>
-          <!-- Biology -->
-        <div class="col-sm-6 col-md-2 col-lg-1">
-          <%= link_to projects_path(query: 'biology') do %>
+        <!-- Biology -->
+        <div class="col-sm-6 col-md-2 col-lg-1 d-flex flex-direction-column">
+          <%= link_to projects_path(query: 'biology'), class: "text-center" do %>
             <i class="fas fa-dna fa-2x filter"></i>
-            <p class="ml-3">Biology</p>
+            <p class="i-filt">Biology</p>
           <% end %>
         </div>
-          <!-- Ecology -->
-        <div class="col-sm-6 col-md-2 col-lg-1">
-          <%= link_to projects_path(query: 'ecology') do %>
+        <!-- Ecology -->
+        <div class="col-sm-6 col-md-2 col-lg-1 d-flex flex-direction-column">
+          <%= link_to projects_path(query: 'ecology'), class: "text-center" do %>
             <i class="filter fas fa-seedling fa-2x"></i>
-            <p class="ml-3">Ecology</p>
+            <p class="i-filt">Ecology</p>
           <% end %>
         </div>
-             <!-- History -->
-        <div class="col-sm-6 col-md-2 col-lg-1">
-          <%= link_to projects_path(query: 'history') do %>
+       <!-- History -->
+        <div class="col-sm-6 col-md-2 col-lg-1 d-flex flex-direction-column">
+          <%= link_to projects_path(query: 'history'), class: "text-center" do %>
             <i class="filter fas fa-history fa-2x"></i>
-            <p class="ml-3">History</p>
+            <p class="i-filt">History</p>
           <% end %>
         </div>
-              <!-- Space  -->
-        <div class="col-sm-6 col-md-2 col-lg-1">
-          <%= link_to projects_path(query: 'astronomy') do %>
-            <i class="filter fas fa-rocket fa-2x mr-3"></i>
-            <p class="ml-3">Astronomy</p>
+        <!-- Space  -->
+        <div class="col-sm-6 col-md-2 col-lg-1 d-flex flex-direction-column">
+          <%= link_to projects_path(query: 'astronomy'), class: "text-center" do %>
+            <i class="filter fas fa-rocket fa-2x"></i>
+            <p class="i-filt">Astronomy</p>
           <% end %>
         </div>
-          <!-- Chemistry -->
-        <div class="col-sm-6 col-md-2 col-lg-1">
-          <%= link_to projects_path(query: 'chemistry') do %>
-            <i class="filter fas fa-flask fa-2x mr-3"></i>
-            <p class="ml-3">Chemistry</p>
+        <!-- Chemistry -->
+<!--         <div class="col-sm-6 col-md-2 col-lg-1 d-flex flex-direction-column">
+          <%#= link_to projects_path(query: 'chemistry'), class: "text-center" do %>
+            <i class="filter fas fa-flask fa-2x"></i>
+            <p class="i-filt">Chemistry</p>
+          <%# end %>
+        </div> -->
+        <!-- All -->
+        <div class="col-sm-6 col-md-2 col-lg-1 d-flex flex-direction-column">
+          <%= link_to projects_path(query: ''), class: "text-center" do %>
+            <i class="fas fa-infinity fa-2x"></i>
+            <p class="i-filt">All</p>
           <% end %>
         </div>
-          <!-- Medicine -->
+        <!-- Medicine -->
       <!--   <div class="col-sm-6 col-md-2 col-lg-1">
           <div class="text-center cat-filter">
             <i class="filter fas fa-stethoscope fa-2x mr-3" title="Medicine"></i>
@@ -99,7 +106,7 @@
     </div>
   </div>
   <div class="search-bar">
-    <p><%= link_to 'Create an account', new_project_path %> to favorite projects to your profile and collect badges.</p>
+    <!-- <p><%#= link_to 'Create an account', new_project_path %> to favorite projects to your profile and collect badges.</p> -->
   </div>
   <!-- Cards-->
   <div class="row">
