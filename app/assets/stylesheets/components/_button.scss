@@ -6,7 +6,6 @@
     margin: 1.75vh 0.5vw;
     padding: 0.4em 1.2vw;
     text-transform: capitalize;
-
 }
 
 .learn-more-button:hover{
@@ -21,15 +20,20 @@
   margin-bottom: 25px;
   color: white;
   background-color: #ee4540;
-  font-size: 20px;
 }
 
 #donate-btn {
   font-weight: bold;
   border-radius: 10px;
   margin: 25px;
-  padding: 10px 15px;
+  padding: 5px 15px;
   font-weight: 30px;
+  color: white;
+  background-color: rgb(211, 164, 78);
+  border: none;
+  &:hover {
+    background-color: rgba(204,125,0,0.7);
+  }
 }
 
 .btn-primary {
