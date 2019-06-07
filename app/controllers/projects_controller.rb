@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
     else
       @projects = Project.all
     end
+    @projects = @projects.order(:created_at)
   end
 
   def create
