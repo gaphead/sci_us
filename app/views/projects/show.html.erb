@@ -11,8 +11,8 @@
     <% end %>
     <br>
     <%= cl_image_tag(@project.photo, crop: :fill, gravity: :face, class: "project-photo") %>
-    <div class="category-triangle" id="triangle">
-      <p id="category">Category: <%=@project.category.capitalize%></p>
+    <div class="category-triangle mt-4" id="triangle">
+      <!-- <p id="category">Category: <%=@project.category.capitalize%></p> -->
     </div>
 
     <div class="show-section">
@@ -54,13 +54,13 @@
   </div>
 
  <div id="project-info-links" class="col-sm-12 col-md-4 col-lg-4">
-    <div class="participate-fund-container">
+    <div class="participate-fund-container pt-1">
       <!-- save to favorites -->
       <div class="favorite-fund">
         <% if user_signed_in? %>
           <div class="project-favorite">
             <div class="favorite-padding">
-              <p>Save this project to your favorites </p>
+              <p>Save project to favorites </p>
             </div>
             <div data-project-id="<%= @project.id %>">
               <%= link_to toggle_project_favorites_path(@project.id), method: :post, remote: true do %>

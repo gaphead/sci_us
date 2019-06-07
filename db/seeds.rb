@@ -15,11 +15,11 @@ erik = User.new(
 )
 
 aaron = User.new(
-  first_name: 'Aaron',
-  last_name: 'feldman',
-  email: 'emailaaron@email.com',
-  password: '123456'
-  )
+  first_name: "Aaron",
+  last_name: "Feldman",
+  email: "emailaaron@email.com",
+  password: "123456"
+)
 
 alex = User.new(
   first_name: "Alex",
@@ -31,14 +31,21 @@ alex = User.new(
 catherine = User.new(
   first_name: "Catherine",
   last_name: "Ryan",
-  email: "catherine@email.com",
+  email: "emailcatherine@email.com",
   password: "123456"
 )
 
 john = User.new(
   first_name: "John",
   last_name: "Pandit",
-  email: "john@email.com",
+  email: "emailjohn@email.com",
+  password: "123456"
+)
+
+sarah = User.new(
+  first_name: "Sarah",
+  last_name: "Parcak",
+  email: "emailsarah@email.com",
   password: "123456"
 )
 
@@ -46,25 +53,37 @@ john = User.new(
 print "Creating users"
 
 erik.remote_photo_url = "https://lh3.googleusercontent.com/-FqOP9ADmAUU/W04mHOMxzyI/AAAAAAAAABw/VlrHRB759PIx2SRuysFlMn0N8u7jpBqVQCEwYBhgL/w280-h280-p/ERik.png"
-erik.save
+erik.save!
+
+print "."
+
+aaron.remote_photo_url = "https://res.cloudinary.com/dcwi01zq2/image/upload/v1559918827/aaron_xbpd7s.jpg"
+aaron.save!
 
 print "."
 
 alex.remote_photo_url = "https://www.alextangpsychology.com/uploads/8/3/0/2/83023440/published/file-000_3.jpeg?1496814685"
-alex.save
+alex.save!
 
 print "."
 
-
 catherine.remote_photo_url = "https://images.unsplash.com/photo-1551863863-e01bbf274ef6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
+catherine.save!
 
-catherine.save
+print "."
+
+# add john's photo
+john.save!
+
+print "."
+
+sarah.remote_photo_url = "https://d73cxpb95fml3.cloudfront.net/assets/media/images/about/team/sarah.jpg"
+sarah.save!
+
+print "."
 
 puts "Done"
 
-
-aaron.remote_photo_url = 'https://scontent.fyxk1-1.fna.fbcdn.net/v/t1.0-9/20770194_10155113158529825_624466131833219709_n.jpg?_nc_cat=102&_nc_ht=scontent.fyxk1-1.fna&oh=a7f8a061b0c8bf25c64da97f7d5a404c&oe=5D52B8E5'
-aaron.save
 # Projects
 
 # apairs = Project.new(
@@ -175,13 +194,33 @@ pcam = Project.new(
   org_description: "Westminster undergraduate students have been working alongside experts on a number of cool projects. They assist in the yearly banding effort, help to establish a minimum banding size for baby pelicans and measure the mortality of pelicans on Gunnison Island, and assist in analyzing the images from the PELIcams.",
   active: true,
   category: "animals",
-
   user: john,
   rresearcherbio: "",
-
   current_funding: 1500,
   desired_funding: 4000
 )
+
+gxplore = Project.new(
+  name: "GlobalXplorer",
+  short_description: "With your help, GlobalXplorer° will strive to discover and protect our shared human story.",
+  long_description: "We are at a tipping point. 'We're not just losing objects, we're losing opportunities to discover who we are. The last five years have been horrific for archaeology. My colleagues and I have spent countless hours surveying the destruction, and the bad news trickles out in the press. Every day, we read reports of stolen ancient treasures sold at major auction houses, of incredible ancient sites bulldozed in Central America, of revered ancient sites in the Middle East blown up by ISIL.'",
+  about: "GlobalXplorer° is an online platform that uses the power of the crowd to analyze the incredible wealth of satellite images currently available to archaeologists. Launched by 2016 TED Prize winner and National Geographic Fellow, Dr. Sarah Parcak, as her “wish for the world,” GlobalXplorer° aims to bring the wonder of archaeological discovery to all, and to help us better understand our connection to the past.",
+  context: "So far, Dr. Parcak’s techniques have helped locate 17 potential pyramids, in addition to 3,100 potential forgotten settlements and 1,000 potential lost tombs in Egypt — and she's also made significant discoveries in the Viking world and Roman Empire. With the help of citizen scientists across the globe, she hopes to uncover much, much more. This is just the beginning. With additional funding, Dr. Parcak aims to revolutionize how modern archaeology is done altogether, by creating a global network of citizen explorers, opening field schools to guide archaeological preservation on the ground, developing an archaeological institute, and even launching a satellite designed with archaeology in mind.",
+  significance: "So far, Sarah’s methods have proved over 90% successful in producing significant discoveries.",
+  goals: "Satellite imagery gives us a new tool in the global fight to protect our cultural heritage. Become a space archaeologist and document threats to ancient sites. Help authorities get there first.",
+  url: "https://www.globalxplorer.org/",
+  location: "Online",
+  organization: "GlobalXplorer",
+  org_description: "Our first expedition takes us to Peru, home of Machu Picchu and the Nasca Lines. With your help, we hope to reduce looting and encroachment, as well as discover and protect sites.",
+  active: true,
+  category: "history",
+  user: sarah,
+  rresearcherbio: "Sarah Parcak is from Bangor, Maine. She holds degrees from Yale (BA) and Cambridge University (M.Phil and PhD), is a Fellow of the Society of Antiquaries (an elected position), a National Geographic Fellow, and a 2014 TED Senior Fellow. Sarah serves as the founding director of the Laboratory for Global Observation at the University of Alabama at Birmingham, where she is an Associate Professor in the Department of Anthropology. She is also the CEO of SpectralGlobe technologies (SpectralGlobe.com), a company which specializes in using remote sensing technologies to provide innovative landscape solutions. She is the winner of the 2016 TED Prize and president of GlobalXplorer°.",
+  current_funding: 2850,
+  desired_funding: 5000
+)
+
+
 # sci_lab.remote_photo_url = "https://www.scienceathome.org/wp-content/uploads/2018/05/slsd1-1200x691.png"
 # sci_lab.save
 
@@ -207,8 +246,6 @@ pcam = Project.new(
 
 # print "."
 
-print "."
-
 # stars.remote_photo_url = 'https://blog.bestbuy.ca/wp-content/uploads/2017/04/Telescopes-and-star-gazing-essentials-1.jpg'
 # stars.save
 
@@ -223,7 +260,7 @@ animal_words = %w(fynbos wildlife owls mammal animals zebra hawk fauna bird monk
 bio_words = %w(arthropods diversity species biological viruses cells organs medicine specimens brains antibiotics trail jarrah)
 # chem_words = %w()
 eco_words = %w(forests forest ocean marine vessel leaves plant plants climate weather manchester leaf)
-hist_words = %w(archivist archivists mysteries handwritten notes wwi military transcribe war cairo illustraions history historical)
+hist_words = %w(heritage cultural loss archivist archivists mysteries handwritten notes wwi military transcribe war cairo illustraions history historical)
 # med_words = %w()
 # ocean_words = %w()
 # phys_words = %w()
@@ -328,12 +365,17 @@ json_strings.each do |json_string|
 end
 
 ebird.remote_photo_url = "https://images.unsplash.com/photo-1444465146604-4fe67bfac6e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80"
-ebird.save
+ebird.save!
 
 print "."
 
 pcam.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/2ab1eff8-1532-4059-8513-09e41eb96694.jpeg"
-pcam.save
+pcam.save!
+
+print "."
+
+gxplore.remote_photo_url = "https://res.cloudinary.com/dcwi01zq2/image/upload/v1559916851/Screen_Shot_2019-06-07_at_9.50.38_AM_ockhlg.png"
+gxplore.save!
 
 print "."
 
