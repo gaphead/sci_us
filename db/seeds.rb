@@ -67,12 +67,12 @@ alex.save!
 
 print "."
 
-catherine.remote_photo_url = "https://images.unsplash.com/photo-1551863863-e01bbf274ef6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
+catherine.remote_photo_url = "https://api.curtisbrown.co.uk/media/73114/show/square"
 catherine.save!
 
 print "."
 
-# add john's photo
+john.remote_photo_url = "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/01/25/104239559-HARWOOD_J_8x10.240x240.jpg?"
 john.save!
 
 print "."
