@@ -245,7 +245,7 @@ ebird.save!
 
 print "."
 
-pcam.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/2ab1eff8-1532-4059-8513-09e41eb96694.jpeg"
+pcam.remote_photo_url = "https://images.unsplash.com/photo-1459515239697-320241f6dace?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
 pcam.save!
 
 print "."
