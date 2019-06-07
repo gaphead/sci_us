@@ -220,6 +220,45 @@ gxplore = Project.new(
   desired_funding: 5000
 )
 
+pcards = Project.new(
+  name: "Decoding Punch Cards",
+  short_description: "Help us remember the 25,926 men and women who brought a 'bit of home' to the allied forces during WWI.",
+  long_description: "From 1914 to 1918, the conflict that would come to be known as the First World War ensnared twenty-eight nations with a total population count of 1.5 billion, or 90% of the world’s known population. Fifty-nine million men fought in World War I, resulting in 7.7 million deaths and 18.6 million injuries. By the time America entered the war in 1917, it was clear that World War I would be remembered as a great humanitarian crisis. Prior to the American entry to the war, the YMCA had been providing services to the Allied forces as well as relief to prisoners of war. This was possible due to the United States’ status as a neutral nation. When President Wilson declared America’s involvement in the war on April 6, 1917, the YMCA pledged its support. Tapping the YMCA’s legacy of service during previous conflicts, the YMCA was asked to take on nearly all human service activities for the U.S. military.",
+  about: "On April 6, 1917 the United States Congress declared the United States' entry into the war effort. Within hours, John Mott, the General Secretary of the American Young Men's Christian Association (YMCA), sent a telegram to President Wilson offering the full cooperation of the YMCA in the war effort. From 1917 - 1919 a grand total of 25,926 men and women provided morale-boosting services ranging from education, recreation, and religious services at home and abroad. Help us uncover who these people were, and how they made life better for the men who served.",
+  context: "From 1914 to 1918, the conflict that would come to be known as the First World War ensnared twenty-eight nations with a total population count of 1.5 billion, or 90% of the world’s known population. Fifty-nine million men fought in World War I, resulting in 7.7 million deaths and 18.6 million injuries. By the time America entered the war in 1917, it was clear that World War I would be remembered as a great humanitarian crisis. Prior to the American entry to the war, the YMCA had been providing services to the Allied forces as well as relief to prisoners of war. This was possible due to the United States’ status as a neutral nation. When President Wilson declared America’s involvement in the war on April 6, 1917, the YMCA pledged its support. Tapping the YMCA’s legacy of service during previous conflicts, the YMCA was asked to take on nearly all human service activities for the U.S. military.",
+  significance: "The 25,926 men and women represented by these cards comprise what former President William Howard Taft called 'one of the greatest achievements of peace in all the history of human warfare.'",
+  goals: "This project seeks to shed light on these individuals and make freely available the biographical and demographic information contained within these cards by engaging citizen scientists in the coding of a large, currently inaccessible, collection of 25,926 punch cards containing a wealth of valuable demographic information and providing full, open source, access to the resulting data (including raw and collated) to scholars, students, and the public at large.",
+  url: "https://www.zooniverse.org/projects/buzzbean/decoding-punch-cards",
+  location: "Online",
+  organization: "Decoding Punch Cards",
+  org_description: "",
+  active: true,
+  category: "history",
+  user: catherine,
+  rresearcherbio: "I have worked in the field of historical preservation in a variety of settings around the world over the last 20 years: field work, museums, and archaeological digs. My undergraduate degree is in American History from Columbia University. I received a DVM from Tufts University in 2004 and an MPH from the University of Iowa in 2010. I am currently in my last year of the American History program at NYU working on my dissertation project.",
+  current_funding: 1300,
+  desired_funding: 1500
+)
+
+ebird.remote_photo_url = "https://images.unsplash.com/photo-1444465146604-4fe67bfac6e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80"
+ebird.save!
+
+print "."
+
+pcam.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/2ab1eff8-1532-4059-8513-09e41eb96694.jpeg"
+pcam.save!
+
+print "."
+
+gxplore.remote_photo_url = "https://res.cloudinary.com/dcwi01zq2/image/upload/v1559916851/Screen_Shot_2019-06-07_at_9.50.38_AM_ockhlg.png"
+gxplore.save!
+
+print "."
+
+pcards.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/2d9013f7-f284-491a-9e14-14683fe5e145.jpeg"
+pcards.save!
+
+print "."
 
 # sci_lab.remote_photo_url = "https://www.scienceathome.org/wp-content/uploads/2018/05/slsd1-1200x691.png"
 # sci_lab.save
@@ -356,27 +395,12 @@ json_strings.each do |json_string|
       desired_funding: funding_goal,
       current_funding: actual_funding
     )
-    unless name == "PELIcams"
+    unless name == "PELIcams" || name == "Decoding Punch Cards"
       new_project.remote_photo_url = "https://#{image_url}"
       new_project.save!
       print "."
     end
   end
 end
-
-ebird.remote_photo_url = "https://images.unsplash.com/photo-1444465146604-4fe67bfac6e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80"
-ebird.save!
-
-print "."
-
-pcam.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/2ab1eff8-1532-4059-8513-09e41eb96694.jpeg"
-pcam.save!
-
-print "."
-
-gxplore.remote_photo_url = "https://res.cloudinary.com/dcwi01zq2/image/upload/v1559916851/Screen_Shot_2019-06-07_at_9.50.38_AM_ockhlg.png"
-gxplore.save!
-
-print "."
 
 puts "Done"

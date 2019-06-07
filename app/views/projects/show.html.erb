@@ -37,7 +37,7 @@
       <% if @project.user.nil? == false %>
         <div class="researcher-bio">
           <div>
-            <%= cl_image_tag @project.user.photo, class: "avatar-small", align: "center", alt: "", width: 100 %>
+            <%= cl_image_tag @project.user.photo, class: "avatar-large", alt: "" %>
           </div>
           <div class="bio">
             <p><%= @project.rresearcherbio %></p>
