@@ -2,12 +2,6 @@
 
 <div class="new-donation-container">
   <div class="donation-card">
-    <!-- Title -->
-    <h5>Back <strong><%= @donation.project.name%></strong></h5>
-    <br>
-    <!-- Image -->
-    <div class="donation-image" style="background-image: url(<%= @donation.project.photo %>); background-size: cover; background-position: center center;"></div>
-    <br>
     <!-- Buttons -->
     <div class="donation-buttons">
       <button type="button" class="btn btn-success" id="donate-amount-btn"data-amount="10">C$10</button>
@@ -17,16 +11,15 @@
       <button type="button" class="btn btn-success" id="donate-amount-btn"data-amount="200">C$200</button>
     </div>
     <br>
-     <%= form_tag donation_payments_path(@donation) do %>
+     <%= form_tag project_payments_path(@project) do %>
       <div id="error_explanation">
         <% if flash[:error].present? %>
           <p><%= flash[:error] %></p>
         <% end %>
       </div>
       <article>
-        <span>C$</span>
-        <%= text_field_tag(:amount, "", :placeholder => "0")%>
-        <button id='donateButton'>Donate</button>
+        <%= text_field_tag(:amount, "", :placeholder => " CAD $25")%>
+        <button id='donate-btn'>Donate</button>
       </article>
       <article>
         <%= hidden_field_tag(:stripeToken) %>

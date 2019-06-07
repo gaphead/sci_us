@@ -86,6 +86,7 @@
 
 .show-section > p {
   padding-top: 10px;
+  color: grey;
 }
 
 .project-photo {
@@ -159,6 +160,7 @@
 
 .researcher-bio {
   display: flex;
+  color: gray;
 }
 
 .favorite-fund {
@@ -171,4 +173,16 @@
 
 .bio {
   padding: 0px 0px 20px 50px;
+}
+
+
+#researcher {
+  font-size: 17px;
+  color: #242424;
+  margin-top: 13px;
+  margin-bottom: 20px;
+
+  strong {
+    color: black;
+  }
 }
