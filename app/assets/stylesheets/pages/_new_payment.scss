@@ -5,12 +5,6 @@
 
   .donation-card {
     background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 700px;
-    height: 550px;
     // border: 2px solid #51D6FF;
     border-radius: 8px;
   }
@@ -23,11 +17,9 @@
   }
 
   .donation-buttons {
-    width: 350px;
-    height: 100px;
     align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
   }

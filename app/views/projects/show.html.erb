@@ -5,23 +5,20 @@
   <div class="project-name-photo col-sm-12 col-md-8 col-lg-8">
     <br>
     <h2><strong><%= @project.name %></strong></h2>
-    <br>
     <% if @project.user.nil? == false %>
-      <h5>Research lead by <%= @project.user.first_name %> <%= @project.user.last_name %></h5>
+      <h5 id="researcher">Research lead by <strong><%= @project.user.first_name %> <%= @project.user.last_name %></strong></h5>
     <% end %>
+
+    <%= link_to "Participate", { controller: :projects, action: :project_counter }  , class: 'btn btn-light', data: @project.category, id: 'participate-btn',target: :_blank, method: :post %>
     <br>
     <%= cl_image_tag(@project.photo, crop: :fill, gravity: :face, class: "project-photo") %>
-    <div class="category-triangle mt-4" id="triangle">
-      <!-- <p id="category">Category: <%=@project.category.capitalize%></p> -->
-    </div>
-
     <div class="show-section">
       <br>
     <div class="show-section">
       <h2>About this project</h2>
       <p><%=@project.about %></p>
     </div>
-          <h2>What is the context of this research?</h2>
+      <h2>What is the context of this research?</h2>
       <p><%= @project.context %></p>
     </div>
     <div class="show-section">
@@ -37,9 +34,11 @@
       <% if @project.user.nil? == false %>
         <div class="researcher-bio">
           <div>
-            <%= cl_image_tag @project.user.photo, class: "avatar-large", alt: "" %>
+            <%= cl_image_tag @project.user.photo, class: "avatar-large", align: "center", height: 75 %>
           </div>
           <div class="bio">
+            <p><%= @project.user.first_name %> <%= @project.user.last_name %>
+            </%>
             <p><%= @project.rresearcherbio %></p>
           </div>
         </div>
@@ -96,14 +95,25 @@
           </div>
         </div>
         <div class="fund-button">
-          <%= form_tag donations_path do %>
-            <%= hidden_field_tag 'project_id', @project.id %>
-            <%= submit_tag 'Fund Project', class: 'btn btn-info', id: 'donate-btn'%>
-          <% end %>
         </div>
-        <br>
-        <!-- participate  -->
-        <%= link_to "Participate in #{@project.name}", { controller: :projects, action: :project_counter }  , class: 'btn btn-light', data: @project.category, id: 'participate-btn',target: :_blank, method: :post %>
+
+
+
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="funding-collapse" data-toggle="collapse" data-target="#collapseOne">
+      <h5 class="mb-0 text-center" >
+        Fund Project
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <%= render "payments/new" %>
+      </div>
+    </div>
+  </div>
+</div>
       </div>
     </div>
   </div>

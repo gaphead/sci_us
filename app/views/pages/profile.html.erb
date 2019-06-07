@@ -5,44 +5,31 @@
         <div class='opener'>
           <div class='text-center pt-4'>
             <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"> <%= @user.first_name %> <%= @user.last_name %> </h5>
-    <%= cl_image_tag @user.photo, class: "avatar-large", align: "center", alt: "your profile picture", width: 100 unless @user.photo.blank? %>
-    <p class="card-text mt-4">View your achievements and favroited projects here.</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><%= @user.email %></li>
-    <li class="list-group-item">researcher: <% if @user.researcher_status == true%>
-      yes
-      <% else %>
-      no
-      <% end %>
-     </li>
-  </ul>
-  <div class="card-body">
-    <% if current_user.id == @user.id %>
-    <%= link_to "Edit profile", edit_user_registration_path(@user), class: 'btn btn-secondary' %>
-    <% end %>
-  </div>
-</div>
-          <!--   <h5>Hey, It's you!</h1>
-              <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-            <%= cl_image_tag @user.photo, class: "avatar-large", alt: "your profile picture", width: 100 unless @user.photo.blank? %>
-          </div>
-
-          <div class='text-center pt-4'>
-            <p><%= @user.email %></p>
-            <p><%= @user.description %></p>
-          </div>
-          <div class="text-center pt-4">
-
-             check that this logic actually works to hide the edit button from other users' profiles -->
-
+              <div class="card-body">
+                <h5 class="card-title"> <%= @user.first_name %> <%= @user.last_name %> </h5>
+                <%= cl_image_tag @user.photo, class: "avatar-large", align: "center", alt: "your profile picture", width: 100 unless @user.photo.blank? %>
+                <p class="card-text mt-4">View your achievements and favroited projects here.</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><%= @user.email %></li>
+                <li class="list-group-item"><% if @user.researcher_status == true%>
+                  Researcher
+                  <% else %>
+                  Citizen Scientist
+                  <% end %>
+                 </li>
+              </ul>
+              <div class="card-body">
+                <% if current_user.id == @user.id %>
+                <%= link_to "Edit profile", edit_user_registration_path(@user), class: 'btn btn-secondary' %>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-sm-12 col-md-8">
+    <div class="col-sm-6 col-md-8">
       <div class="container">
         <div class='opener'>
           <div class='text-left pt-5'>
@@ -175,35 +162,62 @@
       </div>
 
       <div class="card-container card-container-profile">
-        <% @user.projects.each do |p| %>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card card-index<%= p.category %>">
-              <%= link_to(project_path(p), class: "card-link") do %>
-              <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
-              </div>
-              <% end %>
-              <div class="card-body-">
-                <div class="star-project-tile">
-                  <%= link_to(project_path(p), class: "card-link") do %>
-                    <h5 class="card-title"><%= p.name %></h5>
-                  <% end %>
-                  <% if user_signed_in? %>
-                  <div data-project-id="<%= p.id %>">
-                    <%= link_to toggle_project_favorites_path(p), method: :post, remote: true do %>
-                    <% if current_user.has_favorited?(p) %>
-                      <i id="star", class="fas fa-star fa-lg fa-rocket-click"></i>
-                    <% else %>
-                      <i id="star", class="fas fa-star fa-lg"></i>
+        <!-- Cards-->
+        <div class="row">
+          <% @user.projects.each do |p| %>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3">
+              <div class="card card-index<%= p.category %>" id="card-profile">
+                <%= link_to(project_path(p), class: "card-link") do %>
+                  <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= p.photo %>);">
+                  </div>
+                <% end %>
+
+                <div class="card-body-">
+                  <div class="star-project-tile">
+                    <%= link_to(project_path(p), class: "card-link") do %>
+                      <h5 class="card-title"><%= p.name %></h5>
                     <% end %>
+                    <% if user_signed_in? %>
+                    <div data-project-id="<%= p.id %>">
+                      <%= link_to toggle_project_favorites_path(p), method: :post, remote: true do %>
+                        <% if current_user.has_favorited?(p) %>
+                          <i id="star", class="fas fa-star fa-lg fa-rocket-click"></i>
+                        <% else %>
+                          <i id="star", class="fas fa-star fa-lg"></i>
+                        <% end %>
+                      <% end %>
+                    </div>
                     <% end %>
                   </div>
-                  <% end %>
+                  <div>
+                    <p class="card-text"><%= p.short_description %></p>
+                  </div>
                 </div>
-                <p class="card-text"><%= p.short_description %></p>
+                <!-- progress bar   -->
+                <div class="progress-card">
+                  <div id="progress-all">
+                    <div class="progress" style="height: 18px; background-color: lightgrey; width: 100%; border-radius: 50px; border: 1px;">
+                      <div id="progress" class="progress-bar bg-info" role="progressbar" style="width: <%= ((p.current_funding / p.desired_funding.to_f)*100).to_i %>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <p id="test-amount"><%= ((p.current_funding / p.desired_funding.to_f)*100).to_i %>%</p>
+                      </div>
+                    </div>
+                    <div class="funding-amounts">
+                      <div class="funding-title">
+                        <strong>$ <%= p.current_funding %></strong>
+                        <p>Earned</p>
+                      </div>
+                      <div class="funding-title">
+                        <strong>$ <%= p.desired_funding %></strong>
+                        <p>Goal</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+
+        </div> <!-- end of row -->
       </div>
     </div>
   </div>

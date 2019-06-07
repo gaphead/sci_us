@@ -36,7 +36,7 @@ display: none;
 }
 
 .favorited-profile {
-  padding: 50px;
+  padding: 50px 0px;
 }
 
 .badges {
@@ -48,14 +48,15 @@ display: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 
 .card-product-infos {
-  width: 200px;
+  width: 300px;
 }
 
 .card-product {
-  width: 300px;
+  width: 400px;
 }
 
 .border {
@@ -65,4 +66,8 @@ display: none;
 
 #h2grey {
   // color: red;
+}
+
+#card-profile {
+  width: 100% !important;
 }

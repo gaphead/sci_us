@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :projects do
+    resources :payments, only: [:new, :create]
     resources :favorites, only: [] do
       collection do
         post 'toggle'
@@ -11,11 +12,8 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :favorites, only: [:index]
-  resources :donations, only: [:show, :create]
 
-  resources :donations, only: [:show, :create] do
-  resources :payments, only: [:new, :create]
-end
+  resources :donations, only: [:show]
 
   get '/profile/:id', to: 'pages#profile', as: :profile
 
