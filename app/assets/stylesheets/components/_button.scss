@@ -92,14 +92,14 @@
 }
 
 .btn-browse {
-  background-color: rgba(238,69,64,0.9);
+  background-color: rgb(64,167,152);
   font-size: 18px;
   border-color: rgba(255,255,255,0.2);
   color: white;
   border-radius: 5px;
   padding: 10px 15px;
   &:hover {
-    background-color: rgba(238,69,64,1);
+    background-color: rgba(64,167,152,.8);
     border-color: rgba(255,255,255,0.2);
     color: white;
     border-radius: 5px;
