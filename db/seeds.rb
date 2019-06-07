@@ -245,7 +245,7 @@ ebird.save!
 
 print "."
 
-pcam.remote_photo_url = "https://images.unsplash.com/photo-1459515239697-320241f6dace?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+pcam.remote_photo_url = "https://siegelbirds.weebly.com/uploads/1/3/7/8/13785421/443240230_orig.jpg?638"
 pcam.save!
 
 print "."
@@ -255,7 +255,7 @@ gxplore.save!
 
 print "."
 
-pcards.remote_photo_url = "https://panoptes-uploads.zooniverse.org/production/project_avatar/2d9013f7-f284-491a-9e14-14683fe5e145.jpeg"
+pcards.remote_photo_url = "https://www.history.com/.image/t_share/MTU5NDkxNDUyMzE1OTAzMjQ5/christmas-truce-getty-566449031.jpg"
 pcards.save!
 
 print "."
