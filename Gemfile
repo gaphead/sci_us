@@ -17,7 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 # gem 'algoliasearch-rails'
 gem 'money-rails', '~>1.12' # Gem to manage properties of money in ruby
 gem 'stripe' # Stripe gem
